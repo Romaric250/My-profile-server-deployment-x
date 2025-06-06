@@ -1,17 +1,138 @@
 import { ContactRelationship, IContactRelationship } from '../models/ContactRelationship';
-import { RelationshipType } from '../models/RelationshipType';
-import mongoose from 'mongoose';
+import { RelationshipType, IRelationshipType, ProfileType } from '../models/RelationshipType';
+import { FilterQuery, QueryOptions, Types } from 'mongoose';
+
+interface CreateContactRelationshipData {
+    fromContact: string;
+    toContact: string;
+    relationshipTypeId: string;
+    createdBy: string;
+}
 
 export class ContactRelationshipService {
     /**
+     * Create a new relationship type
+     */
+    static async createRelationType(data: {
+        name: string;
+        inverseName: string;
+        profileType: ProfileType;
+        group?: string;
+        description?: string;
+        isSystemDefined?: boolean;
+        tags?: string[];
+    }): Promise<IRelationshipType> {
+        const existing = await RelationshipType.findOne({
+            name: data.name,
+            profileType: data.profileType,
+            isApproved: true
+        });
+
+        if (existing) {
+            throw new Error('Relationship type already exists');
+        }
+
+        return RelationshipType.create({
+            ...data,
+            isSystemDefined: data.isSystemDefined || false,
+            isApproved: true
+        });
+    }
+
+    /**
+     * Update a relationship type
+     */
+    static async updateRelationType(
+        id: string,
+        data: Partial<IRelationshipType>
+    ): Promise<IRelationshipType | null> {
+        const existing = await RelationshipType.findById(id);
+        if (!existing) {
+            throw new Error('Relationship type not found');
+        }
+
+        if (existing.isSystemDefined && data.isSystemDefined === false) {
+            throw new Error('Cannot modify system-defined status of relationship types');
+        }
+
+        // If name or profileType is being changed, check for duplicates
+        if (data.name || data.profileType) {
+            const duplicate = await RelationshipType.findOne({
+                _id: { $ne: id },
+                name: data.name || existing.name,
+                profileType: data.profileType || existing.profileType,
+                isApproved: true
+            });
+
+            if (duplicate) {
+                throw new Error('A relationship type with this name and profile type already exists');
+            }
+        }
+
+        return RelationshipType.findByIdAndUpdate(
+            id,
+            { $set: data },
+            { new: true }
+        );
+    }
+
+    /**
+     * Delete a relationship type
+     */
+    static async deleteRelationType(id: string): Promise<void> {
+        const relationshipType = await RelationshipType.findById(id);
+        if (!relationshipType) {
+            throw new Error('Relationship type not found');
+        }
+
+        if (relationshipType.isSystemDefined) {
+            throw new Error('Cannot delete system-defined relationship types');
+        }
+
+        // Check if there are any relationships using this type
+        const hasRelationships = await ContactRelationship.exists({
+            relationshipTypeId: id
+        });
+
+        if (hasRelationships) {
+            throw new Error('Cannot delete relationship type that is in use');
+        }
+
+        await relationshipType.deleteOne();
+    }
+
+    /**
+     * Get relationship types by profile type
+     */
+    static async getRelationTypesByProfile(profileType: ProfileType): Promise<IRelationshipType[]> {
+        return RelationshipType.find({
+            profileType,
+            isApproved: true
+        });
+    }
+
+    /**
+     * Search relationship types
+     */
+    static async searchRelationTypes(query: string): Promise<IRelationshipType[]> {
+        return RelationshipType.find({
+            $and: [
+                { isApproved: true },
+                {
+                    $or: [
+                        { name: { $regex: query, $options: 'i' } },
+                        { inverseName: { $regex: query, $options: 'i' } },
+                        { description: { $regex: query, $options: 'i' } }
+                    ]
+                }
+            ]
+        });
+    }
+
+    /**
      * Create a new contact relationship
      */
-    async createContactRelationship(data: {
-        fromContact: string;
-        toContact: string;
-        relationshipTypeId: string;
-        createdBy: string;
-    }): Promise<IContactRelationship> {
+    static async create(data: CreateContactRelationshipData): Promise<IContactRelationship> {
         const relationshipType = await RelationshipType.findById(data.relationshipTypeId);
         if (!relationshipType) {
             throw new Error('Relationship type not found');
@@ -30,22 +151,41 @@ export class ContactRelationshipService {
         }
 
         // Create the relationship
-        const relationship = await ContactRelationship.create({
+        return ContactRelationship.create({
             fromContact: data.fromContact,
             toContact: data.toContact,
             relationshipTypeId: data.relationshipTypeId,
             createdBy: data.createdBy,
             fromContactAccepted: true,
-            toContactAccepted: false
+            toContactAccepted: false,
+            fromName: relationshipType.name,
+            toName: relationshipType.inverseName
         });
+    }
 
-        return relationship;
+    /**
+     * Find relationships with filtering and pagination
+     */
+    static async find(
+        filter: FilterQuery<IContactRelationship> = {},
+        options: QueryOptions = {}
+    ): Promise<IContactRelationship[]> {
+        return ContactRelationship.find(filter, null, options)
+            .populate(['relationshipTypeId', 'fromContact', 'toContact', 'createdBy']);
+    }
+
+    /**
+     * Get a single relationship by ID
+     */
+    static async findById(id: string): Promise<IContactRelationship | null> {
+        return ContactRelationship.findById(id)
+            .populate(['relationshipTypeId', 'fromContact', 'toContact', 'createdBy']);
     }
 
     /**
      * Get relationship between two contacts
      */
-    async getRelationship(fromContact: string, toContact: string): Promise<IContactRelationship | null> {
+    static async findBetweenContacts(fromContact: string, toContact: string): Promise<IContactRelationship | null> {
         return ContactRelationship.findOne({
             $or: [
                 { fromContact, toContact },
@@ -57,7 +197,7 @@ export class ContactRelationshipService {
     /**
      * Accept a relationship request
      */
-    async acceptRelationship(relationshipId: string, contactId: string): Promise<IContactRelationship> {
+    static async accept(relationshipId: string, contactId: string): Promise<IContactRelationship> {
         const relationship = await ContactRelationship.findById(relationshipId);
         if (!relationship) {
             throw new Error('Relationship not found');
@@ -69,16 +209,15 @@ export class ContactRelationshipService {
         }
 
         relationship.toContactAccepted = true;
-        // acceptedAt will be automatically set by the pre-save hook
         await relationship.save();
 
-        return relationship;
+        return relationship.populate(['relationshipTypeId', 'fromContact', 'toContact', 'createdBy']);
     }
 
     /**
      * Reject or cancel a relationship
      */
-    async rejectRelationship(relationshipId: string, contactId: string): Promise<void> {
+    static async reject(relationshipId: string, contactId: string): Promise<void> {
         const relationship = await ContactRelationship.findById(relationshipId);
         if (!relationship) {
             throw new Error('Relationship not found');
@@ -95,7 +234,7 @@ export class ContactRelationshipService {
     /**
      * Update relationship type
      */
-    async updateRelationshipType(
+    static async updateType(
         relationshipId: string,
         relationshipTypeId: string,
         contactId: string
@@ -117,47 +256,62 @@ export class ContactRelationshipService {
             throw new Error('Unauthorized to update this relationship');
         }
 
-        relationship.relationshipTypeId = new mongoose.Types.ObjectId(relationshipTypeId);
+        relationship.relationshipTypeId = new Types.ObjectId(relationshipTypeId);
         await relationship.save();
 
-        return relationship;
+        return relationship.populate(['relationshipTypeId', 'fromContact', 'toContact', 'createdBy']);
     }
 
     /**
-     * Get all relationships for a contact
+     * Get all relationships for a contact with filters
      */
-    async getContactRelationships(
+    static async findForContact(
         contactId: string,
-        filters?: {
-            accepted?: boolean;
-            pending?: boolean;
-        }
+        filter: FilterQuery<IContactRelationship> = {},
+        options: QueryOptions = {}
     ): Promise<IContactRelationship[]> {
-        const query: any = {
+        const baseQuery = {
             $or: [
                 { fromContact: contactId },
                 { toContact: contactId }
-            ]
+            ],
+            ...filter
         };
 
-        if (filters?.accepted) {
-            query.toContactAccepted = true;
-        }
-        if (filters?.pending) {
-            query.toContactAccepted = false;
-        }
-
-        return ContactRelationship.find(query)
+        return ContactRelationship.find(baseQuery, null, options)
             .populate(['relationshipTypeId', 'fromContact', 'toContact', 'createdBy']);
     }
 
     /**
      * Get pending relationship requests for a contact
      */
-    async getPendingRequests(contactId: string): Promise<IContactRelationship[]> {
+    static async findPendingRequests(
+        contactId: string,
+        options: QueryOptions = {}
+    ): Promise<IContactRelationship[]> {
         return ContactRelationship.find({
             toContact: contactId,
             toContactAccepted: false
+        }, null, options).populate(['relationshipTypeId', 'fromContact', 'toContact', 'createdBy']);
+    }
+
+    /**
+     * Bulk delete relationships
+     */
+    static async bulkDelete(ids: string[]): Promise<{ deletedCount: number }> {
+        const result = await ContactRelationship.deleteMany({ _id: { $in: ids } });
+        return { deletedCount: result.deletedCount };
+    }
+
+    /**
+     * Search relationships by name
+     */
+    static async search(query: string): Promise<IContactRelationship[]> {
+        return ContactRelationship.find({
+            $or: [
+                { fromName: { $regex: query, $options: 'i' } },
+                { toName: { $regex: query, $options: 'i' } }
+            ]
         }).populate(['relationshipTypeId', 'fromContact', 'toContact', 'createdBy']);
     }
 } 

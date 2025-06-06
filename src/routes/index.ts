@@ -54,6 +54,7 @@ import stripeRoutes from './stripe.routes';
 import taskRoutes from './task.routes';
 import profileDataRoutes from './data.routes';
 import settingsRoutes from './settings.routes';
+import contactRelationshipRoutes from './contactRelationship.routes';
 import listRoutes from './list.routes';
 import eventRoutes from './event.routes';
 import interactionRoutes from './interaction.routes';
@@ -192,7 +193,7 @@ export const setupRoutes = (app: Application): void => {
   // app.use('/api/connections', protect, connectionRoutes);
   app.use('/api/p/connections', protect, connectionRoutes);
   app.use('/api/contacts', protect, contactRoutes);
-
+  app.use('/api/c/relationship', protect, contactRelationshipRoutes);
   app.use('/api/tasks', protect, taskRoutes);
   app.use('/api/lists', protect, listRoutes);
   app.use('/api/events', protect, eventRoutes);

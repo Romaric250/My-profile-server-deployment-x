@@ -1,6 +1,10 @@
 import { Request, Response } from 'express';
 import { ContactRelationshipService } from '../services/contactRelationship.service';
 import mongoose from 'mongoose';
+import createHttpError from 'http-errors';
+import { RelationshipType } from '../models/RelationshipType';
+import { User } from '../models/User';
+
 
 export class ContactRelationshipController {
     private relationshipService: ContactRelationshipService;
@@ -12,37 +16,48 @@ export class ContactRelationshipController {
     /**
      * Create a new contact relationship
      */
-    async createRelationship = async (req: Request, res: Response): Promise<void> => {
+    createRelationship = async (req: Request, res: Response): Promise<void> => {
         try {
-            const { fromContact, toContact, relationshipTypeId, fromName, toName } = req.body;
+            const userId = (req.user as any)?._id;
+            const usercontact = (req.user as any)?.phoneNumber;
+
+            if (!userId || !usercontact) throw createHttpError(401, 'Unauthorized');
+            const { toContact, relationshipTypeId } = req.body;
 
             // Validate required fields
-            if (!fromContact || !toContact || !relationshipTypeId || !fromName || !toName) {
+            if ( !toContact || !relationshipTypeId) {
                 res.status(400).json({
                     success: false,
                     message: 'Missing required fields'
                 });
-                return;
+                
             }
 
             // Validate ObjectId format
-            if (!mongoose.Types.ObjectId.isValid(fromContact) ||
-                !mongoose.Types.ObjectId.isValid(toContact) ||
-                !mongoose.Types.ObjectId.isValid(relationshipTypeId)) {
+            if (!mongoose.Types.ObjectId.isValid(relationshipTypeId)) {
                 res.status(400).json({
                     success: false,
                     message: 'Invalid ID format'
                 });
-                return;
+                
+
             }
 
-            const relationship = await this.relationshipService.createContactRelationship({
-                fromContact,
+            const toContactexist = await User.findOne({phoneNumber: toContact});
+            if (!toContactexist) {
+                res.status(400).json({
+                    success: false,
+                    message: 'Contact you want to connect to is not found'
+                });
+            }
+            
+
+
+            const relationship = await ContactRelationshipService.create({
+                fromContact: usercontact,
                 toContact,
                 relationshipTypeId,
-                createdBy: req.user._id, // Assuming user is attached to request by auth middleware
-                fromName,
-                toName
+                createdBy: userId
             });
 
             res.status(201).json({
@@ -60,9 +75,11 @@ export class ContactRelationshipController {
     /**
      * Accept a relationship request
      */
-    async acceptRelationship = async (req: Request, res: Response): Promise<void> => {
+    acceptRelationship = async (req: Request, res: Response): Promise<void> => {
         try {
             const { relationshipId } = req.params;
+            const userId = (req.user as any)?._id;
+            if (!userId) throw createHttpError(401, 'Unauthorized');
 
             if (!mongoose.Types.ObjectId.isValid(relationshipId)) {
                 res.status(400).json({
@@ -72,9 +89,9 @@ export class ContactRelationshipController {
                 return;
             }
 
-            const relationship = await this.relationshipService.acceptRelationship(
+            const relationship = await ContactRelationshipService.accept(
                 relationshipId,
-                req.user._id // Assuming user is attached to request by auth middleware
+                userId
             );
 
             res.status(200).json({
@@ -92,9 +109,11 @@ export class ContactRelationshipController {
     /**
      * Reject or cancel a relationship
      */
-    async rejectRelationship = async (req: Request, res: Response): Promise<void> => {
+    rejectRelationship = async (req: Request, res: Response): Promise<void> => {
         try {
             const { relationshipId } = req.params;
+            const userId = (req.user as any)?._id;
+            if (!userId) throw createHttpError(401, 'Unauthorized');
 
             if (!mongoose.Types.ObjectId.isValid(relationshipId)) {
                 res.status(400).json({
@@ -104,9 +123,9 @@ export class ContactRelationshipController {
                 return;
             }
 
-            await this.relationshipService.rejectRelationship(
+            await ContactRelationshipService.reject(
                 relationshipId,
-                req.user._id // Assuming user is attached to request by auth middleware
+                userId
             );
 
             res.status(200).json({
@@ -124,10 +143,12 @@ export class ContactRelationshipController {
     /**
      * Update relationship type
      */
-    async updateRelationshipType = async (req: Request, res: Response): Promise<void> => {
+    updateRelationshipType = async (req: Request, res: Response): Promise<void> => {
         try {
             const { relationshipId } = req.params;
             const { relationshipTypeId } = req.body;
+            const userId = (req.user as any)?._id;
+            if (!userId) throw createHttpError(401, 'Unauthorized');
 
             if (!mongoose.Types.ObjectId.isValid(relationshipId) ||
                 !mongoose.Types.ObjectId.isValid(relationshipTypeId)) {
@@ -138,10 +159,10 @@ export class ContactRelationshipController {
                 return;
             }
 
-            const relationship = await this.relationshipService.updateRelationshipType(
+            const relationship = await ContactRelationshipService.updateType(
                 relationshipId,
                 relationshipTypeId,
-                req.user._id // Assuming user is attached to request by auth middleware
+                userId
             );
 
             res.status(200).json({
@@ -159,17 +180,18 @@ export class ContactRelationshipController {
     /**
      * Get all relationships for the authenticated user
      */
-    async getMyRelationships = async (req: Request, res: Response): Promise<void> => {
+    getMyRelationships = async (req: Request, res: Response): Promise<void> => {
         try {
             const { accepted, pending } = req.query;
-            
-            const relationships = await this.relationshipService.getContactRelationships(
-                req.user._id, // Assuming user is attached to request by auth middleware
-                {
-                    accepted: accepted === 'true',
-                    pending: pending === 'true'
-                }
-            );
+            const userId = (req.user as any)?._id;
+            if (!userId) throw createHttpError(401, 'Unauthorized');
+
+            const filter = {
+                ...(accepted === 'true' && { toContactAccepted: true }),
+                ...(pending === 'true' && { toContactAccepted: false })
+            };
+
+            const relationships = await ContactRelationshipService.findForContact(userId, filter);
 
             res.status(200).json({
                 success: true,
@@ -186,9 +208,11 @@ export class ContactRelationshipController {
     /**
      * Get pending relationship requests for the authenticated user
      */
-    async getPendingRequests = async (req: Request, res: Response): Promise<void> => {
+    getPendingRequests = async (req: Request, res: Response): Promise<void> => {
         try {
-            const requests = await this.relationshipService.getPendingRequests(req.user._id);
+            const userId = (req.user as any)?._id;
+            if (!userId) throw createHttpError(401, 'Unauthorized');
+            const requests = await ContactRelationshipService.findPendingRequests(userId);
 
             res.status(200).json({
                 success: true,
@@ -205,7 +229,7 @@ export class ContactRelationshipController {
     /**
      * Get a specific relationship
      */
-    async getRelationship = async (req: Request, res: Response): Promise<void> => {
+    getRelationship = async (req: Request, res: Response): Promise<void> => {
         try {
             const { fromContact, toContact } = req.params;
 
@@ -218,7 +242,7 @@ export class ContactRelationshipController {
                 return;
             }
 
-            const relationship = await this.relationshipService.getRelationship(fromContact, toContact);
+            const relationship = await ContactRelationshipService.findBetweenContacts(fromContact, toContact);
 
             if (!relationship) {
                 res.status(404).json({
@@ -239,4 +263,69 @@ export class ContactRelationshipController {
             });
         }
     };
+
+
+createRelationshipType = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const userId = (req.user as any)?._id;
+        if (!userId) throw createHttpError(401, 'Unauthorized');
+        const { name, inverseName, profileType } = req.body;
+        const relationshipType = await RelationshipType.create({
+            name,
+            inverseName,
+            profileType
+        });
+        res.status(201).json({
+            success: true,
+            data: relationshipType
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error instanceof Error ? error.message : 'Failed to create relationship type'
+        });
+    }
+};
+
+newUpdateRelationshipType = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const userId = (req.user as any)?._id;
+        if (!userId) throw createHttpError(401, 'Unauthorized');
+        const { relationshipId } = req.params;
+        const { name, inverseName, profileType } = req.body;
+        const relationshipType = await RelationshipType.findByIdAndUpdate(relationshipId, { name, inverseName, profileType });
+        res.status(200).json({
+            success: true,
+            data: relationshipType
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error instanceof Error ? error.message : 'Failed to update relationship type'
+        });
+    }
+}
+
+deleteRelationshipType = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const userId = (req.user as any)?._id;
+        if (!userId) throw createHttpError(401, 'Unauthorized');
+        const { relationshipId } = req.params;
+        const relationshipType = await RelationshipType.findByIdAndDelete(relationshipId);
+        res.status(200).json({
+            success: true,
+            data: relationshipType
+        }); 
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error instanceof Error ? error.message : 'Failed to delete relationship type'
+        });
+    }
+}
+
+
+
+
+
 } 

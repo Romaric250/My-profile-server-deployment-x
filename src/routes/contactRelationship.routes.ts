@@ -10,6 +10,10 @@ const controller = new ContactRelationshipController();
 // Create a new relationship
 router.post('/', controller.createRelationship);
 
+router.post('/type', controller.createRelationshipType);
+router.put('/type/:relationshipId', controller.newUpdateRelationshipType);
+router.delete('/type/:relationshipId', controller.deleteRelationshipType);
+
 // Accept a relationship request
 router.put('/:relationshipId/accept', controller.acceptRelationship);
 

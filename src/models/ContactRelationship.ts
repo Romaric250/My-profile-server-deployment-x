@@ -67,7 +67,14 @@ const contactRelationshipSchema = new Schema<IContactRelationship>(
       default: false,
       index: true
     },
-
+    fromName: {
+      type: String,
+      required: true
+    },
+    toName: {
+      type: String,
+      required: true
+    },
   
     acceptedAt: {
       type: Date
