@@ -22,3 +22,4 @@ router.delete('/:id', RelationshipTypeController.delete);
 router.delete('/delete/all', RelationshipTypeController.deleteAll);
 
 export default router;
+

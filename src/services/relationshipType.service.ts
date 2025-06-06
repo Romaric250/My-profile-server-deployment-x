@@ -1,4 +1,5 @@
 import { RelationshipType, IRelationshipType, ProfileType } from '../models/RelationshipType';
+import { ContactRelationship } from '../models/ContactRelationship';
 import { FilterQuery, QueryOptions } from 'mongoose';
 
 export class RelationshipTypeService {
@@ -6,8 +7,8 @@ export class RelationshipTypeService {
      * Create a new relationship type
      */
     static async create(data: Partial<IRelationshipType>): Promise<IRelationshipType> {
-        if (!data.name || !data.profileType) {
-            throw new Error('Name and profileType are required');
+        if (!data.name || !data.profileType || !data.inverseName) {
+            throw new Error('Name, inverseName, and profileType are required');
         }
 
         const existing = await RelationshipType.findOne({
@@ -22,7 +23,8 @@ export class RelationshipTypeService {
 
         return RelationshipType.create({
             ...data,
-            isSystemDefined: data.isSystemDefined || false
+            isSystemDefined: data.isSystemDefined || false,
+            isApproved: true
         });
     }
 
@@ -50,11 +52,29 @@ export class RelationshipTypeService {
         id: string,
         data: Partial<IRelationshipType>
     ): Promise<IRelationshipType | null> {
+        const existing = await RelationshipType.findById(id);
+        if (!existing) {
+            throw new Error('Relationship type not found');
+        }
+
         // Prevent changing system-defined relationships
-        if (data.isSystemDefined === false) {
-            const existing = await RelationshipType.findById(id);
-            if (existing?.isSystemDefined) {
+        if (existing.isSystemDefined) {
+            if (data.isSystemDefined === false || data.name || data.inverseName) {
                 throw new Error('Cannot modify system-defined relationship types');
+            }
+        }
+
+        // If name or profileType is being changed, check for duplicates
+        if (data.name || data.profileType) {
+            const duplicate = await RelationshipType.findOne({
+                _id: { $ne: id },
+                name: data.name || existing.name,
+                profileType: data.profileType || existing.profileType,
+                isApproved: true
+            });
+
+            if (duplicate) {
+                throw new Error('A relationship type with this name and profile type already exists');
             }
         }
 
@@ -68,12 +88,26 @@ export class RelationshipTypeService {
     /**
      * Delete a relationship type
      */
-    static async delete(id: string): Promise<IRelationshipType | null> {
-        const relationship = await RelationshipType.findById(id);
-        if (relationship?.isSystemDefined) {
+    static async delete(id: string): Promise<void> {
+        const relationshipType = await RelationshipType.findById(id);
+        if (!relationshipType) {
+            throw new Error('Relationship type not found');
+        }
+
+        if (relationshipType.isSystemDefined) {
             throw new Error('Cannot delete system-defined relationship types');
         }
-        return RelationshipType.findByIdAndDelete(id);
+
+        // Check if there are any relationships using this type
+        const hasRelationships = await ContactRelationship.exists({
+            relationshipTypeId: id
+        });
+
+        if (hasRelationships) {
+            throw new Error('Cannot delete relationship type that is in use');
+        }
+
+        await relationshipType.deleteOne();
     }
 
     /**
@@ -81,7 +115,12 @@ export class RelationshipTypeService {
      */
     static async search(query: string): Promise<IRelationshipType[]> {
         return RelationshipType.find({
-            $text: { $search: query }
+            $or: [
+                { name: { $regex: query, $options: 'i' } },
+                { inverseName: { $regex: query, $options: 'i' } },
+                { description: { $regex: query, $options: 'i' } }
+            ],
+            isApproved: true
         });
     }
 
@@ -91,12 +130,31 @@ export class RelationshipTypeService {
     static async findByProfileType(
         profileType: ProfileType
     ): Promise<IRelationshipType[]> {
-        return RelationshipType.find({ profileType });
+        return RelationshipType.find({ 
+            profileType,
+            isApproved: true 
+        });
     }
 
     /**
-  * Bulk create relationship types with validation and error handling
-  */
+     * Validate relationship type for use
+     */
+    static async validateForUse(id: string): Promise<IRelationshipType> {
+        const relationshipType = await RelationshipType.findById(id);
+        if (!relationshipType) {
+            throw new Error('Relationship type not found');
+        }
+
+        if (!relationshipType.isApproved) {
+            throw new Error('Relationship type is not approved');
+        }
+
+        return relationshipType;
+    }
+
+    /**
+     * Bulk create relationship types
+     */
     static async bulkCreate(
         items: Array<Partial<IRelationshipType>>,
         options: { skipDuplicates?: boolean } = { skipDuplicates: true }
@@ -114,8 +172,8 @@ export class RelationshipTypeService {
             items.map(async (item, index) => {
                 try {
                     // Required fields check
-                    if (!item.name || !item.profileType) {
-                        throw new Error('Name and profileType are required');
+                    if (!item.name || !item.profileType || !item.inverseName) {
+                        throw new Error('Name, inverseName, and profileType are required');
                     }
 
                     // Validate profileType enum
@@ -159,13 +217,34 @@ export class RelationshipTypeService {
         };
     }
 
-
     /**
-    * Bulk Delete relationship types by IDs
-    */
-
+     * Bulk Delete relationship types
+     */
     static async bulkDelete(ids: string[]): Promise<{ deletedCount: number }> {
-        const result = await RelationshipType.deleteMany({ _id: { $in: ids } });
+        // Check for system-defined types
+        const systemTypes = await RelationshipType.find({
+            _id: { $in: ids },
+            isSystemDefined: true
+        });
+
+        if (systemTypes.length > 0) {
+            throw new Error('Cannot delete system-defined relationship types');
+        }
+
+        // Check for types in use
+        const usedTypes = await ContactRelationship.find({
+            relationshipTypeId: { $in: ids }
+        });
+
+        if (usedTypes.length > 0) {
+            throw new Error('Cannot delete relationship types that are in use');
+        }
+
+        const result = await RelationshipType.deleteMany({ 
+            _id: { $in: ids },
+            isSystemDefined: false
+        });
+        
         return { deletedCount: result.deletedCount };
     }
 }

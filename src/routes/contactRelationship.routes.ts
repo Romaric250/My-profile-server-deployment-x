@@ -11,6 +11,7 @@ const controller = new ContactRelationshipController();
 router.post('/', controller.createRelationship);
 
 router.post('/type', controller.createRelationshipType);
+
 router.put('/type/:relationshipId', controller.newUpdateRelationshipType);
 router.delete('/type/:relationshipId', controller.deleteRelationshipType);
 
@@ -31,5 +32,7 @@ router.get('/pending-requests', controller.getPendingRequests);
 
 // Get specific relationship
 router.get('/:fromContact/:toContact', controller.getRelationship);
+
+router.delete('/type', controller.bulkDeleteRelationshipType);
 
 export default router; 

@@ -324,7 +324,23 @@ deleteRelationshipType = async (req: Request, res: Response): Promise<void> => {
     }
 }
 
+bulkDeleteRelationshipType = async (req: Request, res: Response): Promise<void> => {
+    try {
 
+        const relationshipTypes = await RelationshipType.find({});
+        const relationshipIds = relationshipTypes.map((relationship) => relationship._id);
+        const relationshipType = await RelationshipType.deleteMany({ _id: { $in: relationshipIds } });
+        res.status(200).json({
+            success: true,
+            data: relationshipType
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error instanceof Error ? error.message : 'Failed to delete relationship type'
+        });
+    }
+}
 
 
 
