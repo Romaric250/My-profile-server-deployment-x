@@ -1,4 +1,3 @@
-
 import mongoose, { Document, Schema, Model } from 'mongoose';
 import { IUser } from './User';       
 import { Contact } from './Contact';  
@@ -17,6 +16,10 @@ export interface IContactRelationship extends Document {
 
   fromContactAccepted: boolean;
   toContactAccepted: boolean;
+
+  fromName: string;
+  toName: string;
+  
   
 
 
@@ -64,6 +67,8 @@ const contactRelationshipSchema = new Schema<IContactRelationship>(
       default: false,
       index: true
     },
+
+  
     acceptedAt: {
       type: Date
     }
@@ -78,7 +83,7 @@ const contactRelationshipSchema = new Schema<IContactRelationship>(
   }
 );
 
-//  a unique index so that a given “fromContact → toContact” pair can only exist once
+//  a unique index so that a given "fromContact → toContact" pair can only exist once
 contactRelationshipSchema.index(
   { fromContact: 1, toContact: 1, },
   { unique: true }
@@ -93,3 +98,8 @@ contactRelationshipSchema.pre<IContactRelationship>('save', function (next) {
 });
 
 export interface ContactRelationshipModel extends Model<IContactRelationship> {}
+
+export const ContactRelationship = mongoose.model<IContactRelationship, ContactRelationshipModel>(
+    'ContactRelationship',
+    contactRelationshipSchema
+);
