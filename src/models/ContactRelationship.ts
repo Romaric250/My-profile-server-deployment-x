@@ -93,9 +93,3 @@ contactRelationshipSchema.pre<IContactRelationship>('save', function (next) {
 });
 
 export interface ContactRelationshipModel extends Model<IContactRelationship> {}
-
-
-export const ContactRelationship = mongoose.model<
-  IContactRelationship,
-  ContactRelationshipModel
->('ContactRelationship', contactRelationshipSchema);
