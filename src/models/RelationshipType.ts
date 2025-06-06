@@ -3,6 +3,7 @@ import mongoose, { Document, Schema, Model } from 'mongoose';
 // Interface extending Document
 export interface IRelationshipType extends Document {
     name: string;
+    inverseName: string;
     profileType: ProfileType;
     group?: string;
     description?: string;
@@ -23,12 +24,20 @@ export enum ProfileType {
 
 const relationshipTypeSchema = new Schema<IRelationshipType>(
     {
+        
         name: {
             type: String,
             required: true,
             trim: true,
             index: true
         },
+        inverseName: {
+            type: String,
+            required: true,
+            trim: true,
+            index: true
+        },
+
         profileType: {
             type: String,
             enum: Object.values(ProfileType),
