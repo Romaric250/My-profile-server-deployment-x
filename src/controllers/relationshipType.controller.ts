@@ -73,15 +73,16 @@ export class RelationshipTypeController {
     /**
      * Delete a relationship type
      */
-    static async delete(req: Request, res: Response) {
+    static async delete(req: Request, res: Response):Promise<void> {
         try {
-            const relationship = await RelationshipTypeService.delete(req.params.id);
-            if (!relationship) {
-                return res.status(404).json({ error: 'Relationship type not found' });
-            }
+            await RelationshipTypeService.delete(req.params.id);
             res.json({ message: 'Relationship type deleted' });
         } catch (error: any) {
-            res.status(400).json({ error: error.message });
+            if (error.message === 'Relationship type not found') {
+                res.status(404).json({ error: error.message });
+            } else {
+                res.status(400).json({ error: error.message });
+            }
         }
     }
 

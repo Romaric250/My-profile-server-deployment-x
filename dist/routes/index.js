@@ -58,6 +58,7 @@ const stripe_routes_1 = __importDefault(require("./stripe.routes"));
 const task_routes_1 = __importDefault(require("./task.routes"));
 const data_routes_1 = __importDefault(require("./data.routes"));
 const settings_routes_1 = __importDefault(require("./settings.routes"));
+const contactRelationship_routes_1 = __importDefault(require("./contactRelationship.routes"));
 const list_routes_1 = __importDefault(require("./list.routes"));
 const event_routes_1 = __importDefault(require("./event.routes"));
 const interaction_routes_1 = __importDefault(require("./interaction.routes"));
@@ -167,6 +168,7 @@ const setupRoutes = (app) => {
     // app.use('/api/connections', protect, connectionRoutes);
     app.use('/api/p/connections', auth_middleware_1.protect, connection_routes_1.default);
     app.use('/api/contacts', auth_middleware_1.protect, contact_route_1.default);
+    app.use('/api/c/relationship', auth_middleware_1.protect, contactRelationship_routes_1.default);
     app.use('/api/tasks', auth_middleware_1.protect, task_routes_1.default);
     app.use('/api/lists', auth_middleware_1.protect, list_routes_1.default);
     app.use('/api/events', auth_middleware_1.protect, event_routes_1.default);
