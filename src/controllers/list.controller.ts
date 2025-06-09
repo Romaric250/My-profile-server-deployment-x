@@ -627,7 +627,7 @@ export const getListByShareableLink = async (req: Request, res: Response) => {
         }
 
         const accessInfo = {
-            profileId: req.user?._id?.toString(),
+            profileId: req.user?._id?.toString() || null,
             ipAddress: req.ip,
             userAgent: req.headers['user-agent']
         };
