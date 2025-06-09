@@ -62,6 +62,20 @@ const userSchema = new mongoose_1.Schema({
         required: true,
         unique: true,
     },
+    firstName: {
+        type: String,
+        required: function () {
+            // Only required if not a social login or if social login is complete
+            return !(this.signupType === 'google' || this.signupType === 'facebook' || this.signupType === 'linkedin');
+        },
+    },
+    lastName: {
+        type: String,
+        required: function () {
+            // Only required if not a social login or if social login is complete
+            return !(this.signupType === 'google' || this.signupType === 'facebook' || this.signupType === 'linkedin');
+        },
+    },
     dateOfBirth: {
         type: Date,
         required: function () {
@@ -307,7 +321,40 @@ const userSchema = new mongoose_1.Schema({
             // Social auth users need to complete it separately
             return this.signupType === 'email';
         }
-    }
+    },
+    // Admin management fields
+    isBanned: {
+        type: Boolean,
+        default: false,
+    },
+    banReason: {
+        type: String,
+        required: function () {
+            return this.isBanned;
+        },
+    },
+    banDate: {
+        type: Date,
+        required: function () {
+            return this.isBanned;
+        },
+    },
+    isAccountLocked: {
+        type: Boolean,
+        default: false,
+    },
+    lockReason: {
+        type: String,
+        required: function () {
+            return this.isAccountLocked;
+        },
+    },
+    lockDate: {
+        type: Date,
+        required: function () {
+            return this.isAccountLocked;
+        },
+    },
 }, {
     timestamps: true,
 });
@@ -408,5 +455,11 @@ userSchema.index({ linkedinId: 1 }, { sparse: true });
 userSchema.index({ verificationToken: 1 }, { sparse: true });
 userSchema.index({ resetPasswordToken: 1 }, { sparse: true });
 userSchema.index({ otpData: 1 }, { sparse: true });
+userSchema.index({ isBanned: 1 });
+userSchema.index({ isAccountLocked: 1 });
+userSchema.index({ role: 1 });
+userSchema.index({ isEmailVerified: 1 });
+userSchema.index({ isPhoneVerified: 1 });
+userSchema.index({ createdAt: 1 });
 logger_1.logger.info('User model indexes created successfully');
 exports.User = mongoose_1.default.model('User', userSchema);
