@@ -3,14 +3,14 @@ import mongoose, { Document, Model, Schema } from 'mongoose';
 export type ProfileCategory = 'individual' | 'accessory' | 'group';
 
 export const PROFILE_TYPE_ENUM = [
-  // individual
+  // individual profiletype
   'personal', 'academic', 'work', 'professional', 'proprietor',
   'freelancer', 'artist', 'influencer', 'athlete', 'provider',
   'merchant', 'vendor', "dummy",
-  // accessory
+  // accessory profiletype
   'emergency', 'medical', 'pet', 'ecommerce', 'home', 'transportation',
   'driver', 'event', 'dependent', 'rider',
-  // group
+  // group profiletype
   'group', 'team', 'family', 'neighborhood', 'company', 'business',
   'association', 'organization', 'institution', 'community'
 ] as const;

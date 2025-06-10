@@ -24,6 +24,11 @@ const ActivityProgressSchema = new Schema<IUserBadgeActivityProgress>({
   }
 });
 
+
+// clearly define the profile incentives
+// mypts,stamps, rewards, badge, milestones
+
+
 const ProfileBadgeSchema = new Schema<IUserBadge>(
   {
     badgeId: {

@@ -31,6 +31,10 @@ export enum InteractionStatus {
     COMPLETED = 'completed',
     CANCELLED = 'cancelled'
 }
+//
+
+
+
 
 interface IInteraction extends Document {
     title: string;

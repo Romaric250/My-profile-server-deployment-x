@@ -267,8 +267,11 @@ const ProfileSchema = new Schema<IProfile>(
       type: String,
       required: true,
       enum: [
+      //individual
         'personal', 'academic', 'work', 'professional', 'proprietor', 'freelancer', 'artist', 'influencer', 'athlete', 'provider', 'merchant', 'vendor',
+       //accessory
         'emergency', 'medical', 'pet', 'ecommerce', 'home', 'transportation', 'driver', 'event', 'dependent', 'rider',
+       //group
         'group', 'team', 'family', 'neighborhood', 'company', 'business', 'association', 'organization', 'institution', 'community'
       ],
       index: true
@@ -305,7 +308,7 @@ const ProfileSchema = new Schema<IProfile>(
       updatedAt: { type: Date, default: Date.now }
     },
     templatedId: { type: Schema.Types.ObjectId, ref: 'ProfileTemplate', required: true },
-    sections: [{ type: Schema.Types.Mixed }],
+    sections: [{ type: Schema.Types.Mixed }],// create the profile sections
     members: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
     groups: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
 
@@ -336,7 +339,13 @@ const ProfileSchema = new Schema<IProfile>(
       emailSignature: String,
       wallPaper: String,
       VirtualBackground: String
-    },
+    },// put under the format
+
+//profilesharing{
+//exp date set upon sharing any link, share and give an access code, Just add an extra model
+//}
+
+
     profileLocation: {
       city: String,
       stateOrProvince: String,
@@ -368,6 +377,8 @@ const ProfileSchema = new Schema<IProfile>(
     ProfileReferal: {
       referalLink: String,
       referals: { type: Number, default: 0 },
+      // add uplink and downlink, profile level
+
     },
     ProfileBadges: {
       badges: [{
@@ -379,7 +390,7 @@ const ProfileSchema = new Schema<IProfile>(
         earnedAt: Date,
       }],
     },
-    analytics: {
+    analytics: { // use insights instead
       Mypts: {
         balance: { type: Number, default: 0 },
         usage: { type: Number, default: 0 },
