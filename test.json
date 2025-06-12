@@ -1,0 +1,1470 @@
+[
+  {
+    "profileCategory": "group",
+    "profileType": "group",
+    "name": "Group Profile Template",
+    "slug": "group-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "groupInformation",
+            "label": "Group Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "groupName", "label": "Group Name", "widget": "text"},
+              {"name": "groupType", "label": "Group Type", "widget": "select", "options": [
+                {"label": "Social", "value": "social"},
+                {"label": "Hobby", "value": "hobby"},
+                {"label": "Volunteer", "value": "volunteer"},
+                {"label": "Community", "value": "community"}
+              ]},
+              {"name": "purposeOrMission", "label": "Purpose or Mission", "widget": "textarea"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "groupDescription",
+            "label": "Group Description",
+            "widget": "textarea",
+            "description": "Overview of the group's activities, goals, and interests",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "memberDetails",
+            "label": "Member Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "totalMembers", "label": "Total Number of Members", "widget": "number"},
+              {"name": "memberRoles", "label": "Member Roles", "widget": "list:text", "description": "e.g., leader, coordinator, participant"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "activitiesAndEvents",
+            "label": "Activities & Events",
+            "widget": "object",
+            "subFields": [
+              {"name": "typesOfActivities", "label": "Types of Activities", "widget": "list:text"},
+              {"name": "frequencyOfMeetups", "label": "Frequency of Meetups or Events", "widget": "text"},
+              {"name": "pastEventHighlights", "label": "Highlights from Past Events", "widget": "textarea"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "groupGoals",
+            "label": "Group Goals",
+            "widget": "object",
+            "subFields": [
+              {"name": "shortTermGoals", "label": "Short-term Goals", "widget": "textarea"},
+              {"name": "longTermVision", "label": "Long-term Vision", "widget": "textarea"},
+              {"name": "plannedProjects", "label": "Planned Projects", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "membershipRequirements",
+            "label": "Membership Requirements",
+            "widget": "object",
+            "subFields": [
+              {"name": "eligibilityCriteria", "label": "Eligibility Criteria", "widget": "textarea"},
+              {"name": "fees", "label": "Fees (if applicable)", "widget": "text"},
+              {"name": "rulesForJoining", "label": "Rules for Joining", "widget": "textarea"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "availability",
+            "label": "Availability",
+            "widget": "object",
+            "subFields": [
+              {"name": "meetupTimes", "label": "Times for Group Meetups", "widget": "text"},
+              {"name": "preferredDays", "label": "Preferred Days for Events or Activities", "widget": "text"}
+            ],
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "achievements",
+            "label": "Achievements",
+            "widget": "object",
+            "subFields": [
+              {"name": "awards", "label": "Awards", "widget": "list:text"},
+              {"name": "milestones", "label": "Milestones", "widget": "list:text"},
+              {"name": "communityContributions", "label": "Notable Contributions to the Community", "widget": "textarea"}
+            ],
+            "order": 8,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "groupContactInfo",
+            "label": "Group Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "groupEmail", "label": "Group Email Address", "widget": "email"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "website", "label": "Website or Blog (if applicable)", "widget": "url"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "leadershipContacts",
+            "label": "Leadership Contacts",
+            "widget": "object",
+            "description": "Contact details of group leaders or coordinators",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "meetingLocation",
+            "label": "Meeting Location",
+            "widget": "object",
+            "subFields": [
+              {"name": "physicalLocation", "label": "Physical Location of Meetups", "widget": "text"},
+              {"name": "virtualMeetingLinks", "label": "Virtual Meeting Links (if applicable)", "widget": "url"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactMethod",
+            "label": "Preferred Contact Method",
+            "widget": "multiselect",
+            "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "WhatsApp", "value": "whatsapp"},
+              {"label": "Telegram", "value": "telegram"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactTime",
+            "label": "Preferred Contact Time",
+            "widget": "text",
+            "description": "Best times for responding to inquiries or coordinating activities",
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "groupNetworks",
+            "label": "Group Networks",
+            "widget": "object",
+            "description": "Social media accounts (e.g., Facebook, Instagram, Twitter)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "memberForums",
+            "label": "Member Forums",
+            "widget": "object",
+            "subFields": [
+              {"name": "discussionPlatforms", "label": "Online Discussion Platforms", "widget": "list:text"},
+              {"name": "groupChats", "label": "Group Chats", "widget": "list:text"},
+              {"name": "messageBoards", "label": "Message Boards", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "communityEngagement",
+            "label": "Community Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "collaborationsWithOtherGroups", "label": "Collaborations with Other Groups", "widget": "textarea"},
+              {"name": "participationInCommunityEvents", "label": "Participation in Community Events", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "socialEvents",
+            "label": "Social Events",
+            "widget": "object",
+            "subFields": [
+              {"name": "groupParties", "label": "Group Parties", "widget": "list:text"},
+              {"name": "outings", "label": "Outings", "widget": "list:text"},
+              {"name": "teamBuildingActivities", "label": "Team-building Activities", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "marketingChannels",
+            "label": "Marketing Channels",
+            "widget": "object",
+            "description": "Platforms for promoting the group's activities (e.g., YouTube, TikTok, newsletters)",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "socialPreferences",
+            "label": "Social Preferences",
+            "widget": "object",
+            "subFields": [
+              {"name": "opennessToNewMembers", "label": "Openness to New Members", "widget": "select", "options": [
+                {"label": "Open", "value": "open"},
+                {"label": "Selective", "value": "selective"},
+                {"label": "Closed", "value": "closed"}
+              ]},
+              {"name": "partnershipsAndNetworking", "label": "Partnerships and Networking Opportunities", "widget": "textarea"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "availabilityForEvents",
+            "label": "Availability for Events",
+            "widget": "text",
+            "description": "Time slots for group participation in fairs, exhibitions, or community events",
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "family",
+    "name": "Family Profile Template",
+    "slug": "family-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "familyInformation",
+            "label": "Family Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyName", "label": "Family Name", "widget": "text"},
+              {"name": "familyMotto", "label": "Family Motto or Tradition", "widget": "text"},
+              {"name": "numberOfMembers", "label": "Number of Family Members", "widget": "number"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "memberDetails",
+            "label": "Member Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "names", "label": "Names", "widget": "list:text"},
+              {"name": "ages", "label": "Ages", "widget": "list:text"},
+              {"name": "roles", "label": "Roles", "widget": "list:text", "description": "e.g., Parent, Sibling, Grandparent"},
+              {"name": "relationshipStatus", "label": "Relationship Status", "widget": "text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "familyHistory",
+            "label": "Family History",
+            "widget": "object",
+            "subFields": [
+              {"name": "briefHistory", "label": "Brief Family History", "widget": "textarea"},
+              {"name": "ancestralRoots", "label": "Ancestral Roots", "widget": "text"},
+              {"name": "importantMilestones", "label": "Important Milestones or Achievements", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "interestsAndActivities",
+            "label": "Interests & Activities",
+            "widget": "object",
+            "subFields": [
+              {"name": "hobbies", "label": "Hobbies", "widget": "list:text"},
+              {"name": "sharedActivities", "label": "Shared Activities", "widget": "list:text", "description": "e.g., travel, sports, gardening"},
+              {"name": "familyTraditions", "label": "Family Traditions", "widget": "textarea"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "valuesAndBeliefs",
+            "label": "Values & Beliefs",
+            "widget": "object",
+            "subFields": [
+              {"name": "coreFamilyValues", "label": "Core Family Values", "widget": "textarea"},
+              {"name": "culturalOrReligiousBeliefs", "label": "Cultural or Religious Beliefs", "widget": "textarea"},
+              {"name": "goalsAsFamily", "label": "Goals as a Family", "widget": "textarea"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndCelebrations",
+            "label": "Events & Celebrations",
+            "widget": "object",
+            "subFields": [
+              {"name": "annualFamilyEvents", "label": "Annual Family Events", "widget": "list:text", "description": "e.g., reunions, birthdays, holidays"},
+              {"name": "upcomingCelebrations", "label": "Upcoming Celebrations", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "availability",
+            "label": "Availability",
+            "widget": "object",
+            "subFields": [
+              {"name": "preferredTimesForGatherings", "label": "Preferred Times for Family Gatherings", "widget": "text"},
+              {"name": "availabilityForMeetups", "label": "Availability for Virtual or Physical Meetups", "widget": "text"}
+            ],
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "familyAchievements",
+            "label": "Family Achievements",
+            "widget": "object",
+            "subFields": [
+              {"name": "notableAccomplishments", "label": "Notable Accomplishments of Family Members", "widget": "textarea"},
+              {"name": "collectiveAchievements", "label": "Collective Achievements", "widget": "textarea", "description": "e.g., community involvement"}
+            ],
+            "order": 8,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "familyContactInfo",
+            "label": "Family Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyEmail", "label": "Family Email Address", "widget": "email"},
+              {"name": "sharedPhoneNumber", "label": "Shared Phone Number (if applicable)", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "individualContacts",
+            "label": "Individual Contacts",
+            "widget": "object",
+            "description": "Contact details for each family member (optional, if needed for coordination)",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "physicalAddress",
+            "label": "Physical Address",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyHomeAddress", "label": "Family Home Address", "widget": "text"},
+              {"name": "vacationHomeOrFrequentLocations", "label": "Vacation Home or Frequently Visited Locations", "widget": "list:text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactMethod",
+            "label": "Preferred Contact Method",
+            "widget": "multiselect",
+            "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "WhatsApp", "value": "whatsapp"},
+              {"label": "Messenger", "value": "messenger"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactTime",
+            "label": "Preferred Contact Time",
+            "widget": "text",
+            "description": "Best times for responding to family inquiries or coordinating meetups",
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "familyNetworks",
+            "label": "Family Networks",
+            "widget": "object",
+            "description": "Shared family social media accounts (e.g., Instagram, Facebook, YouTube for updates)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "memberEngagement",
+            "label": "Member Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyGroupChats", "label": "Family Group Chats", "widget": "list:text"},
+              {"name": "messagingThreads", "label": "Messaging Threads", "widget": "list:text"},
+              {"name": "onlineFamilyBulletinBoards", "label": "Online Family Bulletin Boards", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "communityEngagement",
+            "label": "Community Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyParticipationInCommunityEvents", "label": "Family Participation in Community Events", "widget": "textarea"},
+              {"name": "volunteeringAsFamily", "label": "Volunteering as a Family", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "socialEvents",
+            "label": "Social Events",
+            "widget": "object",
+            "subFields": [
+              {"name": "picnics", "label": "Picnics", "widget": "list:text"},
+              {"name": "outings", "label": "Outings", "widget": "list:text"},
+              {"name": "gameNights", "label": "Game Nights", "widget": "list:text"},
+              {"name": "virtualOrInPersonBondingActivities", "label": "Virtual or In-person Bonding Activities", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "marketingChannels",
+            "label": "Marketing Channels",
+            "widget": "object",
+            "description": "Platforms used to promote family projects or shared interests (e.g., blogs, social media)",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "socialPreferences",
+            "label": "Social Preferences",
+            "widget": "textarea",
+            "description": "Indicate preferences for collaborations, community events, or extended family gatherings",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "availabilityForEvents",
+            "label": "Availability for Events",
+            "widget": "text",
+            "description": "Time slots for participating in family reunions, neighborhood gatherings, or festivals",
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+  "profileCategory": "accessory",
+  "profileType": "transportation",
+  "name": "Transportation Service Profile Template",
+  "slug": "transportation-profile",
+  "categories": [
+    {
+      "name": "about",
+      "label": "About",
+      "icon": "info-circle",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "serviceInformation",
+          "label": "Service Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "serviceName", "label": "Service Name", "widget": "text"},
+            {"name": "vehicleType", "label": "Vehicle Type", "widget": "select", "options": [
+              {"label": "Car", "value": "car"},
+              {"label": "Truck", "value": "truck"},
+              {"label": "Bike", "value": "bike"},
+              {"label": "Van", "value": "van"},
+              {"label": "Bus", "value": "bus"},
+              {"label": "Other", "value": "other"}
+            ]}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "vehicleDetails",
+          "label": "Vehicle Details",
+          "widget": "object",
+          "subFields": [
+            {"name": "vehicleModel", "label": "Vehicle Model", "widget": "text"},
+            {"name": "registrationNumber", "label": "Registration Number", "widget": "text"},
+            {"name": "licensePlate", "label": "License Plate", "widget": "text"},
+            {"name": "capacity", "label": "Capacity (Passengers or Cargo)", "widget": "text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "servicesProvided",
+          "label": "Services Provided",
+          "widget": "object",
+          "subFields": [
+            {"name": "transportationType", "label": "Type of Transportation", "widget": "multiselect", "options": [
+              {"label": "Passenger", "value": "passenger"},
+              {"label": "Freight", "value": "freight"},
+              {"label": "Delivery", "value": "delivery"}
+            ]},
+            {"name": "serviceAreas", "label": "Service Areas", "widget": "multiselect", "options": [
+              {"label": "Local", "value": "local"},
+              {"label": "Regional", "value": "regional"},
+              {"label": "International", "value": "international"}
+            ]}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "operatingHours",
+          "label": "Operating Hours",
+          "widget": "object",
+          "subFields": [
+            {"name": "dailySchedule", "label": "Daily Schedule", "widget": "text"},
+            {"name": "operatingHours", "label": "Operating Hours", "widget": "text"},
+            {"name": "breakTimes", "label": "Break Times", "widget": "text"},
+            {"name": "availabilityForBookings", "label": "Availability for Bookings", "widget": "text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "certificationsAndPermits",
+          "label": "Certifications & Permits",
+          "widget": "object",
+          "subFields": [
+            {"name": "licenses", "label": "Licenses (e.g., Driving License, Permits)", "widget": "list:text"},
+            {"name": "inspectionCertificates", "label": "Vehicle Inspection Certificates", "widget": "list:text"}
+          ],
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "serviceHighlights",
+          "label": "Service Highlights",
+          "widget": "object",
+          "subFields": [
+            {"name": "notableAchievements", "label": "Notable Achievements", "widget": "textarea"},
+            {"name": "customerTestimonials", "label": "Customer Testimonials", "widget": "textarea"},
+            {"name": "awardsOrRecognitions", "label": "Awards or Recognitions", "widget": "textarea"}
+          ],
+          "order": 6,
+          "enabled": true
+        },
+        {
+          "name": "safetyFeatures",
+          "label": "Safety Features",
+          "widget": "object",
+          "subFields": [
+            {"name": "safetyMeasures", "label": "Safety Measures", "widget": "textarea"},
+            {"name": "insuranceCoverage", "label": "Insurance Coverage", "widget": "text"}
+          ],
+          "order": 7,
+          "enabled": true
+        },
+        {
+          "name": "skillsAndExpertise",
+          "label": "Skills & Expertise",
+          "widget": "object",
+          "subFields": [
+            {"name": "drivingExperience", "label": "Driving Experience", "widget": "textarea"},
+            {"name": "specialLicenses", "label": "Special Licenses", "widget": "list:text"},
+            {"name": "navigationSkills", "label": "Navigation Skills", "widget": "textarea"}
+          ],
+          "order": 8,
+          "enabled": true
+        },
+        {
+          "name": "environmentalImpact",
+          "label": "Environmental Impact",
+          "widget": "object",
+          "subFields": [
+            {"name": "fuelType", "label": "Fuel Type", "widget": "text"},
+            {"name": "ecoFriendlyPractices", "label": "Eco-friendly Practices", "widget": "textarea"},
+            {"name": "carbonFootprintReduction", "label": "Carbon Footprint Reduction Efforts", "widget": "textarea"}
+          ],
+          "order": 9,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Contact",
+      "icon": "address-book",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "contactInformation",
+          "label": "Contact Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "businessEmail", "label": "Business Email", "widget": "email"},
+            {"name": "businessPhoneNumber", "label": "Business Phone Number", "widget": "text"},
+            {"name": "emergencyContactNumber", "label": "Emergency Contact Number", "widget": "text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "bookingOptions",
+          "label": "Booking Options",
+          "widget": "object",
+          "subFields": [
+            {"name": "onlineBookingLink", "label": "Online Booking Link", "widget": "url"},
+            {"name": "appIntegration", "label": "App or Platform Integration", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "physicalAddress",
+          "label": "Physical Address",
+          "widget": "object",
+          "subFields": [
+            {"name": "garageLocation", "label": "Garage or Office Location", "widget": "text"},
+            {"name": "serviceHeadquarters", "label": "Service Headquarters", "widget": "text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactMethod",
+          "label": "Preferred Contact Method",
+          "widget": "multiselect",
+          "options": [
+            {"label": "Email", "value": "email"},
+            {"label": "Phone", "value": "phone"},
+            {"label": "Online Messaging", "value": "online_messaging"},
+            {"label": "Booking Platforms", "value": "booking_platforms"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactTime",
+          "label": "Preferred Contact Time",
+          "widget": "text",
+          "description": "Best times for responding to inquiries or scheduling services",
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "social",
+      "label": "Social",
+      "icon": "share-alt",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "onlinePresence",
+          "label": "Online Presence",
+          "widget": "object",
+          "description": "Business social media accounts (e.g., Instagram, Facebook, Twitter for promotions)",
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "serviceReviewsAndRatings",
+          "label": "Service Reviews & Ratings",
+          "widget": "object",
+          "subFields": [
+            {"name": "reviewPlatforms", "label": "Platforms for Reviews", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "networkingAndGroups",
+          "label": "Networking & Groups",
+          "widget": "object",
+          "subFields": [
+            {"name": "associationMemberships", "label": "Membership in Transportation Associations", "widget": "list:text"},
+            {"name": "communityDrivingGroups", "label": "Community Driving Groups", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "marketingChannels",
+          "label": "Marketing Channels",
+          "widget": "object",
+          "description": "Active platforms for advertising (e.g., YouTube, TikTok, local advertising forums)",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "socialPreferences",
+          "label": "Social Preferences",
+          "widget": "textarea",
+          "description": "Indicate openness to collaboration with businesses, community events",
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "availabilityForEvents",
+          "label": "Availability for Events",
+          "widget": "text",
+          "description": "Time slots for participating in transport expos, road safety workshops, or fairs",
+          "order": 6,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+},{
+  "profileCategory": "",
+  "profileType": "single-owner",
+  "name": "Business Profile Template",
+  "slug": "business-profile",
+  "categories": [
+    {
+      "name": "about",
+      "label": "About",
+      "icon": "info-circle",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "businessInformation",
+          "label": "Business Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "fullName", "label": "Full Name", "widget": "text"},
+            {"name": "businessName", "label": "Business Name", "widget": "text"},
+            {"name": "businessType", "label": "Business Type", "widget": "select", "options": [
+              {"label": "Sole Proprietorship", "value": "sole_proprietorship"},
+              {"label": "Freelancer", "value": "freelancer"},
+              {"label": "Consultant", "value": "consultant"},
+              {"label": "Other", "value": "other"}
+            ]},
+            {"name": "industrySector", "label": "Industry Sector", "widget": "text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "servicesOrProducts",
+          "label": "Services/Products Offered",
+          "widget": "object",
+          "subFields": [
+            {"name": "description", "label": "Description", "widget": "textarea"},
+            {"name": "keyFeatures", "label": "Key Features", "widget": "list:text"},
+            {"name": "uniqueSellingPoints", "label": "Unique Selling Points", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "businessMissionVision",
+          "label": "Business Mission & Vision",
+          "widget": "object",
+          "subFields": [
+            {"name": "missionStatement", "label": "Mission Statement", "widget": "textarea"},
+            {"name": "vision", "label": "Vision for the Business", "widget": "textarea"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "skillsAndExpertise",
+          "label": "Skills & Expertise",
+          "widget": "object",
+          "subFields": [
+            {"name": "skills", "label": "Relevant Skills or Qualifications", "widget": "list:text"},
+            {"name": "certifications", "label": "Certifications or Licenses", "widget": "list:text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "businessHighlights",
+          "label": "Business Highlights",
+          "widget": "object",
+          "subFields": [
+            {"name": "awards", "label": "Awards", "widget": "list:text"},
+            {"name": "notableAchievements", "label": "Notable Achievements", "widget": "textarea"},
+            {"name": "milestones", "label": "Milestones Reached", "widget": "list:text"}
+          ],
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "businessGoals",
+          "label": "Business Goals",
+          "widget": "object",
+          "subFields": [
+            {"name": "shortTermObjectives", "label": "Short-term Objectives", "widget": "textarea"},
+            {"name": "longTermPlans", "label": "Long-term Growth Plans", "widget": "textarea"},
+            {"name": "futureProjects", "label": "Future Projects", "widget": "list:text"}
+          ],
+          "order": 6,
+          "enabled": true
+        },
+        {
+          "name": "availability",
+          "label": "Availability",
+          "widget": "object",
+          "subFields": [
+            {"name": "operatingHours", "label": "Operating Hours", "widget": "text"},
+            {"name": "appointmentTimes", "label": "Appointment Times", "widget": "text"},
+            {"name": "availabilityForConsultations", "label": "Availability for Consultations or Collaborations", "widget": "text"}
+          ],
+          "order": 7,
+          "enabled": true
+        },
+        {
+          "name": "portfolioWorkSamples",
+          "label": "Portfolio/Work Samples",
+          "widget": "object",
+          "subFields": [
+            {"name": "workShowcase", "label": "Showcase of Work", "widget": "list:text"},
+            {"name": "clientTestimonials", "label": "Client Testimonials", "widget": "textarea"},
+            {"name": "caseStudies", "label": "Case Studies", "widget": "list:text"}
+          ],
+          "order": 8,
+          "enabled": true
+        },
+        {
+          "name": "languages",
+          "label": "Languages",
+          "widget": "list:text",
+          "description": "Languages spoken fluently (if relevant to the business or customer interaction)",
+          "order": 9,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Contact",
+      "icon": "address-book",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "businessContactInfo",
+          "label": "Business Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "businessEmail", "label": "Business Email", "widget": "email"},
+            {"name": "businessPhoneNumber", "label": "Business Phone Number", "widget": "text"},
+            {"name": "websiteUrl", "label": "Website URL", "widget": "url"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "personalContactInfo",
+          "label": "Personal Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "mobileNumber", "label": "Mobile Number (optional)", "widget": "text"},
+            {"name": "secondaryEmail", "label": "Secondary Email", "widget": "email"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactMethod",
+          "label": "Preferred Contact Method",
+          "widget": "multiselect",
+          "options": [
+            {"label": "Email", "value": "email"},
+            {"label": "Phone", "value": "phone"},
+            {"label": "Online Messaging", "value": "online_messaging"},
+            {"label": "Social Media", "value": "social_media"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "physicalAddress",
+          "label": "Physical Address",
+          "widget": "object",
+          "subFields": [
+            {"name": "businessAddress", "label": "Business Address", "widget": "text"},
+            {"name": "locationOfOperations", "label": "Location of Operations", "widget": "text"},
+            {"name": "mailingAddress", "label": "Mailing Address", "widget": "text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactTime",
+          "label": "Preferred Contact Time",
+          "widget": "text",
+          "description": "Best times for responding to inquiries or scheduling meetings",
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "social",
+      "label": "Social",
+      "icon": "share-alt",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "onlinePresence",
+          "label": "Online Presence",
+          "widget": "object",
+          "description": "Business social media accounts (e.g., Instagram, Facebook, Twitter)",
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "professionalNetworks",
+          "label": "Professional Networks",
+          "widget": "object",
+          "subFields": [
+            {"name": "linkedinProfile", "label": "LinkedIn Profile", "widget": "url"},
+            {"name": "businessListings", "label": "Business Listings", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "customerInteraction",
+          "label": "Customer Interaction",
+          "widget": "object",
+          "subFields": [
+            {"name": "communityGroups", "label": "Community Groups", "widget": "list:text"},
+            {"name": "customerForums", "label": "Customer Forums", "widget": "list:text"},
+            {"name": "userReviewsAndRatings", "label": "User Reviews and Ratings", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "marketingChannels",
+          "label": "Marketing Channels",
+          "widget": "object",
+          "description": "Active platforms for marketing (e.g., YouTube, TikTok, Pinterest)",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "socialPreferences",
+          "label": "Social Preferences",
+          "widget": "textarea",
+          "description": "Indicate openness to networking, partnerships, or community events",
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "availabilityForEvents",
+          "label": "Availability for Events",
+          "widget": "text",
+          "description": "Time slots for attending trade shows, networking events, or workshops",
+          "order": 6,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+},
+{
+  "profileCategory": "professional",
+  "profileType": "professional",
+  "name": "Professional Profile Template",
+  "slug": "professional-profile",
+  "categories": [
+    {
+      "name": "about",
+      "label": "About",
+      "icon": "info-circle",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "personalInformation",
+          "label": "Personal Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "fullName", "label": "Full Name", "widget": "text"},
+            {"name": "jobTitle", "label": "Job Title", "widget": "text"},
+            {"name": "currentEmployer", "label": "Current Employer/Organization", "widget": "text"},
+            {"name": "professionalSummary", "label": "Professional Summary", "widget": "textarea"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "workExperience",
+          "label": "Work Experience",
+          "widget": "object",
+          "subFields": [
+            {"name": "previousRoles", "label": "Previous Roles", "widget": "list:text"},
+            {"name": "keyResponsibilities", "label": "Key Responsibilities", "widget": "list:text"},
+            {"name": "notableAchievements", "label": "Notable Achievements", "widget": "textarea"},
+            {"name": "yearsOfExperience", "label": "Years of Experience", "widget": "number"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "skills",
+          "label": "Skills",
+          "widget": "object",
+          "subFields": [
+            {"name": "technicalSkills", "label": "Technical Skills", "widget": "list:text"},
+            {"name": "softSkills", "label": "Soft Skills", "widget": "list:text"},
+            {"name": "industryExpertise", "label": "Industry-specific Expertise", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "certificationsAndTraining",
+          "label": "Certifications & Training",
+          "widget": "object",
+          "subFields": [
+            {"name": "certifications", "label": "Professional Certifications", "widget": "list:text"},
+            {"name": "trainingPrograms", "label": "Training Programs Completed", "widget": "list:text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "currentProjects",
+          "label": "Current Projects",
+          "widget": "object",
+          "subFields": [
+            {"name": "projectDescriptions", "label": "Description of Ongoing Projects", "widget": "textarea"},
+            {"name": "keyDeliverables", "label": "Key Deliverables", "widget": "list:text"},
+            {"name": "deadlinesOrMilestones", "label": "Deadlines or Milestones", "widget": "list:text"}
+          ],
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "professionalGoals",
+          "label": "Professional Goals",
+          "widget": "object",
+          "subFields": [
+            {"name": "shortTermObjectives", "label": "Short-term Career Objectives", "widget": "textarea"},
+            {"name": "longTermObjectives", "label": "Long-term Career Objectives", "widget": "textarea"},
+            {"name": "leadershipAspirations", "label": "Leadership or Managerial Aspirations", "widget": "textarea"}
+          ],
+          "order": 6,
+          "enabled": true
+        },
+        {
+          "name": "availability",
+          "label": "Availability",
+          "widget": "object",
+          "subFields": [
+            {"name": "workHours", "label": "Work Hours", "widget": "text"},
+            {"name": "openToNetworking", "label": "Open to Networking or Mentoring", "widget": "text"},
+            {"name": "availabilityForFreelance", "label": "Availability for Freelance or Consulting Work", "widget": "text"}
+          ],
+          "order": 7,
+          "enabled": true
+        },
+        {
+          "name": "languages",
+          "label": "Languages",
+          "widget": "list:text",
+          "description": "Languages spoken fluently (if relevant to work)",
+          "order": 8,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Contact",
+      "icon": "address-book",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "professionalContactInfo",
+          "label": "Professional Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "workEmail", "label": "Work Email", "widget": "email"},
+            {"name": "officePhoneNumber", "label": "Office Phone Number", "widget": "text"},
+            {"name": "secondaryEmail", "label": "Secondary Email (if applicable)", "widget": "email"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "personalContactInfo",
+          "label": "Personal Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "mobileNumber", "label": "Mobile Number (optional)", "widget": "text"},
+            {"name": "correspondenceAddress", "label": "Address for Formal Correspondence", "widget": "text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactMethod",
+          "label": "Preferred Contact Method",
+          "widget": "multiselect",
+          "options": [
+            {"label": "Phone", "value": "phone"},
+            {"label": "Email", "value": "email"},
+            {"label": "Video Calls", "value": "video_calls"},
+            {"label": "Messaging App", "value": "messaging_app"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactTime",
+          "label": "Preferred Contact Time",
+          "widget": "text",
+          "description": "Best times for responding to messages, calls, or meetings",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "officeLocation",
+          "label": "Office Location",
+          "widget": "object",
+          "subFields": [
+            {"name": "workplaceAddress", "label": "Current Workplace Address", "widget": "text"},
+            {"name": "remoteOrOnsiteStatus", "label": "Remote or On-site Status", "widget": "select", "options": [
+              {"label": "Remote", "value": "remote"},
+              {"label": "On-site", "value": "on_site"},
+              {"label": "Hybrid", "value": "hybrid"}
+            ]}
+          ],
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    },
+   {
+      "name": "social",
+      "label": "Social",
+      "icon": "share-alt",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "professionalNetworks",
+          "label": "Professional Networks",
+          "widget": "object",
+          "subFields": [
+            {"name": "linkedinProfile", "label": "LinkedIn Profile", "widget": "url"},
+            {"name": "githubProfile", "label": "GitHub (if applicable)", "widget": "url"},
+            {"name": "professionalSocial", "label": "Professional Twitter/Instagram", "widget": "url"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "industryAssociations",
+          "label": "Industry Associations",
+          "widget": "object",
+          "subFields": [
+            {"name": "memberships", "label": "Memberships in Associations/Societies", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "professionalForums",
+          "label": "Professional Forums",
+          "widget": "object",
+          "subFields": [
+            {"name": "forums", "label": "Forums/Communities/Discussion Groups", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "socialPreferences",
+          "label": "Social Preferences",
+          "widget": "textarea",
+          "description": "Indicate preferences for networking events, industry meetups, or informal gatherings",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "availabilityForEvents",
+          "label": "Availability for Events",
+          "widget": "text",
+          "description": "Time slots for conferences, workshops, speaking engagements, or networking events",
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    },
+    {
+  "profileCategory": "academic",
+  "profileType": "academic",
+  "name": "Academic Profile Template",
+  "slug": "academic-profile",
+  "categories": [
+    {
+      "name": "about",
+      "label": "About",
+      "icon": "info-circle",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "personalInformation",
+          "label": "Personal Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "fullName", "label": "Full Name", "widget": "text"},
+            {"name": "academicTitle", "label": "Academic Title", "widget": "select", "options": [
+              {"label": "Student", "value": "student"},
+              {"label": "Graduate", "value": "graduate"},
+              {"label": "Researcher", "value": "researcher"},
+              {"label": "Other", "value": "other"}
+            ]},
+            {"name": "institutionName", "label": "Institution Name", "widget": "text"},
+            {"name": "enrollmentNumber", "label": "Enrollment Number", "widget": "text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "academicBackground",
+          "label": "Academic Background",
+          "widget": "object",
+          "subFields": [
+            {"name": "degreeProgram", "label": "Current Degree Program", "widget": "select", "options": [
+              {"label": "Bachelor's", "value": "bachelors"},
+              {"label": "Master's", "value": "masters"},
+              {"label": "PhD", "value": "phd"},
+              {"label": "Other", "value": "other"}
+            ]},
+            {"name": "majorFieldOfStudy", "label": "Major/Field of Study", "widget": "text"},
+            {"name": "yearOfStudy", "label": "Year of Study", "widget": "text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "academicAchievements",
+          "label": "Academic Achievements",
+          "widget": "object",
+          "subFields": [
+            {"name": "awards", "label": "Awards", "widget": "list:text"},
+            {"name": "scholarships", "label": "Scholarships", "widget": "list:text"},
+            {"name": "deansList", "label": "Dean’s List Recognition", "widget": "text"},
+            {"name": "publishedResearch", "label": "Published Research", "widget": "list:text"},
+            {"name": "completedProjects", "label": "Completed Projects", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "currentAcademicActivities",
+          "label": "Current Academic Activities",
+          "widget": "object",
+          "subFields": [
+            {"name": "ongoingResearch", "label": "Ongoing Research", "widget": "textarea"},
+            {"name": "capstoneProject", "label": "Capstone Project", "widget": "text"},
+            {"name": "thesisTopic", "label": "Thesis/Dissertation Topic", "widget": "text"},
+            {"name": "currentCourses", "label": "Courses Currently Enrolled", "widget": "list:text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "gpaAcademicStanding",
+          "label": "GPA & Academic Standing",
+          "widget": "object",
+          "subFields": [
+            {"name": "currentGPA", "label": "Current GPA", "widget": "text"},
+            {"name": "classRank", "label": "Class Rank (if applicable)", "widget": "text"},
+            {"name": "creditsEarned", "label": "Credits Earned", "widget": "text"}
+          ],
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "skillsAndInterests",
+          "label": "Skills & Interests",
+          "widget": "object",
+          "subFields": [
+            {"name": "academicSkills", "label": "Academic Skills", "widget": "list:text"},
+            {"name": "researchInterests", "label": "Research Interests", "widget": "list:text"}
+          ],
+          "order": 6,
+          "enabled": true
+        },
+        {
+          "name": "timeAvailability",
+          "label": "Time Availability",
+          "widget": "object",
+          "subFields": [
+            {"name": "studyHours", "label": "Study Hours", "widget": "text"},
+            {"name": "availabilityForGroupProjects", "label": "Availability for Group Projects", "widget": "text"},
+            {"name": "preferredConsultationTimes", "label": "Preferred Times for Consultations", "widget": "text"}
+          ],
+          "order": 7,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Contact",
+      "icon": "address-book",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "institutionContactInfo",
+          "label": "Institution Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "universityEmail", "label": "University Email", "widget": "email"},
+            {"name": "advisorContact", "label": "Advisor/Professor Contact", "widget": "text"},
+            {"name": "departmentOfficeNumber", "label": "Department Office Number", "widget": "text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "personalContactInfo",
+          "label": "Personal Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "mobileNumber", "label": "Mobile Number (optional)", "widget": "text"},
+            {"name": "secondaryEmail", "label": "Secondary Email (optional)", "widget": "email"},
+            {"name": "preferredContactMethod", "label": "Preferred Contact Method", "widget": "multiselect", "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "Messaging App", "value": "messaging_app"}
+            ]}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactTime",
+          "label": "Preferred Contact Time",
+          "widget": "text",
+          "description": "Best times for responding to messages or calls",
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "physicalAddress",
+          "label": "Physical Address",
+          "widget": "object",
+          "subFields": [
+            {"name": "dormAddress", "label": "Dorm/Residence Address (if applicable)", "widget": "text"},
+            {"name": "campusAddress", "label": "Campus Address", "widget": "text"}
+          ],
+          "order": 4,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "social",
+      "label": "Social",
+      "icon": "share-alt",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "internalNetworks",
+          "label": "Internal Networks",
+          "widget": "object",
+          "subFields": [
+            {"name": "universityForums", "label": "University Forums", "widget": "list:text"},
+            {"name": "studyGroups", "label": "Study Groups", "widget": "list:text"},
+            {"name": "clubMemberships", "label": "Club Memberships", "widget": "list:text"},
+            {"name": "peerNetworks", "label": "Peer Networks", "widget": "list:text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "externalAcademicNetworks",
+          "label": "External Academic Networks",
+          "widget": "object",
+          "subFields": [
+            {"name": "linkedInProfile", "label": "LinkedIn Profile", "widget": "url"},
+            {"name": "researchGateProfile", "label": "ResearchGate Profile", "widget": "url"},
+            {"name": "academiaProfile", "label": "Academia.edu Profile", "widget": "url"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "socialGroupsActivities",
+          "label": "Social Groups & Activities",
+          "widget": "object",
+          "subFields": [
+            {"name": "nonAcademicClubs", "label": "Non-academic Clubs", "widget": "list:text"},
+            {"name": "extracurricularActivities", "label": "Extracurricular Activities", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "socialPreferences",
+          "label": "Social Preferences",
+          "widget": "textarea",
+          "description": "Indicate preferences for networking events, study groups, or casual meetups",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "availabilityForEvents",
+          "label": "Availability for Events",
+          "widget": "text",
+          "description": "Time slots for seminars, workshops, academic conferences, or social events",
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}
+  
+]

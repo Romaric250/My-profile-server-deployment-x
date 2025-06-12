@@ -1,0 +1,3901 @@
+[
+  {
+    "profileCategory": "group",
+    "profileType": "group",
+    "name": "Group Profile Template",
+    "slug": "group-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "groupInformation",
+            "label": "Group Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "groupName", "label": "Group Name", "widget": "text"},
+              {"name": "groupType", "label": "Group Type", "widget": "select", "options": [
+                {"label": "Social", "value": "social"},
+                {"label": "Hobby", "value": "hobby"},
+                {"label": "Volunteer", "value": "volunteer"},
+                {"label": "Community", "value": "community"}
+              ]},
+              {"name": "purposeOrMission", "label": "Purpose or Mission", "widget": "textarea"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "groupDescription",
+            "label": "Group Description",
+            "widget": "textarea",
+            "description": "Overview of the group's activities, goals, and interests",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "memberDetails",
+            "label": "Member Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "totalMembers", "label": "Total Number of Members", "widget": "number"},
+              {"name": "memberRoles", "label": "Member Roles", "widget": "list:text", "description": "e.g., leader, coordinator, participant"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "activitiesAndEvents",
+            "label": "Activities & Events",
+            "widget": "object",
+            "subFields": [
+              {"name": "typesOfActivities", "label": "Types of Activities", "widget": "list:text"},
+              {"name": "frequencyOfMeetups", "label": "Frequency of Meetups or Events", "widget": "text"},
+              {"name": "pastEventHighlights", "label": "Highlights from Past Events", "widget": "textarea"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "groupGoals",
+            "label": "Group Goals",
+            "widget": "object",
+            "subFields": [
+              {"name": "shortTermGoals", "label": "Short-term Goals", "widget": "textarea"},
+              {"name": "longTermVision", "label": "Long-term Vision", "widget": "textarea"},
+              {"name": "plannedProjects", "label": "Planned Projects", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "membershipRequirements",
+            "label": "Membership Requirements",
+            "widget": "object",
+            "subFields": [
+              {"name": "eligibilityCriteria", "label": "Eligibility Criteria", "widget": "textarea"},
+              {"name": "fees", "label": "Fees (if applicable)", "widget": "text"},
+              {"name": "rulesForJoining", "label": "Rules for Joining", "widget": "textarea"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "availability",
+            "label": "Availability",
+            "widget": "object",
+            "subFields": [
+              {"name": "meetupTimes", "label": "Times for Group Meetups", "widget": "text"},
+              {"name": "preferredDays", "label": "Preferred Days for Events or Activities", "widget": "text"}
+            ],
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "achievements",
+            "label": "Achievements",
+            "widget": "object",
+            "subFields": [
+              {"name": "awards", "label": "Awards", "widget": "list:text"},
+              {"name": "milestones", "label": "Milestones", "widget": "list:text"},
+              {"name": "communityContributions", "label": "Notable Contributions to the Community", "widget": "textarea"}
+            ],
+            "order": 8,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "groupContactInfo",
+            "label": "Group Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "groupEmail", "label": "Group Email Address", "widget": "email"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "website", "label": "Website or Blog (if applicable)", "widget": "url"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "leadershipContacts",
+            "label": "Leadership Contacts",
+            "widget": "object",
+            "description": "Contact details of group leaders or coordinators",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "meetingLocation",
+            "label": "Meeting Location",
+            "widget": "object",
+            "subFields": [
+              {"name": "physicalLocation", "label": "Physical Location of Meetups", "widget": "text"},
+              {"name": "virtualMeetingLinks", "label": "Virtual Meeting Links (if applicable)", "widget": "url"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactMethod",
+            "label": "Preferred Contact Method",
+            "widget": "multiselect",
+            "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "WhatsApp", "value": "whatsapp"},
+              {"label": "Telegram", "value": "telegram"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactTime",
+            "label": "Preferred Contact Time",
+            "widget": "text",
+            "description": "Best times for responding to inquiries or coordinating activities",
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "groupNetworks",
+            "label": "Group Networks",
+            "widget": "object",
+            "description": "Social media accounts (e.g., Facebook, Instagram, Twitter)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "memberForums",
+            "label": "Member Forums",
+            "widget": "object",
+            "subFields": [
+              {"name": "discussionPlatforms", "label": "Online Discussion Platforms", "widget": "list:text"},
+              {"name": "groupChats", "label": "Group Chats", "widget": "list:text"},
+              {"name": "messageBoards", "label": "Message Boards", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "communityEngagement",
+            "label": "Community Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "collaborationsWithOtherGroups", "label": "Collaborations with Other Groups", "widget": "textarea"},
+              {"name": "participationInCommunityEvents", "label": "Participation in Community Events", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "socialEvents",
+            "label": "Social Events",
+            "widget": "object",
+            "subFields": [
+              {"name": "groupParties", "label": "Group Parties", "widget": "list:text"},
+              {"name": "outings", "label": "Outings", "widget": "list:text"},
+              {"name": "teamBuildingActivities", "label": "Team-building Activities", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "marketingChannels",
+            "label": "Marketing Channels",
+            "widget": "object",
+            "description": "Platforms for promoting the group's activities (e.g., YouTube, TikTok, newsletters)",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "socialPreferences",
+            "label": "Social Preferences",
+            "widget": "object",
+            "subFields": [
+              {"name": "opennessToNewMembers", "label": "Openness to New Members", "widget": "select", "options": [
+                {"label": "Open", "value": "open"},
+                {"label": "Selective", "value": "selective"},
+                {"label": "Closed", "value": "closed"}
+              ]},
+              {"name": "partnershipsAndNetworking", "label": "Partnerships and Networking Opportunities", "widget": "textarea"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "availabilityForEvents",
+            "label": "Availability for Events",
+            "widget": "text",
+            "description": "Time slots for group participation in fairs, exhibitions, or community events",
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "family",
+    "name": "Family Profile Template",
+    "slug": "family-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "familyInformation",
+            "label": "Family Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyName", "label": "Family Name", "widget": "text"},
+              {"name": "familyMotto", "label": "Family Motto or Tradition", "widget": "text"},
+              {"name": "numberOfMembers", "label": "Number of Family Members", "widget": "number"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "memberDetails",
+            "label": "Member Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "names", "label": "Names", "widget": "list:text"},
+              {"name": "ages", "label": "Ages", "widget": "list:text"},
+              {"name": "roles", "label": "Roles", "widget": "list:text", "description": "e.g., Parent, Sibling, Grandparent"},
+              {"name": "relationshipStatus", "label": "Relationship Status", "widget": "text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "familyHistory",
+            "label": "Family History",
+            "widget": "object",
+            "subFields": [
+              {"name": "briefHistory", "label": "Brief Family History", "widget": "textarea"},
+              {"name": "ancestralRoots", "label": "Ancestral Roots", "widget": "text"},
+              {"name": "importantMilestones", "label": "Important Milestones or Achievements", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "interestsAndActivities",
+            "label": "Interests & Activities",
+            "widget": "object",
+            "subFields": [
+              {"name": "hobbies", "label": "Hobbies", "widget": "list:text"},
+              {"name": "sharedActivities", "label": "Shared Activities", "widget": "list:text", "description": "e.g., travel, sports, gardening"},
+              {"name": "familyTraditions", "label": "Family Traditions", "widget": "textarea"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "valuesAndBeliefs",
+            "label": "Values & Beliefs",
+            "widget": "object",
+            "subFields": [
+              {"name": "coreFamilyValues", "label": "Core Family Values", "widget": "textarea"},
+              {"name": "culturalOrReligiousBeliefs", "label": "Cultural or Religious Beliefs", "widget": "textarea"},
+              {"name": "goalsAsFamily", "label": "Goals as a Family", "widget": "textarea"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndCelebrations",
+            "label": "Events & Celebrations",
+            "widget": "object",
+            "subFields": [
+              {"name": "annualFamilyEvents", "label": "Annual Family Events", "widget": "list:text", "description": "e.g., reunions, birthdays, holidays"},
+              {"name": "upcomingCelebrations", "label": "Upcoming Celebrations", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "availability",
+            "label": "Availability",
+            "widget": "object",
+            "subFields": [
+              {"name": "preferredTimesForGatherings", "label": "Preferred Times for Family Gatherings", "widget": "text"},
+              {"name": "availabilityForMeetups", "label": "Availability for Virtual or Physical Meetups", "widget": "text"}
+            ],
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "familyAchievements",
+            "label": "Family Achievements",
+            "widget": "object",
+            "subFields": [
+              {"name": "notableAccomplishments", "label": "Notable Accomplishments of Family Members", "widget": "textarea"},
+              {"name": "collectiveAchievements", "label": "Collective Achievements", "widget": "textarea", "description": "e.g., community involvement"}
+            ],
+            "order": 8,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "familyContactInfo",
+            "label": "Family Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyEmail", "label": "Family Email Address", "widget": "email"},
+              {"name": "sharedPhoneNumber", "label": "Shared Phone Number (if applicable)", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "individualContacts",
+            "label": "Individual Contacts",
+            "widget": "object",
+            "description": "Contact details for each family member (optional, if needed for coordination)",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "physicalAddress",
+            "label": "Physical Address",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyHomeAddress", "label": "Family Home Address", "widget": "text"},
+              {"name": "vacationHomeOrFrequentLocations", "label": "Vacation Home or Frequently Visited Locations", "widget": "list:text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactMethod",
+            "label": "Preferred Contact Method",
+            "widget": "multiselect",
+            "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "WhatsApp", "value": "whatsapp"},
+              {"label": "Messenger", "value": "messenger"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactTime",
+            "label": "Preferred Contact Time",
+            "widget": "text",
+            "description": "Best times for responding to family inquiries or coordinating meetups",
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "familyNetworks",
+            "label": "Family Networks",
+            "widget": "object",
+            "description": "Shared family social media accounts (e.g., Instagram, Facebook, YouTube for updates)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "memberEngagement",
+            "label": "Member Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyGroupChats", "label": "Family Group Chats", "widget": "list:text"},
+              {"name": "messagingThreads", "label": "Messaging Threads", "widget": "list:text"},
+              {"name": "onlineFamilyBulletinBoards", "label": "Online Family Bulletin Boards", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "communityEngagement",
+            "label": "Community Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "familyParticipationInCommunityEvents", "label": "Family Participation in Community Events", "widget": "textarea"},
+              {"name": "volunteeringAsFamily", "label": "Volunteering as a Family", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "socialEvents",
+            "label": "Social Events",
+            "widget": "object",
+            "subFields": [
+              {"name": "picnics", "label": "Picnics", "widget": "list:text"},
+              {"name": "outings", "label": "Outings", "widget": "list:text"},
+              {"name": "gameNights", "label": "Game Nights", "widget": "list:text"},
+              {"name": "virtualOrInPersonBondingActivities", "label": "Virtual or In-person Bonding Activities", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "marketingChannels",
+            "label": "Marketing Channels",
+            "widget": "object",
+            "description": "Platforms used to promote family projects or shared interests (e.g., blogs, social media)",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "socialPreferences",
+            "label": "Social Preferences",
+            "widget": "textarea",
+            "description": "Indicate preferences for collaborations, community events, or extended family gatherings",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "availabilityForEvents",
+            "label": "Availability for Events",
+            "widget": "text",
+            "description": "Time slots for participating in family reunions, neighborhood gatherings, or festivals",
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+  "profileCategory": "accessory",
+  "profileType": "transportation",
+  "name": "Transportation Profile Template",
+  "slug": "transportation-profile",
+  "categories": [
+    {
+      "name": "about",
+      "label": "About",
+      "icon": "info-circle",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "serviceInformation",
+          "label": "Service Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "serviceName", "label": "Service Name", "widget": "text"},
+            {"name": "vehicleType", "label": "Vehicle Type", "widget": "select", "options": [
+              {"label": "Car", "value": "car"},
+              {"label": "Truck", "value": "truck"},
+              {"label": "Bike", "value": "bike"},
+              {"label": "Van", "value": "van"},
+              {"label": "Bus", "value": "bus"},
+              {"label": "Other", "value": "other"}
+            ]}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "vehicleDetails",
+          "label": "Vehicle Details",
+          "widget": "object",
+          "subFields": [
+            {"name": "vehicleModel", "label": "Vehicle Model", "widget": "text"},
+            {"name": "registrationNumber", "label": "Registration Number", "widget": "text"},
+            {"name": "licensePlate", "label": "License Plate", "widget": "text"},
+            {"name": "capacity", "label": "Capacity (Passengers or Cargo)", "widget": "text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "servicesProvided",
+          "label": "Services Provided",
+          "widget": "object",
+          "subFields": [
+            {"name": "transportationType", "label": "Type of Transportation", "widget": "multiselect", "options": [
+              {"label": "Passenger", "value": "passenger"},
+              {"label": "Freight", "value": "freight"},
+              {"label": "Delivery", "value": "delivery"}
+            ]},
+            {"name": "serviceAreas", "label": "Service Areas", "widget": "multiselect", "options": [
+              {"label": "Local", "value": "local"},
+              {"label": "Regional", "value": "regional"},
+              {"label": "International", "value": "international"}
+            ]}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "operatingHours",
+          "label": "Operating Hours",
+          "widget": "object",
+          "subFields": [
+            {"name": "dailySchedule", "label": "Daily Schedule", "widget": "text"},
+            {"name": "operatingHours", "label": "Operating Hours", "widget": "text"},
+            {"name": "breakTimes", "label": "Break Times", "widget": "text"},
+            {"name": "availabilityForBookings", "label": "Availability for Bookings", "widget": "text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "certificationsAndPermits",
+          "label": "Certifications & Permits",
+          "widget": "object",
+          "subFields": [
+            {"name": "licenses", "label": "Licenses (e.g., Driving License, Permits)", "widget": "list:text"},
+            {"name": "inspectionCertificates", "label": "Vehicle Inspection Certificates", "widget": "list:text"}
+          ],
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "serviceHighlights",
+          "label": "Service Highlights",
+          "widget": "object",
+          "subFields": [
+            {"name": "notableAchievements", "label": "Notable Achievements", "widget": "textarea"},
+            {"name": "customerTestimonials", "label": "Customer Testimonials", "widget": "textarea"},
+            {"name": "awardsOrRecognitions", "label": "Awards or Recognitions", "widget": "textarea"}
+          ],
+          "order": 6,
+          "enabled": true
+        },
+        {
+          "name": "safetyFeatures",
+          "label": "Safety Features",
+          "widget": "object",
+          "subFields": [
+            {"name": "safetyMeasures", "label": "Safety Measures", "widget": "textarea"},
+            {"name": "insuranceCoverage", "label": "Insurance Coverage", "widget": "text"}
+          ],
+          "order": 7,
+          "enabled": true
+        },
+        {
+          "name": "skillsAndExpertise",
+          "label": "Skills & Expertise",
+          "widget": "object",
+          "subFields": [
+            {"name": "drivingExperience", "label": "Driving Experience", "widget": "textarea"},
+            {"name": "specialLicenses", "label": "Special Licenses", "widget": "list:text"},
+            {"name": "navigationSkills", "label": "Navigation Skills", "widget": "textarea"}
+          ],
+          "order": 8,
+          "enabled": true
+        },
+        {
+          "name": "environmentalImpact",
+          "label": "Environmental Impact",
+          "widget": "object",
+          "subFields": [
+            {"name": "fuelType", "label": "Fuel Type", "widget": "text"},
+            {"name": "ecoFriendlyPractices", "label": "Eco-friendly Practices", "widget": "textarea"},
+            {"name": "carbonFootprintReduction", "label": "Carbon Footprint Reduction Efforts", "widget": "textarea"}
+          ],
+          "order": 9,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Contact",
+      "icon": "address-book",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "contactInformation",
+          "label": "Contact Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "businessEmail", "label": "Business Email", "widget": "email"},
+            {"name": "businessPhoneNumber", "label": "Business Phone Number", "widget": "text"},
+            {"name": "emergencyContactNumber", "label": "Emergency Contact Number", "widget": "text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "bookingOptions",
+          "label": "Booking Options",
+          "widget": "object",
+          "subFields": [
+            {"name": "onlineBookingLink", "label": "Online Booking Link", "widget": "url"},
+            {"name": "appIntegration", "label": "App or Platform Integration", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "physicalAddress",
+          "label": "Physical Address",
+          "widget": "object",
+          "subFields": [
+            {"name": "garageLocation", "label": "Garage or Office Location", "widget": "text"},
+            {"name": "serviceHeadquarters", "label": "Service Headquarters", "widget": "text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactMethod",
+          "label": "Preferred Contact Method",
+          "widget": "multiselect",
+          "options": [
+            {"label": "Email", "value": "email"},
+            {"label": "Phone", "value": "phone"},
+            {"label": "Online Messaging", "value": "online_messaging"},
+            {"label": "Booking Platforms", "value": "booking_platforms"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactTime",
+          "label": "Preferred Contact Time",
+          "widget": "text",
+          "description": "Best times for responding to inquiries or scheduling services",
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "social",
+      "label": "Social",
+      "icon": "share-alt",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "onlinePresence",
+          "label": "Online Presence",
+          "widget": "object",
+          "description": "Business social media accounts (e.g., Instagram, Facebook, Twitter for promotions)",
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "serviceReviewsAndRatings",
+          "label": "Service Reviews & Ratings",
+          "widget": "object",
+          "subFields": [
+            {"name": "reviewPlatforms", "label": "Platforms for Reviews", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "networkingAndGroups",
+          "label": "Networking & Groups",
+          "widget": "object",
+          "subFields": [
+            {"name": "associationMemberships", "label": "Membership in Transportation Associations", "widget": "list:text"},
+            {"name": "communityDrivingGroups", "label": "Community Driving Groups", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "marketingChannels",
+          "label": "Marketing Channels",
+          "widget": "object",
+          "description": "Active platforms for advertising (e.g., YouTube, TikTok, local advertising forums)",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "socialPreferences",
+          "label": "Social Preferences",
+          "widget": "textarea",
+          "description": "Indicate openness to collaboration with businesses, community events",
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "availabilityForEvents",
+          "label": "Availability for Events",
+          "widget": "text",
+          "description": "Time slots for participating in transport expos, road safety workshops, or fairs",
+          "order": 6,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+},{
+  "profileCategory": "group",
+  "profileType": "business",
+  "name": "Business Profile Template",
+  "slug": "single-owner-business-profile",
+  "categories": [
+    {
+      "name": "about",
+      "label": "About",
+      "icon": "info-circle",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "businessInformation",
+          "label": "Business Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "fullName", "label": "Full Name", "widget": "text"},
+            {"name": "businessName", "label": "Business Name", "widget": "text"},
+            {"name": "businessType", "label": "Business Type", "widget": "select", "options": [
+              {"label": "Sole Proprietorship", "value": "sole_proprietorship"},
+              {"label": "Freelancer", "value": "freelancer"},
+              {"label": "Consultant", "value": "consultant"},
+              {"label": "Other", "value": "other"}
+            ]},
+            {"name": "industrySector", "label": "Industry Sector", "widget": "text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "servicesOrProducts",
+          "label": "Services/Products Offered",
+          "widget": "object",
+          "subFields": [
+            {"name": "description", "label": "Description", "widget": "textarea"},
+            {"name": "keyFeatures", "label": "Key Features", "widget": "list:text"},
+            {"name": "uniqueSellingPoints", "label": "Unique Selling Points", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "businessMissionVision",
+          "label": "Business Mission & Vision",
+          "widget": "object",
+          "subFields": [
+            {"name": "missionStatement", "label": "Mission Statement", "widget": "textarea"},
+            {"name": "vision", "label": "Vision for the Business", "widget": "textarea"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "skillsAndExpertise",
+          "label": "Skills & Expertise",
+          "widget": "object",
+          "subFields": [
+            {"name": "skills", "label": "Relevant Skills or Qualifications", "widget": "list:text"},
+            {"name": "certifications", "label": "Certifications or Licenses", "widget": "list:text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "businessHighlights",
+          "label": "Business Highlights",
+          "widget": "object",
+          "subFields": [
+            {"name": "awards", "label": "Awards", "widget": "list:text"},
+            {"name": "notableAchievements", "label": "Notable Achievements", "widget": "textarea"},
+            {"name": "milestones", "label": "Milestones Reached", "widget": "list:text"}
+          ],
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "businessGoals",
+          "label": "Business Goals",
+          "widget": "object",
+          "subFields": [
+            {"name": "shortTermObjectives", "label": "Short-term Objectives", "widget": "textarea"},
+            {"name": "longTermPlans", "label": "Long-term Growth Plans", "widget": "textarea"},
+            {"name": "futureProjects", "label": "Future Projects", "widget": "list:text"}
+          ],
+          "order": 6,
+          "enabled": true
+        },
+        {
+          "name": "availability",
+          "label": "Availability",
+          "widget": "object",
+          "subFields": [
+            {"name": "operatingHours", "label": "Operating Hours", "widget": "text"},
+            {"name": "appointmentTimes", "label": "Appointment Times", "widget": "text"},
+            {"name": "availabilityForConsultations", "label": "Availability for Consultations or Collaborations", "widget": "text"}
+          ],
+          "order": 7,
+          "enabled": true
+        },
+        {
+          "name": "portfolioWorkSamples",
+          "label": "Portfolio/Work Samples",
+          "widget": "object",
+          "subFields": [
+            {"name": "workShowcase", "label": "Showcase of Work", "widget": "list:text"},
+            {"name": "clientTestimonials", "label": "Client Testimonials", "widget": "textarea"},
+            {"name": "caseStudies", "label": "Case Studies", "widget": "list:text"}
+          ],
+          "order": 8,
+          "enabled": true
+        },
+        {
+          "name": "languages",
+          "label": "Languages",
+          "widget": "list:text",
+          "description": "Languages spoken fluently (if relevant to the business or customer interaction)",
+          "order": 9,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Contact",
+      "icon": "address-book",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "businessContactInfo",
+          "label": "Business Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "businessEmail", "label": "Business Email", "widget": "email"},
+            {"name": "businessPhoneNumber", "label": "Business Phone Number", "widget": "text"},
+            {"name": "websiteUrl", "label": "Website URL", "widget": "url"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "personalContactInfo",
+          "label": "Personal Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "mobileNumber", "label": "Mobile Number (optional)", "widget": "text"},
+            {"name": "secondaryEmail", "label": "Secondary Email", "widget": "email"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactMethod",
+          "label": "Preferred Contact Method",
+          "widget": "multiselect",
+          "options": [
+            {"label": "Email", "value": "email"},
+            {"label": "Phone", "value": "phone"},
+            {"label": "Online Messaging", "value": "online_messaging"},
+            {"label": "Social Media", "value": "social_media"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "physicalAddress",
+          "label": "Physical Address",
+          "widget": "object",
+          "subFields": [
+            {"name": "businessAddress", "label": "Business Address", "widget": "text"},
+            {"name": "locationOfOperations", "label": "Location of Operations", "widget": "text"},
+            {"name": "mailingAddress", "label": "Mailing Address", "widget": "text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactTime",
+          "label": "Preferred Contact Time",
+          "widget": "text",
+          "description": "Best times for responding to inquiries or scheduling meetings",
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "social",
+      "label": "Social",
+      "icon": "share-alt",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "onlinePresence",
+          "label": "Online Presence",
+          "widget": "object",
+          "description": "Business social media accounts (e.g., Instagram, Facebook, Twitter)",
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "professionalNetworks",
+          "label": "Professional Networks",
+          "widget": "object",
+          "subFields": [
+            {"name": "linkedinProfile", "label": "LinkedIn Profile", "widget": "url"},
+            {"name": "businessListings", "label": "Business Listings", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "customerInteraction",
+          "label": "Customer Interaction",
+          "widget": "object",
+          "subFields": [
+            {"name": "communityGroups", "label": "Community Groups", "widget": "list:text"},
+            {"name": "customerForums", "label": "Customer Forums", "widget": "list:text"},
+            {"name": "userReviewsAndRatings", "label": "User Reviews and Ratings", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "marketingChannels",
+          "label": "Marketing Channels",
+          "widget": "object",
+          "description": "Active platforms for marketing (e.g., YouTube, TikTok, Pinterest)",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "socialPreferences",
+          "label": "Social Preferences",
+          "widget": "textarea",
+          "description": "Indicate openness to networking, partnerships, or community events",
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "availabilityForEvents",
+          "label": "Availability for Events",
+          "widget": "text",
+          "description": "Time slots for attending trade shows, networking events, or workshops",
+          "order": 6,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+},
+{
+  "profileCategory": "individual",
+  "profileType": "professional",
+  "name": "Professional Profile Template",
+  "slug": "professional-profile",
+  "categories": [
+    {
+      "name": "about",
+      "label": "About",
+      "icon": "info-circle",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "personalInformation",
+          "label": "Personal Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "fullName", "label": "Full Name", "widget": "text"},
+            {"name": "jobTitle", "label": "Job Title", "widget": "text"},
+            {"name": "currentEmployer", "label": "Current Employer/Organization", "widget": "text"},
+            {"name": "professionalSummary", "label": "Professional Summary", "widget": "textarea"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "workExperience",
+          "label": "Work Experience",
+          "widget": "object",
+          "subFields": [
+            {"name": "previousRoles", "label": "Previous Roles", "widget": "list:text"},
+            {"name": "keyResponsibilities", "label": "Key Responsibilities", "widget": "list:text"},
+            {"name": "notableAchievements", "label": "Notable Achievements", "widget": "textarea"},
+            {"name": "yearsOfExperience", "label": "Years of Experience", "widget": "number"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "skills",
+          "label": "Skills",
+          "widget": "object",
+          "subFields": [
+            {"name": "technicalSkills", "label": "Technical Skills", "widget": "list:text"},
+            {"name": "softSkills", "label": "Soft Skills", "widget": "list:text"},
+            {"name": "industryExpertise", "label": "Industry-specific Expertise", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "certificationsAndTraining",
+          "label": "Certifications & Training",
+          "widget": "object",
+          "subFields": [
+            {"name": "certifications", "label": "Professional Certifications", "widget": "list:text"},
+            {"name": "trainingPrograms", "label": "Training Programs Completed", "widget": "list:text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "currentProjects",
+          "label": "Current Projects",
+          "widget": "object",
+          "subFields": [
+            {"name": "projectDescriptions", "label": "Description of Ongoing Projects", "widget": "textarea"},
+            {"name": "keyDeliverables", "label": "Key Deliverables", "widget": "list:text"},
+            {"name": "deadlinesOrMilestones", "label": "Deadlines or Milestones", "widget": "list:text"}
+          ],
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "professionalGoals",
+          "label": "Professional Goals",
+          "widget": "object",
+          "subFields": [
+            {"name": "shortTermObjectives", "label": "Short-term Career Objectives", "widget": "textarea"},
+            {"name": "longTermObjectives", "label": "Long-term Career Objectives", "widget": "textarea"},
+            {"name": "leadershipAspirations", "label": "Leadership or Managerial Aspirations", "widget": "textarea"}
+          ],
+          "order": 6,
+          "enabled": true
+        },
+        {
+          "name": "availability",
+          "label": "Availability",
+          "widget": "object",
+          "subFields": [
+            {"name": "workHours", "label": "Work Hours", "widget": "text"},
+            {"name": "openToNetworking", "label": "Open to Networking or Mentoring", "widget": "text"},
+            {"name": "availabilityForFreelance", "label": "Availability for Freelance or Consulting Work", "widget": "text"}
+          ],
+          "order": 7,
+          "enabled": true
+        },
+        {
+          "name": "languages",
+          "label": "Languages",
+          "widget": "list:text",
+          "description": "Languages spoken fluently (if relevant to work)",
+          "order": 8,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Contact",
+      "icon": "address-book",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "professionalContactInfo",
+          "label": "Professional Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "workEmail", "label": "Work Email", "widget": "email"},
+            {"name": "officePhoneNumber", "label": "Office Phone Number", "widget": "text"},
+            {"name": "secondaryEmail", "label": "Secondary Email (if applicable)", "widget": "email"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "personalContactInfo",
+          "label": "Personal Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "mobileNumber", "label": "Mobile Number (optional)", "widget": "text"},
+            {"name": "correspondenceAddress", "label": "Address for Formal Correspondence", "widget": "text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactMethod",
+          "label": "Preferred Contact Method",
+          "widget": "multiselect",
+          "options": [
+            {"label": "Phone", "value": "phone"},
+            {"label": "Email", "value": "email"},
+            {"label": "Video Calls", "value": "video_calls"},
+            {"label": "Messaging App", "value": "messaging_app"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactTime",
+          "label": "Preferred Contact Time",
+          "widget": "text",
+          "description": "Best times for responding to messages, calls, or meetings",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "officeLocation",
+          "label": "Office Location",
+          "widget": "object",
+          "subFields": [
+            {"name": "workplaceAddress", "label": "Current Workplace Address", "widget": "text"},
+            {"name": "remoteOrOnsiteStatus", "label": "Remote or On-site Status", "widget": "select", "options": [
+              {"label": "Remote", "value": "remote"},
+              {"label": "On-site", "value": "on_site"},
+              {"label": "Hybrid", "value": "hybrid"}
+            ]}
+          ],
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    },
+   {
+      "name": "social",
+      "label": "Social",
+      "icon": "share-alt",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "professionalNetworks",
+          "label": "Professional Networks",
+          "widget": "object",
+          "subFields": [
+            {"name": "linkedinProfile", "label": "LinkedIn Profile", "widget": "url"},
+            {"name": "githubProfile", "label": "GitHub (if applicable)", "widget": "url"},
+            {"name": "professionalSocial", "label": "Professional Twitter/Instagram", "widget": "url"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "industryAssociations",
+          "label": "Industry Associations",
+          "widget": "object",
+          "subFields": [
+            {"name": "memberships", "label": "Memberships in Associations/Societies", "widget": "list:text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "professionalForums",
+          "label": "Professional Forums",
+          "widget": "object",
+          "subFields": [
+            {"name": "forums", "label": "Forums/Communities/Discussion Groups", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "socialPreferences",
+          "label": "Social Preferences",
+          "widget": "textarea",
+          "description": "Indicate preferences for networking events, industry meetups, or informal gatherings",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "availabilityForEvents",
+          "label": "Availability for Events",
+          "widget": "text",
+          "description": "Time slots for conferences, workshops, speaking engagements, or networking events",
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+  },
+  {
+    "profileCategory": "individual",
+    "profileType": "academic",
+    "name": "Academic Profile Template",
+    "slug": "academic-profile",
+  "categories": [
+    {
+      "name": "about",
+      "label": "About",
+      "icon": "info-circle",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "personalInformation",
+          "label": "Personal Information",
+          "widget": "object",
+          "subFields": [
+            {"name": "fullName", "label": "Full Name", "widget": "text"},
+            {"name": "academicTitle", "label": "Academic Title", "widget": "select", "options": [
+              {"label": "Student", "value": "student"},
+              {"label": "Graduate", "value": "graduate"},
+              {"label": "Researcher", "value": "researcher"},
+              {"label": "Other", "value": "other"}
+            ]},
+            {"name": "institutionName", "label": "Institution Name", "widget": "text"},
+            {"name": "enrollmentNumber", "label": "Enrollment Number", "widget": "text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "academicBackground",
+          "label": "Academic Background",
+          "widget": "object",
+          "subFields": [
+            {"name": "degreeProgram", "label": "Current Degree Program", "widget": "select", "options": [
+              {"label": "Bachelor's", "value": "bachelors"},
+              {"label": "Master's", "value": "masters"},
+              {"label": "PhD", "value": "phd"},
+              {"label": "Other", "value": "other"}
+            ]},
+            {"name": "majorFieldOfStudy", "label": "Major/Field of Study", "widget": "text"},
+            {"name": "yearOfStudy", "label": "Year of Study", "widget": "text"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "academicAchievements",
+          "label": "Academic Achievements",
+          "widget": "object",
+          "subFields": [
+            {"name": "awards", "label": "Awards", "widget": "list:text"},
+            {"name": "scholarships", "label": "Scholarships", "widget": "list:text"},
+            {"name": "deansList", "label": "Dean’s List Recognition", "widget": "text"},
+            {"name": "publishedResearch", "label": "Published Research", "widget": "list:text"},
+            {"name": "completedProjects", "label": "Completed Projects", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "currentAcademicActivities",
+          "label": "Current Academic Activities",
+          "widget": "object",
+          "subFields": [
+            {"name": "ongoingResearch", "label": "Ongoing Research", "widget": "textarea"},
+            {"name": "capstoneProject", "label": "Capstone Project", "widget": "text"},
+            {"name": "thesisTopic", "label": "Thesis/Dissertation Topic", "widget": "text"},
+            {"name": "currentCourses", "label": "Courses Currently Enrolled", "widget": "list:text"}
+          ],
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "gpaAcademicStanding",
+          "label": "GPA & Academic Standing",
+          "widget": "object",
+          "subFields": [
+            {"name": "currentGPA", "label": "Current GPA", "widget": "text"},
+            {"name": "classRank", "label": "Class Rank (if applicable)", "widget": "text"},
+            {"name": "creditsEarned", "label": "Credits Earned", "widget": "text"}
+          ],
+          "order": 5,
+          "enabled": true
+        },
+        {
+          "name": "skillsAndInterests",
+          "label": "Skills & Interests",
+          "widget": "object",
+          "subFields": [
+            {"name": "academicSkills", "label": "Academic Skills", "widget": "list:text"},
+            {"name": "researchInterests", "label": "Research Interests", "widget": "list:text"}
+          ],
+          "order": 6,
+          "enabled": true
+        },
+        {
+          "name": "timeAvailability",
+          "label": "Time Availability",
+          "widget": "object",
+          "subFields": [
+            {"name": "studyHours", "label": "Study Hours", "widget": "text"},
+            {"name": "availabilityForGroupProjects", "label": "Availability for Group Projects", "widget": "text"},
+            {"name": "preferredConsultationTimes", "label": "Preferred Times for Consultations", "widget": "text"}
+          ],
+          "order": 7,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "label": "Contact",
+      "icon": "address-book",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "institutionContactInfo",
+          "label": "Institution Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "universityEmail", "label": "University Email", "widget": "email"},
+            {"name": "advisorContact", "label": "Advisor/Professor Contact", "widget": "text"},
+            {"name": "departmentOfficeNumber", "label": "Department Office Number", "widget": "text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "personalContactInfo",
+          "label": "Personal Contact Info",
+          "widget": "object",
+          "subFields": [
+            {"name": "mobileNumber", "label": "Mobile Number (optional)", "widget": "text"},
+            {"name": "secondaryEmail", "label": "Secondary Email (optional)", "widget": "email"},
+            {"name": "preferredContactMethod", "label": "Preferred Contact Method", "widget": "multiselect", "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "Messaging App", "value": "messaging_app"}
+            ]}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "preferredContactTime",
+          "label": "Preferred Contact Time",
+          "widget": "text",
+          "description": "Best times for responding to messages or calls",
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "physicalAddress",
+          "label": "Physical Address",
+          "widget": "object",
+          "subFields": [
+            {"name": "dormAddress", "label": "Dorm/Residence Address (if applicable)", "widget": "text"},
+            {"name": "campusAddress", "label": "Campus Address", "widget": "text"}
+          ],
+          "order": 4,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "social",
+      "label": "Social",
+      "icon": "share-alt",
+      "collapsible": true,
+      "fields": [
+        {
+          "name": "internalNetworks",
+          "label": "Internal Networks",
+          "widget": "object",
+          "subFields": [
+            {"name": "universityForums", "label": "University Forums", "widget": "list:text"},
+            {"name": "studyGroups", "label": "Study Groups", "widget": "list:text"},
+            {"name": "clubMemberships", "label": "Club Memberships", "widget": "list:text"},
+            {"name": "peerNetworks", "label": "Peer Networks", "widget": "list:text"}
+          ],
+          "order": 1,
+          "enabled": true
+        },
+        {
+          "name": "externalAcademicNetworks",
+          "label": "External Academic Networks",
+          "widget": "object",
+          "subFields": [
+            {"name": "linkedInProfile", "label": "LinkedIn Profile", "widget": "url"},
+            {"name": "researchGateProfile", "label": "ResearchGate Profile", "widget": "url"},
+            {"name": "academiaProfile", "label": "Academia.edu Profile", "widget": "url"}
+          ],
+          "order": 2,
+          "enabled": true
+        },
+        {
+          "name": "socialGroupsActivities",
+          "label": "Social Groups & Activities",
+          "widget": "object",
+          "subFields": [
+            {"name": "nonAcademicClubs", "label": "Non-academic Clubs", "widget": "list:text"},
+            {"name": "extracurricularActivities", "label": "Extracurricular Activities", "widget": "list:text"}
+          ],
+          "order": 3,
+          "enabled": true
+        },
+        {
+          "name": "socialPreferences",
+          "label": "Social Preferences",
+          "widget": "textarea",
+          "description": "Indicate preferences for networking events, study groups, or casual meetups",
+          "order": 4,
+          "enabled": true
+        },
+        {
+          "name": "availabilityForEvents",
+          "label": "Availability for Events",
+          "widget": "text",
+          "description": "Time slots for seminars, workshops, academic conferences, or social events",
+          "order": 5,
+          "enabled": true
+        }
+      ]
+    }
+  ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "company",
+    "name": "Company Profile Template",
+    "slug": "company-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "companyInformation",
+            "label": "Company Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "companyName", "label": "Company Name", "widget": "text"},
+              {"name": "logo", "label": "Logo", "widget": "image"},
+              {"name": "slogan", "label": "Slogan/Tagline", "widget": "text"},
+              {"name": "industryType", "label": "Industry Type", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "missionAndVision",
+            "label": "Mission & Vision",
+            "widget": "object",
+            "subFields": [
+              {"name": "missionStatement", "label": "Mission Statement", "widget": "textarea"},
+              {"name": "visionForCompany", "label": "Vision for the Company", "widget": "textarea"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "foundingDetails",
+            "label": "Founding Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "yearOfEstablishment", "label": "Year of Establishment", "widget": "number"},
+              {"name": "founders", "label": "Founders", "widget": "list:text"},
+              {"name": "milestonesOrKeyAchievements", "label": "Milestones or Key Achievements", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "productsAndServices",
+            "label": "Products & Services",
+            "widget": "object",
+            "subFields": [
+              {"name": "overviewOfProducts", "label": "Overview of Products or Services Offered", "widget": "textarea"},
+              {"name": "keyFeatures", "label": "Key Features", "widget": "list:text"},
+              {"name": "uniqueSellingPoints", "label": "Unique Selling Points", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "businessGoals",
+            "label": "Business Goals",
+            "widget": "object",
+            "subFields": [
+              {"name": "shortTermObjectives", "label": "Short-term Objectives", "widget": "textarea"},
+              {"name": "longTermGoals", "label": "Long-term Goals", "widget": "textarea"},
+              {"name": "strategicPriorities", "label": "Strategic Priorities", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "teamAndStructure",
+            "label": "Team & Structure",
+            "widget": "object",
+            "subFields": [
+              {"name": "leadershipTeam", "label": "Leadership Team (CEO, COO, etc.)", "widget": "list:text"},
+              {"name": "organizationalHierarchy", "label": "Organizational Hierarchy", "widget": "textarea"},
+              {"name": "keyDepartments", "label": "Key Departments", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "companyCulture",
+            "label": "Company Culture",
+            "widget": "object",
+            "subFields": [
+              {"name": "coreValues", "label": "Core Values", "widget": "list:text"},
+              {"name": "workplaceEnvironment", "label": "Workplace Environment", "widget": "textarea"},
+              {"name": "diversityAndInclusionInitiatives", "label": "Diversity and Inclusion Initiatives", "widget": "textarea"}
+            ],
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "achievementsAndAwards",
+            "label": "Achievements & Awards",
+            "widget": "object",
+            "subFields": [
+              {"name": "industryRecognitions", "label": "Industry Recognitions", "widget": "list:text"},
+              {"name": "certifications", "label": "Certifications", "widget": "list:text"},
+              {"name": "partnerships", "label": "Partnerships", "widget": "list:text"}
+            ],
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "sustainabilityInitiatives",
+            "label": "Sustainability Initiatives",
+            "widget": "object",
+            "subFields": [
+              {"name": "environmentalImpactEfforts", "label": "Environmental Impact Efforts", "widget": "textarea"},
+              {"name": "csrActivities", "label": "CSR (Corporate Social Responsibility) Activities", "widget": "textarea"}
+            ],
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "clientsAndPartners",
+            "label": "Clients & Partners",
+            "widget": "object",
+            "subFields": [
+              {"name": "keyClients", "label": "Key Clients", "widget": "list:text"},
+              {"name": "strategicPartnerships", "label": "Strategic Partnerships", "widget": "list:text"},
+              {"name": "caseStudies", "label": "Case Studies", "widget": "list:text"}
+            ],
+            "order": 10,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "officialContactInfo",
+            "label": "Official Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "companyEmail", "label": "Company Email", "widget": "email"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "websiteUrl", "label": "Website URL", "widget": "url"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "officeLocations",
+            "label": "Office Locations",
+            "widget": "object",
+            "subFields": [
+              {"name": "headOfficeAddress", "label": "Head Office Address", "widget": "text"},
+              {"name": "branchOfficeAddresses", "label": "Branch Office Addresses", "widget": "list:text"},
+              {"name": "globalPresence", "label": "Global Presence", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "customerSupport",
+            "label": "Customer Support",
+            "widget": "object",
+            "subFields": [
+              {"name": "supportHotline", "label": "Support Hotline", "widget": "text"},
+              {"name": "chatSupport", "label": "Chat Support", "widget": "text"},
+              {"name": "helpDeskOrTicketingSystem", "label": "Help Desk or Ticketing System", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactMethod",
+            "label": "Preferred Contact Method",
+            "widget": "multiselect",
+            "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "Online Forms", "value": "online_forms"},
+              {"label": "Messaging Apps", "value": "messaging_apps"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "businessHours",
+            "label": "Business Hours",
+            "widget": "object",
+            "subFields": [
+              {"name": "operatingHours", "label": "Operating Hours", "widget": "text"},
+              {"name": "supportAvailability", "label": "Support Availability", "widget": "text"},
+              {"name": "timeZones", "label": "Time Zones", "widget": "text"}
+            ],
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "onlinePresence",
+            "label": "Online Presence",
+            "widget": "object",
+            "description": "Social media accounts (e.g., LinkedIn, Facebook, Twitter, Instagram)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "marketingChannels",
+            "label": "Marketing Channels",
+            "widget": "object",
+            "description": "Platforms for marketing campaigns (e.g., YouTube, TikTok, newsletters)",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "customerEngagement",
+            "label": "Customer Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "communityForums", "label": "Community Forums", "widget": "list:text"},
+              {"name": "customerTestimonials", "label": "Customer Testimonials", "widget": "textarea"},
+              {"name": "userReviews", "label": "User Reviews", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "networkingAndPartnerships",
+            "label": "Networking & Partnerships",
+            "widget": "object",
+            "subFields": [
+              {"name": "participationInTradeShows", "label": "Participation in Trade Shows", "widget": "list:text"},
+              {"name": "industryEvents", "label": "Industry Events", "widget": "list:text"},
+              {"name": "networkingGroups", "label": "Networking Groups", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "corporateEvents",
+            "label": "Corporate Events",
+            "widget": "object",
+            "subFields": [
+              {"name": "companyHostedEvents", "label": "Company-hosted Events", "widget": "list:text"},
+              {"name": "webinars", "label": "Webinars", "widget": "list:text"},
+              {"name": "conferences", "label": "Conferences", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "employeeEngagement",
+            "label": "Employee Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "teamBuildingActivities", "label": "Team-building Activities", "widget": "list:text"},
+              {"name": "companyAnnouncements", "label": "Company Announcements", "widget": "textarea"},
+              {"name": "internalCommunicationChannels", "label": "Internal Communication Channels", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "socialResponsibility",
+            "label": "Social Responsibility",
+            "widget": "object",
+            "subFields": [
+              {"name": "initiativesForCommunityEngagement", "label": "Initiatives for Community Engagement", "widget": "textarea"},
+              {"name": "charityWork", "label": "Charity Work", "widget": "textarea"},
+              {"name": "donations", "label": "Donations", "widget": "textarea"}
+            ],
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "association",
+    "name": "Association Profile Template",
+    "slug": "association-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "associationInformation",
+            "label": "Association Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "associationName", "label": "Association Name", "widget": "text"},
+              {"name": "logo", "label": "Logo", "widget": "image"},
+              {"name": "motto", "label": "Motto/Tagline", "widget": "text"},
+              {"name": "typeOfAssociation", "label": "Type of Association", "widget": "select", "options": [
+                {"label": "Nonprofit", "value": "nonprofit"},
+                {"label": "Community", "value": "community"},
+                {"label": "Professional", "value": "professional"},
+                {"label": "Other", "value": "other"}
+              ]}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "missionAndVision",
+            "label": "Mission & Vision",
+            "widget": "object",
+            "subFields": [
+              {"name": "missionStatement", "label": "Mission Statement", "widget": "textarea"},
+              {"name": "visionForAssociation", "label": "Vision for the Association", "widget": "textarea"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "foundingDetails",
+            "label": "Founding Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "yearOfEstablishment", "label": "Year of Establishment", "widget": "number"},
+              {"name": "founders", "label": "Founders", "widget": "list:text"},
+              {"name": "keyMilestonesOrHistory", "label": "Key Milestones or History", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "objectivesAndGoals",
+            "label": "Objectives & Goals",
+            "widget": "object",
+            "subFields": [
+              {"name": "shortTermObjectives", "label": "Short-term Objectives", "widget": "textarea"},
+              {"name": "longTermGoals", "label": "Long-term Goals", "widget": "textarea"},
+              {"name": "strategicInitiatives", "label": "Strategic Initiatives", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "servicesAndPrograms",
+            "label": "Services & Programs",
+            "widget": "object",
+            "subFields": [
+              {"name": "overviewOfServices", "label": "Overview of Services", "widget": "textarea"},
+              {"name": "programsOffered", "label": "Programs Offered", "widget": "list:text"},
+              {"name": "eventsOrganized", "label": "Events Organized", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "membershipDetails",
+            "label": "Membership Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "eligibilityCriteria", "label": "Eligibility Criteria", "widget": "textarea"},
+              {"name": "membershipLevels", "label": "Membership Levels", "widget": "list:text", "description": "e.g., regular, honorary"},
+              {"name": "memberBenefits", "label": "Member Benefits", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "structureAndGovernance",
+            "label": "Structure & Governance",
+            "widget": "object",
+            "subFields": [
+              {"name": "leadershipTeam", "label": "Leadership Team", "widget": "list:text"},
+              {"name": "committees", "label": "Committees", "widget": "list:text"},
+              {"name": "advisoryBoards", "label": "Advisory Boards", "widget": "list:text"}
+            ],
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "achievementsAndRecognition",
+            "label": "Achievements & Recognition",
+            "widget": "object",
+            "subFields": [
+              {"name": "awards", "label": "Awards", "widget": "list:text"},
+              {"name": "communityImpact", "label": "Community Impact", "widget": "textarea"},
+              {"name": "majorContributions", "label": "Major Contributions", "widget": "textarea"}
+            ],
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "valuesAndPrinciples",
+            "label": "Values & Principles",
+            "widget": "object",
+            "subFields": [
+              {"name": "coreValues", "label": "Core Values", "widget": "list:text"},
+              {"name": "guidingPrinciples", "label": "Guiding Principles", "widget": "list:text"},
+              {"name": "codeOfConduct", "label": "Code of Conduct", "widget": "textarea"}
+            ],
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "financialTransparency",
+            "label": "Financial Transparency",
+            "widget": "object",
+            "subFields": [
+              {"name": "fundingSources", "label": "Funding Sources", "widget": "list:text"},
+              {"name": "annualReports", "label": "Annual Reports", "widget": "list:text"},
+              {"name": "financialSummaries", "label": "Financial Summaries (if applicable)", "widget": "textarea"}
+            ],
+            "order": 10,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "officialContactInfo",
+            "label": "Official Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "emailAddress", "label": "Email Address", "widget": "email"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "websiteUrl", "label": "Website URL", "widget": "url"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "officeLocation",
+            "label": "Office Location",
+            "widget": "object",
+            "subFields": [
+              {"name": "headOfficeAddress", "label": "Head Office Address", "widget": "text"},
+              {"name": "regionalOfficeAddresses", "label": "Regional Office Addresses (if applicable)", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "memberSupport",
+            "label": "Member Support",
+            "widget": "object",
+            "subFields": [
+              {"name": "helpDeskContact", "label": "Help Desk Contact", "widget": "text"},
+              {"name": "faqSection", "label": "FAQ Section", "widget": "url"},
+              {"name": "hotlineOrChatSupport", "label": "Hotline or Chat Support", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactMethod",
+            "label": "Preferred Contact Method",
+            "widget": "multiselect",
+            "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "Online Messaging Platforms", "value": "online_messaging"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "operatingHours",
+            "label": "Operating Hours",
+            "widget": "object",
+            "subFields": [
+              {"name": "officeHours", "label": "Office Hours", "widget": "text"},
+              {"name": "eventAvailability", "label": "Event Availability", "widget": "text"},
+              {"name": "supportResponseTimes", "label": "Support Response Times", "widget": "text"}
+            ],
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "onlinePresence",
+            "label": "Online Presence",
+            "widget": "object",
+            "description": "Social media accounts (e.g., Facebook, Instagram, LinkedIn, Twitter)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "memberEngagement",
+            "label": "Member Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "onlineMemberForums", "label": "Online Member Forums", "widget": "list:text"},
+              {"name": "groupChats", "label": "Group Chats", "widget": "list:text"},
+              {"name": "associationNewsletters", "label": "Association Newsletters", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "communityActivities",
+            "label": "Community Activities",
+            "widget": "object",
+            "subFields": [
+              {"name": "participationInLocalEvents", "label": "Participation in Local Events", "widget": "textarea"},
+              {"name": "volunteeringOpportunities", "label": "Volunteering Opportunities", "widget": "textarea"},
+              {"name": "outreachPrograms", "label": "Outreach Programs", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndConferences",
+            "label": "Events & Conferences",
+            "widget": "object",
+            "subFields": [
+              {"name": "annualMeetings", "label": "Annual Meetings", "widget": "list:text"},
+              {"name": "webinars", "label": "Webinars", "widget": "list:text"},
+              {"name": "networkingEvents", "label": "Networking Events", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "marketingChannels",
+            "label": "Marketing Channels",
+            "widget": "object",
+            "description": "Platforms for promoting events and initiatives (e.g., YouTube, blogs, email campaigns)",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "partnerships",
+            "label": "Partnerships",
+            "widget": "object",
+            "subFields": [
+              {"name": "collaborationsWithOtherAssociations", "label": "Collaborations with Other Associations", "widget": "textarea"},
+              {"name": "institutionsOrOrganizations", "label": "Institutions or Organizations", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "socialImpact",
+            "label": "Social Impact",
+            "widget": "object",
+            "subFields": [
+              {"name": "communityDrivenProjects", "label": "Community-driven Projects", "widget": "textarea"},
+              {"name": "advocacyInitiatives", "label": "Advocacy Initiatives", "widget": "textarea"},
+              {"name": "publicAwarenessCampaigns", "label": "Public Awareness Campaigns", "widget": "textarea"}
+            ],
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "organization",
+    "name": "Organization Profile Template",
+    "slug": "organization-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "organizationInformation",
+            "label": "Organization Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "organizationName", "label": "Organization Name", "widget": "text"},
+              {"name": "logo", "label": "Logo", "widget": "image"},
+              {"name": "slogan", "label": "Slogan/Tagline", "widget": "text"},
+              {"name": "typeOfOrganization", "label": "Type of Organization", "widget": "select", "options": [
+                {"label": "Nonprofit", "value": "nonprofit"},
+                {"label": "Corporate", "value": "corporate"},
+                {"label": "Community", "value": "community"},
+                {"label": "Government", "value": "government"},
+                {"label": "Other", "value": "other"}
+              ]}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "missionAndVision",
+            "label": "Mission & Vision",
+            "widget": "object",
+            "subFields": [
+              {"name": "missionStatement", "label": "Mission Statement", "widget": "textarea"},
+              {"name": "visionForOrganization", "label": "Vision for the Organization", "widget": "textarea"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "foundingDetails",
+            "label": "Founding Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "yearOfEstablishment", "label": "Year of Establishment", "widget": "number"},
+              {"name": "founders", "label": "Founders", "widget": "list:text"},
+              {"name": "keyMilestonesOrHistory", "label": "Key Milestones or History", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "objectivesAndGoals",
+            "label": "Objectives & Goals",
+            "widget": "object",
+            "subFields": [
+              {"name": "shortTermObjectives", "label": "Short-term Objectives", "widget": "textarea"},
+              {"name": "longTermGoals", "label": "Long-term Goals", "widget": "textarea"},
+              {"name": "strategicInitiatives", "label": "Strategic Initiatives", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "servicesAndActivities",
+            "label": "Services & Activities",
+            "widget": "object",
+            "subFields": [
+              {"name": "overviewOfServicesOrPrograms", "label": "Overview of Services or Programs Offered", "widget": "textarea"},
+              {"name": "keyActivities", "label": "Key Activities", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "organizationalStructure",
+            "label": "Organizational Structure",
+            "widget": "object",
+            "subFields": [
+              {"name": "leadershipTeam", "label": "Leadership Team (e.g., CEO, Directors)", "widget": "list:text"},
+              {"name": "departments", "label": "Departments", "widget": "list:text"},
+              {"name": "committees", "label": "Committees", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "valuesAndPrinciples",
+            "label": "Values & Principles",
+            "widget": "object",
+            "subFields": [
+              {"name": "coreValues", "label": "Core Values", "widget": "list:text"},
+              {"name": "ethicalGuidelines", "label": "Ethical Guidelines", "widget": "textarea"},
+              {"name": "codeOfConduct", "label": "Code of Conduct", "widget": "textarea"}
+            ],
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "achievementsAndRecognition",
+            "label": "Achievements & Recognition",
+            "widget": "object",
+            "subFields": [
+              {"name": "awards", "label": "Awards", "widget": "list:text"},
+              {"name": "certifications", "label": "Certifications", "widget": "list:text"},
+              {"name": "communityImpact", "label": "Community Impact", "widget": "textarea"},
+              {"name": "majorContributions", "label": "Major Contributions", "widget": "textarea"}
+            ],
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "partnershipsAndCollaborations",
+            "label": "Partnerships & Collaborations",
+            "widget": "object",
+            "subFields": [
+              {"name": "strategicAlliances", "label": "Strategic Alliances", "widget": "list:text"},
+              {"name": "partnerOrganizations", "label": "Partner Organizations", "widget": "list:text"},
+              {"name": "keyStakeholders", "label": "Key Stakeholders", "widget": "list:text"}
+            ],
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "sustainabilityInitiatives",
+            "label": "Sustainability Initiatives",
+            "widget": "object",
+            "subFields": [
+              {"name": "environmentalEfforts", "label": "Environmental Efforts", "widget": "textarea"},
+              {"name": "csrPrograms", "label": "Corporate Social Responsibility (CSR) Programs", "widget": "textarea"}
+            ],
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "financialTransparency",
+            "label": "Financial Transparency",
+            "widget": "object",
+            "subFields": [
+              {"name": "fundingSources", "label": "Funding Sources", "widget": "list:text"},
+              {"name": "annualReports", "label": "Annual Reports", "widget": "list:text"},
+              {"name": "financialSummaries", "label": "Financial Summaries", "widget": "textarea"}
+            ],
+            "order": 11,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "officialContactInfo",
+            "label": "Official Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "organizationEmail", "label": "Organization Email", "widget": "email"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "websiteUrl", "label": "Website URL", "widget": "url"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "officeLocations",
+            "label": "Office Locations",
+            "widget": "object",
+            "subFields": [
+              {"name": "headOfficeAddress", "label": "Head Office Address", "widget": "text"},
+              {"name": "regionalBranches", "label": "Regional Branches", "widget": "list:text"},
+              {"name": "globalPresence", "label": "Global Presence", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "supportAndHelplines",
+            "label": "Support & Helplines",
+            "widget": "object",
+            "subFields": [
+              {"name": "helpDeskContact", "label": "Help Desk Contact", "widget": "text"},
+              {"name": "hotlineNumbers", "label": "Hotline Numbers", "widget": "list:text"},
+              {"name": "supportResponseTimes", "label": "Support Response Times", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactMethod",
+            "label": "Preferred Contact Method",
+            "widget": "multiselect",
+            "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "Online Messaging", "value": "online_messaging"},
+              {"label": "Contact Forms", "value": "contact_forms"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "operatingHours",
+            "label": "Operating Hours",
+            "widget": "object",
+            "subFields": [
+              {"name": "officeHours", "label": "Office Hours", "widget": "text"},
+              {"name": "serviceAvailability", "label": "Service Availability", "widget": "text"},
+              {"name": "timeZones", "label": "Time Zones", "widget": "text"}
+            ],
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "onlinePresence",
+            "label": "Online Presence",
+            "widget": "object",
+            "description": "Social media accounts (e.g., LinkedIn, Twitter, Facebook, Instagram, YouTube)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "communityEngagement",
+            "label": "Community Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "participationInCommunityEvents", "label": "Participation in Community Events", "widget": "textarea"},
+              {"name": "advocacyInitiatives", "label": "Advocacy Initiatives", "widget": "textarea"},
+              {"name": "outreachPrograms", "label": "Outreach Programs", "widget": "textarea"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "marketingChannels",
+            "label": "Marketing Channels",
+            "widget": "object",
+            "description": "Platforms for promotions and campaigns (e.g., newsletters, blogs, online ads)",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "memberStakeholderEngagement",
+            "label": "Member/Stakeholder Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "internalForums", "label": "Internal Forums", "widget": "list:text"},
+              {"name": "groupChats", "label": "Group Chats", "widget": "list:text"},
+              {"name": "surveys", "label": "Surveys", "widget": "list:text"},
+              {"name": "newsletters", "label": "Newsletters", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndConferences",
+            "label": "Events & Conferences",
+            "widget": "object",
+            "subFields": [
+              {"name": "workshops", "label": "Workshops", "widget": "list:text"},
+              {"name": "seminars", "label": "Seminars", "widget": "list:text"},
+              {"name": "networkingEvents", "label": "Networking Events", "widget": "list:text"},
+              {"name": "annualMeetings", "label": "Annual Meetings", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "publicRelations",
+            "label": "Public Relations",
+            "widget": "object",
+            "subFields": [
+              {"name": "mediaContacts", "label": "Media Contacts", "widget": "list:text"},
+              {"name": "pressReleases", "label": "Press Releases", "widget": "list:text"},
+              {"name": "publicAwarenessCampaigns", "label": "Public Awareness Campaigns", "widget": "textarea"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "impactMeasurement",
+            "label": "Impact Measurement",
+            "widget": "object",
+            "subFields": [
+              {"name": "testimonials", "label": "Testimonials", "widget": "textarea"},
+              {"name": "caseStudies", "label": "Case Studies", "widget": "list:text"},
+              {"name": "metricsOnProgramsOrServices", "label": "Metrics on Programs or Services", "widget": "textarea"}
+            ],
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "institution",
+    "name": "Institution Profile Template",
+    "slug": "institution-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "institutionInformation",
+            "label": "Institution Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "institutionName", "label": "Institution Name", "widget": "text"},
+              {"name": "logo", "label": "Logo", "widget": "image"},
+              {"name": "motto", "label": "Motto/Tagline", "widget": "text"},
+              {"name": "typeOfInstitution", "label": "Type of Institution", "widget": "select", "options": [
+                {"label": "Educational", "value": "educational"},
+                {"label": "Healthcare", "value": "healthcare"},
+                {"label": "Research", "value": "research"},
+                {"label": "Cultural", "value": "cultural"},
+                {"label": "Other", "value": "other"}
+              ]}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "missionAndVision",
+            "label": "Mission & Vision",
+            "widget": "object",
+            "subFields": [
+              {"name": "missionStatement", "label": "Mission Statement", "widget": "textarea"},
+              {"name": "visionForInstitution", "label": "Vision for the Institution", "widget": "textarea"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "foundingDetails",
+            "label": "Founding Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "yearOfEstablishment", "label": "Year of Establishment", "widget": "number"},
+              {"name": "founders", "label": "Founders", "widget": "list:text"},
+              {"name": "historicalMilestones", "label": "Historical Milestones", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "coreObjectives",
+            "label": "Core Objectives",
+            "widget": "object",
+            "subFields": [
+              {"name": "keyObjectives", "label": "Key Objectives", "widget": "textarea"},
+              {"name": "goalsOfInstitution", "label": "Goals of the Institution", "widget": "textarea"},
+              {"name": "areasOfFocus", "label": "Areas of Focus", "widget": "list:text", "description": "e.g., education, community, research"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "servicesAndPrograms",
+            "label": "Services & Programs",
+            "widget": "object",
+            "subFields": [
+              {"name": "descriptionOfPrograms", "label": "Description of Programs or Services Offered", "widget": "textarea"},
+              {"name": "targetAudience", "label": "Target Audience", "widget": "text"},
+              {"name": "uniqueFeatures", "label": "Unique Features", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "organizationalStructure",
+            "label": "Organizational Structure",
+            "widget": "object",
+            "subFields": [
+              {"name": "leadershipTeam", "label": "Leadership Team (e.g., President, Dean, Directors)", "widget": "list:text"},
+              {"name": "departmentsOrDivisions", "label": "Departments or Divisions", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "valuesAndPrinciples",
+            "label": "Values & Principles",
+            "widget": "object",
+            "subFields": [
+              {"name": "coreValues", "label": "Core Values", "widget": "list:text"},
+              {"name": "ethicalGuidelines", "label": "Ethical Guidelines", "widget": "textarea"},
+              {"name": "codeOfConduct", "label": "Code of Conduct", "widget": "textarea"}
+            ],
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "facilitiesAndResources",
+            "label": "Facilities & Resources",
+            "widget": "object",
+            "subFields": [
+              {"name": "campusOrBuildingDetails", "label": "Campus or Building Details", "widget": "textarea"},
+              {"name": "libraries", "label": "Libraries", "widget": "list:text"},
+              {"name": "laboratories", "label": "Laboratories", "widget": "list:text"},
+              {"name": "recreationalFacilities", "label": "Recreational Facilities", "widget": "list:text"}
+            ],
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "achievementsAndRecognition",
+            "label": "Achievements & Recognition",
+            "widget": "object",
+            "subFields": [
+              {"name": "awards", "label": "Awards", "widget": "list:text"},
+              {"name": "accreditation", "label": "Accreditation", "widget": "list:text"},
+              {"name": "impactMetrics", "label": "Impact Metrics", "widget": "textarea"},
+              {"name": "notableAlumniOrContributors", "label": "Notable Alumni or Contributors", "widget": "list:text"}
+            ],
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "partnershipsAndCollaborations",
+            "label": "Partnerships & Collaborations",
+            "widget": "object",
+            "subFields": [
+              {"name": "partnershipsWithOtherInstitutions", "label": "Partnerships with Other Institutions", "widget": "list:text"},
+              {"name": "governmentBodies", "label": "Government Bodies", "widget": "list:text"},
+              {"name": "privateOrganizations", "label": "Private Organizations", "widget": "list:text"}
+            ],
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "researchAndDevelopment",
+            "label": "Research & Development",
+            "widget": "object",
+            "subFields": [
+              {"name": "keyResearchProjects", "label": "Key Research Projects", "widget": "list:text"},
+              {"name": "innovationInitiatives", "label": "Innovation Initiatives", "widget": "textarea"},
+              {"name": "scholarlyContributions", "label": "Scholarly Contributions", "widget": "textarea"}
+            ],
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "sustainabilityInitiatives",
+            "label": "Sustainability Initiatives",
+            "widget": "object",
+            "subFields": [
+              {"name": "environmentalEfforts", "label": "Environmental Efforts", "widget": "textarea"},
+              {"name": "csrPrograms", "label": "CSR Programs", "widget": "textarea"},
+              {"name": "communityProjects", "label": "Community Projects", "widget": "textarea"}
+            ],
+            "order": 12,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "officialContactInfo",
+            "label": "Official Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "institutionEmail", "label": "Institution Email", "widget": "email"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "websiteUrl", "label": "Website URL", "widget": "url"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "officeLocations",
+            "label": "Office Locations",
+            "widget": "object",
+            "subFields": [
+              {"name": "mainCampusOrOfficeAddress", "label": "Main Campus or Office Address", "widget": "text"},
+              {"name": "branchLocations", "label": "Branch Locations", "widget": "list:text"},
+              {"name": "globalPresence", "label": "Global Presence", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "helpAndSupport",
+            "label": "Help & Support",
+            "widget": "object",
+            "subFields": [
+              {"name": "helpDeskContacts", "label": "Help Desk Contacts", "widget": "list:text"},
+              {"name": "supportServices", "label": "Support Services", "widget": "list:text"},
+              {"name": "hotlineNumbers", "label": "Hotline Numbers", "widget": "list:text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactMethod",
+            "label": "Preferred Contact Method",
+            "widget": "multiselect",
+            "options": [
+              {"label": "Email", "value": "email"},
+              {"label": "Phone", "value": "phone"},
+              {"label": "Online Forms", "value": "online_forms"},
+              {"label": "Messaging Apps", "value": "messaging_apps"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "operatingHours",
+            "label": "Operating Hours",
+            "widget": "object",
+            "subFields": [
+              {"name": "officeHours", "label": "Office Hours", "widget": "text"},
+              {"name": "serviceAvailability", "label": "Service Availability", "widget": "text"},
+              {"name": "specificTimesForPublicInquiries", "label": "Specific Times for Public Inquiries", "widget": "text"}
+            ],
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "onlinePresence",
+            "label": "Online Presence",
+            "widget": "object",
+            "description": "Social media accounts (e.g., LinkedIn, Twitter, Instagram, Facebook, YouTube)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "communityEngagement",
+            "label": "Community Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "participationInCommunityEvents", "label": "Participation in Community Events", "widget": "textarea"},
+              {"name": "publicSeminars", "label": "Public Seminars", "widget": "list:text"},
+              {"name": "volunteerInitiatives", "label": "Volunteer Initiatives", "widget": "textarea"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "marketingChannels",
+            "label": "Marketing Channels",
+            "widget": "object",
+            "description": "Platforms for campaigns and promotions (e.g., email newsletters, blogs, video ads)",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "memberStakeholderEngagement",
+            "label": "Member/Stakeholder Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "forums", "label": "Forums", "widget": "list:text"},
+              {"name": "discussionBoards", "label": "Discussion Boards", "widget": "list:text"},
+              {"name": "surveys", "label": "Surveys", "widget": "list:text"},
+              {"name": "newsletters", "label": "Newsletters", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndConferences",
+            "label": "Events & Conferences",
+            "widget": "object",
+            "subFields": [
+              {"name": "workshops", "label": "Workshops", "widget": "list:text"},
+              {"name": "publicLectures", "label": "Public Lectures", "widget": "list:text"},
+              {"name": "webinars", "label": "Webinars", "widget": "list:text"},
+              {"name": "annualMeetings", "label": "Annual Meetings", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "publicRelations",
+            "label": "Public Relations",
+            "widget": "object",
+            "subFields": [
+              {"name": "mediaCoverage", "label": "Media Coverage", "widget": "textarea"},
+              {"name": "pressReleases", "label": "Press Releases", "widget": "list:text"},
+              {"name": "campaignsToPromoteInstitutionMission", "label": "Campaigns to Promote the Institution's Mission", "widget": "textarea"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "impactMetrics",
+            "label": "Impact Metrics",
+            "widget": "object",
+            "subFields": [
+              {"name": "testimonials", "label": "Testimonials", "widget": "textarea"},
+              {"name": "alumniOrParticipantSuccessStories", "label": "Alumni or Participant Success Stories", "widget": "textarea"},
+              {"name": "keyDataOnProgramsServices", "label": "Key Data on Programs/Services", "widget": "textarea"}
+            ],
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "personal",
+    "profileType": "pet",
+    "name": "Pet Profile Template",
+    "slug": "pet-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "basicInformation",
+            "label": "Basic Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "petName", "label": "Pet Name", "widget": "text"},
+              {"name": "petType", "label": "Pet Type", "widget": "select", "options": [
+                {"label": "Dog", "value": "dog"},
+                {"label": "Cat", "value": "cat"},
+                {"label": "Bird", "value": "bird"},
+                {"label": "Fish", "value": "fish"},
+                {"label": "Rabbit", "value": "rabbit"},
+                {"label": "Hamster", "value": "hamster"},
+                {"label": "Other", "value": "other"}
+              ]},
+              {"name": "breed", "label": "Breed", "widget": "text"},
+              {"name": "gender", "label": "Gender", "widget": "select", "options": [
+                {"label": "Male", "value": "male"},
+                {"label": "Female", "value": "female"}
+              ]},
+              {"name": "ageOrDateOfBirth", "label": "Age/Date of Birth", "widget": "text"},
+              {"name": "color", "label": "Color", "widget": "text"},
+              {"name": "weight", "label": "Weight", "widget": "text"},
+              {"name": "bloodType", "label": "Blood Type", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "personality",
+            "label": "Personality",
+            "widget": "object",
+            "subFields": [
+              {"name": "characterTemperament", "label": "Character/Temperament", "widget": "multiselect", "options": [
+                {"label": "Friendly", "value": "friendly"},
+                {"label": "Shy", "value": "shy"},
+                {"label": "Aggressive", "value": "aggressive"},
+                {"label": "Playful", "value": "playful"},
+                {"label": "Calm", "value": "calm"},
+                {"label": "Energetic", "value": "energetic"}
+              ]}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "healthInformation",
+            "label": "Health Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "vaccinationRecords", "label": "Vaccination Records", "widget": "list:text"},
+              {"name": "weightRecords", "label": "Weight Records", "widget": "list:text"},
+              {"name": "sterilizationStatus", "label": "Sterilization Status", "widget": "select", "options": [
+                {"label": "Spayed/Neutered", "value": "sterilized"},
+                {"label": "Not Sterilized", "value": "not_sterilized"}
+              ]},
+              {"name": "microchipNumber", "label": "Microchip Number", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "additionalDetails",
+            "label": "Additional Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "favoriteFoods", "label": "Favorite Foods", "widget": "list:text"},
+              {"name": "favoriteToys", "label": "Favorite Toys", "widget": "list:text"},
+              {"name": "knownTricks", "label": "Known Tricks", "widget": "list:text"},
+              {"name": "medicalConditions", "label": "Medical Conditions (if any)", "widget": "textarea"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "ownerInformation",
+            "label": "Owner Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "ownerName", "label": "Owner Name", "widget": "text"},
+              {"name": "phoneNumbers", "label": "Phone Number(s)", "widget": "list:text"},
+              {"name": "emailAddress", "label": "Email Address", "widget": "email"},
+              {"name": "physicalAddress", "label": "Physical Address", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "emergencyContacts",
+            "label": "Emergency Contacts",
+            "widget": "object",
+            "subFields": [
+              {"name": "alternateContactNames", "label": "Alternate Contact Names", "widget": "list:text"},
+              {"name": "phoneNumbers", "label": "Phone Numbers", "widget": "list:text"},
+              {"name": "emailAddresses", "label": "Email Addresses", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "veterinaryInformation",
+            "label": "Veterinary Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "vetName", "label": "Vet Name", "widget": "text"},
+              {"name": "clinicName", "label": "Clinic Name", "widget": "text"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "address", "label": "Address", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "socialEngagement",
+            "label": "Social Engagement",
+            "widget": "object",
+            "description": "Pet's Social Media Accounts (e.g., Instagram for pets)",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "communityMembership",
+            "label": "Community Membership",
+            "widget": "object",
+            "subFields": [
+              {"name": "petClubs", "label": "Pet Clubs", "widget": "list:text"},
+              {"name": "trainingClasses", "label": "Training Classes", "widget": "list:text"},
+              {"name": "adoptionNetworkMemberships", "label": "Adoption Network Memberships", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "trackingInformation",
+            "label": "Tracking Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "gpsTrackerId", "label": "GPS Tracker ID (if applicable)", "widget": "text"},
+              {"name": "locationSharingPreferences", "label": "Location Sharing Preferences", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "personal",
+    "profileType": "home",
+    "name": "Home Profile Template",
+    "slug": "home-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "basicInformation",
+            "label": "Basic Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "homeName", "label": "Home Name", "widget": "text", "description": "e.g., 'The Smith Residence'"},
+              {"name": "address", "label": "Address", "widget": "text"},
+              {"name": "numberOfResidents", "label": "Number of Residents", "widget": "number"},
+              {"name": "typeOfHome", "label": "Type of Home", "widget": "select", "options": [
+                {"label": "Apartment", "value": "apartment"},
+                {"label": "House", "value": "house"},
+                {"label": "Condo", "value": "condo"},
+                {"label": "Townhouse", "value": "townhouse"},
+                {"label": "Other", "value": "other"}
+              ]}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "homeSpecifications",
+            "label": "Home Specifications",
+            "widget": "object",
+            "subFields": [
+              {"name": "numberOfRooms", "label": "Number of Rooms", "widget": "number"},
+              {"name": "numberOfFloors", "label": "Number of Floors", "widget": "number"},
+              {"name": "yearBuilt", "label": "Year Built", "widget": "number"},
+              {"name": "renovationDetails", "label": "Renovation Details (if any)", "widget": "textarea"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "appliancesAndDevices",
+            "label": "Appliances and Devices",
+            "widget": "object",
+            "subFields": [
+              {"name": "connectedDevices", "label": "List of Connected Devices", "widget": "list:text", "description": "e.g., Smart Thermostat, Smart Fridge, Home Assistant Devices"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "consumptionDetails",
+            "label": "Consumption Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "energyConsumption", "label": "Energy Consumption (Electricity Usage)", "widget": "text"},
+              {"name": "waterConsumption", "label": "Water Consumption", "widget": "text"},
+              {"name": "gasConsumption", "label": "Gas Consumption", "widget": "text"},
+              {"name": "solarEnergyOutput", "label": "Solar Energy Output (if applicable)", "widget": "text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "safetyFeatures",
+            "label": "Safety Features",
+            "widget": "object",
+            "subFields": [
+              {"name": "smokeDetectors", "label": "Smoke Detectors", "widget": "list:text"},
+              {"name": "carbonMonoxideDetectors", "label": "Carbon Monoxide Detectors", "widget": "list:text"},
+              {"name": "fireExtinguishers", "label": "Fire Extinguishers", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "homeSensors",
+            "label": "Home Sensors",
+            "widget": "object",
+            "subFields": [
+              {"name": "motionSensors", "label": "Motion Sensors", "widget": "list:text"},
+              {"name": "temperatureSensors", "label": "Temperature Sensors", "widget": "list:text"},
+              {"name": "humiditySensors", "label": "Humidity Sensors", "widget": "list:text"},
+              {"name": "leakSensors", "label": "Leak Sensors", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "primaryContactInformation",
+            "label": "Primary Contact Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "ownerName", "label": "Owner Name", "widget": "text"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "emailAddress", "label": "Email Address", "widget": "email"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "emergencyContacts",
+            "label": "Emergency Contacts",
+            "widget": "object",
+            "subFields": [
+              {"name": "alternateContactNames", "label": "Alternate Contact Names", "widget": "list:text"},
+              {"name": "phoneNumbers", "label": "Phone Numbers", "widget": "list:text"},
+              {"name": "emailAddresses", "label": "Email Addresses", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "serviceProviders",
+            "label": "Service Providers",
+            "widget": "object",
+            "subFields": [
+              {"name": "utilityCompanies", "label": "Utility Companies (Electricity, Water, Gas)", "widget": "list:text"},
+              {"name": "internetProvider", "label": "Internet Provider", "widget": "text"},
+              {"name": "homeMaintenanceContacts", "label": "Home Maintenance Contacts", "widget": "list:text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "securityContacts",
+            "label": "Security Contacts",
+            "widget": "object",
+            "subFields": [
+              {"name": "securityServiceProvider", "label": "Security Service Provider", "widget": "text"},
+              {"name": "localPolice", "label": "Local Police", "widget": "text"},
+              {"name": "alarmMonitoringService", "label": "Alarm Monitoring Service", "widget": "text"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "communityEngagement",
+            "label": "Community Engagement",
+            "widget": "object",
+            "subFields": [
+              {"name": "neighborhoodAssociationMemberships", "label": "Neighborhood Association Memberships", "widget": "list:text"},
+              {"name": "localCommunityGroups", "label": "Local Community Groups", "widget": "list:text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "smartDoorAccess",
+            "label": "Smart Door Access",
+            "widget": "object",
+            "subFields": [
+              {"name": "doorAccessLogs", "label": "Door Access Logs", "widget": "textarea"},
+              {"name": "registeredAccessCodes", "label": "Registered Access Codes", "widget": "list:text", "description": "e.g., for family, friends, cleaners"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "sharingPreferences",
+            "label": "Sharing Preferences",
+            "widget": "object",
+            "subFields": [
+              {"name": "homeSharingPlatforms", "label": "Home Sharing Platforms", "widget": "list:text", "description": "e.g., Airbnb"},
+              {"name": "houseRules", "label": "House Rules", "widget": "textarea"},
+              {"name": "calendarForHomeAvailability", "label": "Calendar for Home Availability", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "socialFeatures",
+            "label": "Social Features",
+            "widget": "object",
+            "description": "Platforms for Home Sharing or Reviews (e.g., HomeAway, HomeExchange)",
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "professional",
+    "profileType": "work",
+    "name": "Work Profile Template",
+    "slug": "work-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "personalInformation",
+            "label": "Personal Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "fullName", "label": "Full Name", "widget": "text"},
+              {"name": "jobTitle", "label": "Job Title", "widget": "text"},
+              {"name": "department", "label": "Department", "widget": "text"},
+              {"name": "employeeId", "label": "Employee ID", "widget": "text"},
+              {"name": "workLocation", "label": "Work Location", "widget": "text"},
+              {"name": "yearsOfExperience", "label": "Years of Experience", "widget": "number"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "jobRoleAndDescription",
+            "label": "Job Role & Description",
+            "widget": "object",
+            "subFields": [
+              {"name": "overviewOfResponsibilities", "label": "Overview of Responsibilities", "widget": "textarea"},
+              {"name": "keyProjects", "label": "Key Projects", "widget": "list:text"},
+              {"name": "skillsRequiredForRole", "label": "Skills Required for the Role", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "workSchedule",
+            "label": "Work Schedule",
+            "widget": "object",
+            "subFields": [
+              {"name": "shiftType", "label": "Shift Type", "widget": "select", "options": [
+                {"label": "Full-time", "value": "full_time"},
+                {"label": "Part-time", "value": "part_time"},
+                {"label": "Contract", "value": "contract"},
+                {"label": "Freelance", "value": "freelance"}
+              ]},
+              {"name": "weeklyHours", "label": "Weekly Hours", "widget": "number"},
+              {"name": "currentSchedule", "label": "Current Schedule", "widget": "text"},
+              {"name": "preferredWorkingHours", "label": "Preferred Working Hours", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "availability",
+            "label": "Availability",
+            "widget": "object",
+            "subFields": [
+              {"name": "workHours", "label": "Work Hours", "widget": "text"},
+              {"name": "overtimePreferences", "label": "Overtime Preferences", "widget": "textarea"},
+              {"name": "daysAvailableForExtraShifts", "label": "Days Available for Extra Shifts", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "achievements",
+            "label": "Achievements",
+            "widget": "object",
+            "subFields": [
+              {"name": "awards", "label": "Awards", "widget": "list:text"},
+              {"name": "certifications", "label": "Certifications", "widget": "list:text"},
+              {"name": "completedProjects", "label": "Completed Projects", "widget": "list:text"},
+              {"name": "keyMilestones", "label": "Key Milestones", "widget": "list:text"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "goalsAndObjectives",
+            "label": "Goals & Objectives",
+            "widget": "object",
+            "subFields": [
+              {"name": "shortTermGoalsWithTimelines", "label": "Short-term Goals with Timelines", "widget": "textarea"},
+              {"name": "longTermObjectives", "label": "Long-term Objectives", "widget": "textarea"},
+              {"name": "currentProjectDeadlines", "label": "Current Project Deadlines", "widget": "list:text"}
+            ],
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "additionalSkills",
+            "label": "Additional Skills",
+            "widget": "object",
+            "subFields": [
+              {"name": "technicalSkills", "label": "Technical Skills", "widget": "list:text"},
+              {"name": "languagesSpoken", "label": "Languages Spoken", "widget": "list:text"},
+              {"name": "toolsOrSoftwareExpertise", "label": "Tools or Software Expertise", "widget": "list:text"}
+            ],
+            "order": 7,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "officeContactInfo",
+            "label": "Office Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "officePhoneNumber", "label": "Office Phone Number", "widget": "text"},
+              {"name": "workEmailAddress", "label": "Work Email Address", "widget": "email"},
+              {"name": "departmentContact", "label": "Department Contact", "widget": "text"},
+              {"name": "emergencyLine", "label": "Emergency Line", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "personalContactInfo",
+            "label": "Personal Contact Info",
+            "widget": "object",
+            "subFields": [
+              {"name": "mobileNumber", "label": "Mobile Number (optional)", "widget": "text"},
+              {"name": "secondaryEmail", "label": "Secondary Email (optional)", "widget": "email"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "preferredContactTime",
+            "label": "Preferred Contact Time",
+            "widget": "object",
+            "subFields": [
+              {"name": "bestTimesForPhoneCalls", "label": "Best Times for Phone Calls", "widget": "text"},
+              {"name": "emailResponseHours", "label": "Email Response Hours", "widget": "text"},
+              {"name": "messagingAvailability", "label": "Messaging Availability", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "physicalAddress",
+            "label": "Physical Address",
+            "widget": "object",
+            "subFields": [
+              {"name": "officeLocation", "label": "Office Location", "widget": "text"},
+              {"name": "cubicleOrDeskNumber", "label": "Cubicle/Desk Number (if applicable)", "widget": "text"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "internalNetworks",
+            "label": "Internal Networks",
+            "widget": "object",
+            "subFields": [
+              {"name": "companyChatGroups", "label": "Company Chat Groups", "widget": "list:text"},
+              {"name": "teamCollaborationPlatforms", "label": "Team Collaboration Platforms", "widget": "list:text", "description": "e.g., Slack, Microsoft Teams"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "externalNetworks",
+            "label": "External Networks",
+            "widget": "object",
+            "subFields": [
+              {"name": "linkedin", "label": "LinkedIn", "widget": "url"},
+              {"name": "professionalTwitterHandle", "label": "Professional Twitter Handle", "widget": "text"},
+              {"name": "github", "label": "GitHub (if applicable)", "widget": "url"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "workgroupsAndForums",
+            "label": "Workgroups & Forums",
+            "widget": "object",
+            "subFields": [
+              {"name": "membershipInWorkCommittees", "label": "Membership in Work Committees", "widget": "list:text"},
+              {"name": "groups", "label": "Groups", "widget": "list:text"},
+              {"name": "taskForces", "label": "Task Forces", "widget": "list:text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "socialPreferences",
+            "label": "Social Preferences",
+            "widget": "object",
+            "subFields": [
+              {"name": "preferencesForSocialInteractions", "label": "Preferences for Social Interactions", "widget": "multiselect", "options": [
+                {"label": "Team Events", "value": "team_events"},
+                {"label": "Coffee Breaks", "value": "coffee_breaks"},
+                {"label": "Networking Hours", "value": "networking_hours"}
+              ]}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "timeForSocialEvents",
+            "label": "Time for Social Events",
+            "widget": "object",
+            "subFields": [
+              {"name": "availabilityForTeamBonding", "label": "Availability for Team Bonding", "widget": "text"},
+              {"name": "participationInAfterWorkActivities", "label": "Participation in After-work Activities", "widget": "text"},
+              {"name": "lunchHours", "label": "Lunch Hours", "widget": "text"}
+            ],
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "personal",
+    "profileType": "medical",
+    "name": "Medical Profile Template",
+    "slug": "medical-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "basicInformation",
+            "label": "Basic Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "fullName", "label": "Full Name", "widget": "text"},
+              {"name": "dateOfBirth", "label": "Date of Birth", "widget": "date"},
+              {"name": "gender", "label": "Gender", "widget": "select", "options": [
+                {"label": "Male", "value": "male"},
+                {"label": "Female", "value": "female"},
+                {"label": "Other", "value": "other"},
+                {"label": "Prefer not to say", "value": "prefer_not_to_say"}
+              ]},
+              {"name": "bloodType", "label": "Blood Type", "widget": "select", "options": [
+                {"label": "A+", "value": "a_positive"},
+                {"label": "A-", "value": "a_negative"},
+                {"label": "B+", "value": "b_positive"},
+                {"label": "B-", "value": "b_negative"},
+                {"label": "AB+", "value": "ab_positive"},
+                {"label": "AB-", "value": "ab_negative"},
+                {"label": "O+", "value": "o_positive"},
+                {"label": "O-", "value": "o_negative"}
+              ]},
+              {"name": "medicalIdNumber", "label": "Medical ID Number (if applicable)", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "medicalHistory",
+            "label": "Medical History",
+            "widget": "object",
+            "subFields": [
+              {"name": "chronicConditions", "label": "Chronic Conditions", "widget": "list:text"},
+              {"name": "allergies", "label": "Allergies", "widget": "list:text"},
+              {"name": "pastSurgeriesOrHospitalizations", "label": "Past Surgeries or Hospitalizations", "widget": "textarea"},
+              {"name": "currentMedications", "label": "Current Medications", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "familyMedicalHistory",
+            "label": "Family Medical History",
+            "widget": "object",
+            "subFields": [
+              {"name": "knownHereditaryConditionsOrRisks", "label": "Known Hereditary Conditions or Risks", "widget": "textarea"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "immunizationRecords",
+            "label": "Immunization Records",
+            "widget": "object",
+            "subFields": [
+              {"name": "vaccinesReceivedAndDates", "label": "Vaccines Received and Dates", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "personalDescription",
+            "label": "Personal Description",
+            "widget": "object",
+            "subFields": [
+              {"name": "generalHealthStatus", "label": "General Health Status", "widget": "textarea", "description": "e.g., 'active, in good health'"}
+            ],
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "emergencyInformation",
+            "label": "Emergency Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "knownMedicalAlerts", "label": "Known Medical Alerts", "widget": "list:text", "description": "e.g., pacemaker, epilepsy"},
+              {"name": "organDonorStatus", "label": "Organ Donor Status", "widget": "select", "options": [
+                {"label": "Yes", "value": "yes"},
+                {"label": "No", "value": "no"},
+                {"label": "Undecided", "value": "undecided"}
+              ]}
+            ],
+            "order": 6,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "primaryContactInformation",
+            "label": "Primary Contact Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "emailAddress", "label": "Email Address", "widget": "email"},
+              {"name": "guardianOrCaretakerContact", "label": "Guardian or Caretaker Contact (if applicable)", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "emergencyContacts",
+            "label": "Emergency Contacts",
+            "widget": "object",
+            "subFields": [
+              {"name": "name", "label": "Name", "widget": "text"},
+              {"name": "relationship", "label": "Relationship", "widget": "text"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "healthcareProviders",
+            "label": "Healthcare Providers",
+            "widget": "object",
+            "subFields": [
+              {"name": "primaryCarePhysician", "label": "Primary Care Physician", "widget": "text"},
+              {"name": "specialistContacts", "label": "Specialist Contacts", "widget": "list:text"},
+              {"name": "preferredHospitalOrClinic", "label": "Preferred Hospital or Clinic", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "addressOrLocation",
+            "label": "Address or Location",
+            "widget": "object",
+            "subFields": [
+              {"name": "residentialAddress", "label": "Residential Address", "widget": "text"},
+              {"name": "closestHospital", "label": "Closest Hospital", "widget": "text"},
+              {"name": "preferredPharmacyAddress", "label": "Preferred Pharmacy Address", "widget": "text"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "healthSupportNetworks",
+            "label": "Health Support Networks",
+            "widget": "object",
+            "subFields": [
+              {"name": "groupsOrForumsForHealthConditions", "label": "Groups or Forums for Health Conditions", "widget": "list:text", "description": "e.g., Diabetes Support Group"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "healthAppsPlatforms",
+            "label": "Health Apps/Platforms",
+            "widget": "object",
+            "subFields": [
+              {"name": "appsUsedForTrackingHealth", "label": "Apps Used for Tracking Health", "widget": "list:text", "description": "e.g., fitness trackers, medication reminders"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "contentPlatforms",
+            "label": "Content Platforms",
+            "widget": "object",
+            "subFields": [
+              {"name": "sourcesOfHealthInformation", "label": "Sources of Health Information", "widget": "list:text", "description": "e.g., blogs, YouTube channels for wellness"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "communityMembership",
+            "label": "Community Membership",
+            "widget": "object",
+            "subFields": [
+              {"name": "membershipInHealthOrganizations", "label": "Membership in Health Organizations", "widget": "list:text", "description": "e.g., Red Cross Donor, Fitness Clubs"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "personal",
+    "profileType": "emergency",
+    "name": "Emergency Profile Template",
+    "slug": "emergency-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "basicInformation",
+            "label": "Basic Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "fullName", "label": "Full Name", "widget": "text"},
+              {"name": "dateOfBirth", "label": "Date of Birth", "widget": "date"},
+              {"name": "gender", "label": "Gender", "widget": "select", "options": [
+                {"label": "Male", "value": "male"},
+                {"label": "Female", "value": "female"},
+                {"label": "Other", "value": "other"},
+                {"label": "Prefer not to say", "value": "prefer_not_to_say"}
+              ]},
+              {"name": "bloodType", "label": "Blood Type", "widget": "select", "options": [
+                {"label": "A+", "value": "a_positive"},
+                {"label": "A-", "value": "a_negative"},
+                {"label": "B+", "value": "b_positive"},
+                {"label": "B-", "value": "b_negative"},
+                {"label": "AB+", "value": "ab_positive"},
+                {"label": "AB-", "value": "ab_negative"},
+                {"label": "O+", "value": "o_positive"},
+                {"label": "O-", "value": "o_negative"}
+              ]},
+              {"name": "medicalIdNumber", "label": "Medical ID Number (if applicable)", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "emergencyDetails",
+            "label": "Emergency Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "knownMedicalAlerts", "label": "Known Medical Alerts", "widget": "list:text", "description": "e.g., allergies, epilepsy"},
+              {"name": "organDonorStatus", "label": "Organ Donor Status", "widget": "select", "options": [
+                {"label": "Yes", "value": "yes"},
+                {"label": "No", "value": "no"},
+                {"label": "Undecided", "value": "undecided"}
+              ]},
+              {"name": "criticalHealthConditions", "label": "Critical Health Conditions", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "identificationInformation",
+            "label": "Identification Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "nationalIdPassportNumber", "label": "National ID/Passport Number", "widget": "text"},
+              {"name": "driversLicense", "label": "Driver's License", "widget": "text"},
+              {"name": "insurancePolicyNumber", "label": "Insurance Policy Number", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "personalDescription",
+            "label": "Personal Description",
+            "widget": "object",
+            "subFields": [
+              {"name": "height", "label": "Height", "widget": "text"},
+              {"name": "weight", "label": "Weight", "widget": "text"},
+              {"name": "distinctiveMarks", "label": "Distinctive Marks", "widget": "textarea", "description": "e.g., tattoos, scars"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "emergencyPreparedness",
+            "label": "Emergency Preparedness",
+            "widget": "object",
+            "subFields": [
+              {"name": "evacuationPlan", "label": "Evacuation Plan", "widget": "textarea"},
+              {"name": "knownAllergies", "label": "Known Allergies", "widget": "list:text"},
+              {"name": "survivalKitInformation", "label": "Survival Kit Information", "widget": "textarea"}
+            ],
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "emergencyContacts",
+            "label": "Emergency Contacts",
+            "widget": "object",
+            "subFields": [
+              {"name": "names", "label": "Names", "widget": "list:text"},
+              {"name": "relationships", "label": "Relationships", "widget": "list:text"},
+              {"name": "phoneNumbers", "label": "Phone Numbers", "widget": "list:text"},
+              {"name": "emailAddresses", "label": "Email Addresses", "widget": "list:text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "primaryHealthcareContact",
+            "label": "Primary Healthcare Contact",
+            "widget": "object",
+            "subFields": [
+              {"name": "physicianName", "label": "Physician Name", "widget": "text"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "emailAddress", "label": "Email Address", "widget": "email"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "residentialInformation",
+            "label": "Residential Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "homeAddress", "label": "Home Address", "widget": "text"},
+              {"name": "alternateEmergencyAddress", "label": "Alternate Emergency Address", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "organizationContacts",
+            "label": "Organization Contacts",
+            "widget": "object",
+            "subFields": [
+              {"name": "emergencyHotlines", "label": "Emergency Hotlines", "widget": "list:text", "description": "e.g., police, fire, ambulance"},
+              {"name": "localCommunityContacts", "label": "Local Community Contacts", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "socialSupportGroups",
+            "label": "Social Support Groups",
+            "widget": "object",
+            "subFields": [
+              {"name": "family", "label": "Family", "widget": "list:text"},
+              {"name": "friends", "label": "Friends", "widget": "list:text"},
+              {"name": "communityGroupsWhoCanProvideAssistance", "label": "Community Groups Who Can Provide Assistance", "widget": "list:text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "communicationPlatforms",
+            "label": "Communication Platforms",
+            "widget": "object",
+            "subFields": [
+              {"name": "preferredMessagingPlatforms", "label": "Preferred Messaging Platforms", "widget": "list:text", "description": "e.g., WhatsApp, Telegram for emergencies"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "emergencyBroadcastChannels",
+            "label": "Emergency Broadcast Channels",
+            "widget": "object",
+            "subFields": [
+              {"name": "subscribedChannelsForAlerts", "label": "Subscribed Channels for Alerts", "widget": "list:text", "description": "e.g., weather, disaster management"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "communityPlatforms",
+            "label": "Community Platforms",
+            "widget": "object",
+            "subFields": [
+              {"name": "membershipInLocalEmergencyNetworks", "label": "Membership in Local Emergency Networks", "widget": "list:text"},
+              {"name": "preparednessGroups", "label": "Preparedness Groups", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },{
+    "profileCategory": "personal",
+    "profileType": "emergency",
+    "name": "Emergency Profile Template",
+    "slug": "emergency-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "basicInformation",
+            "label": "Basic Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "fullName", "label": "Full Name", "widget": "text"},
+              {"name": "dateOfBirth", "label": "Date of Birth", "widget": "date"},
+              {"name": "gender", "label": "Gender", "widget": "select", "options": [
+                {"label": "Male", "value": "male"},
+                {"label": "Female", "value": "female"},
+                {"label": "Other", "value": "other"},
+                {"label": "Prefer not to say", "value": "prefer_not_to_say"}
+              ]},
+              {"name": "bloodType", "label": "Blood Type", "widget": "select", "options": [
+                {"label": "A+", "value": "a_positive"},
+                {"label": "A-", "value": "a_negative"},
+                {"label": "B+", "value": "b_positive"},
+                {"label": "B-", "value": "b_negative"},
+                {"label": "AB+", "value": "ab_positive"},
+                {"label": "AB-", "value": "ab_negative"},
+                {"label": "O+", "value": "o_positive"},
+                {"label": "O-", "value": "o_negative"}
+              ]},
+              {"name": "medicalIdNumber", "label": "Medical ID Number (if applicable)", "widget": "text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "emergencyDetails",
+            "label": "Emergency Details",
+            "widget": "object",
+            "subFields": [
+              {"name": "knownMedicalAlerts", "label": "Known Medical Alerts", "widget": "list:text", "description": "e.g., allergies, epilepsy"},
+              {"name": "organDonorStatus", "label": "Organ Donor Status", "widget": "select", "options": [
+                {"label": "Yes", "value": "yes"},
+                {"label": "No", "value": "no"},
+                {"label": "Undecided", "value": "undecided"}
+              ]},
+              {"name": "criticalHealthConditions", "label": "Critical Health Conditions", "widget": "list:text"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "identificationInformation",
+            "label": "Identification Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "nationalIdPassportNumber", "label": "National ID/Passport Number", "widget": "text"},
+              {"name": "driversLicense", "label": "Driver's License", "widget": "text"},
+              {"name": "insurancePolicyNumber", "label": "Insurance Policy Number", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "personalDescription",
+            "label": "Personal Description",
+            "widget": "object",
+            "subFields": [
+              {"name": "height", "label": "Height", "widget": "text"},
+              {"name": "weight", "label": "Weight", "widget": "text"},
+              {"name": "distinctiveMarks", "label": "Distinctive Marks", "widget": "textarea", "description": "e.g., tattoos, scars"}
+            ],
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "emergencyPreparedness",
+            "label": "Emergency Preparedness",
+            "widget": "object",
+            "subFields": [
+              {"name": "evacuationPlan", "label": "Evacuation Plan", "widget": "textarea"},
+              {"name": "knownAllergies", "label": "Known Allergies", "widget": "list:text"},
+              {"name": "survivalKitInformation", "label": "Survival Kit Information", "widget": "textarea"}
+            ],
+            "order": 5,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "emergencyContacts",
+            "label": "Emergency Contacts",
+            "widget": "object",
+            "subFields": [
+              {"name": "names", "label": "Names", "widget": "list:text"},
+              {"name": "relationships", "label": "Relationships", "widget": "list:text"},
+              {"name": "phoneNumbers", "label": "Phone Numbers", "widget": "list:text"},
+              {"name": "emailAddresses", "label": "Email Addresses", "widget": "list:text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "primaryHealthcareContact",
+            "label": "Primary Healthcare Contact",
+            "widget": "object",
+            "subFields": [
+              {"name": "physicianName", "label": "Physician Name", "widget": "text"},
+              {"name": "phoneNumber", "label": "Phone Number", "widget": "text"},
+              {"name": "emailAddress", "label": "Email Address", "widget": "email"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "residentialInformation",
+            "label": "Residential Information",
+            "widget": "object",
+            "subFields": [
+              {"name": "homeAddress", "label": "Home Address", "widget": "text"},
+              {"name": "alternateEmergencyAddress", "label": "Alternate Emergency Address", "widget": "text"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "organizationContacts",
+            "label": "Organization Contacts",
+            "widget": "object",
+            "subFields": [
+              {"name": "emergencyHotlines", "label": "Emergency Hotlines", "widget": "list:text", "description": "e.g., police, fire, ambulance"},
+              {"name": "localCommunityContacts", "label": "Local Community Contacts", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      },
+       {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "socialSupportGroups",
+            "label": "Social Support Groups",
+            "widget": "object",
+            "subFields": [
+              {"name": "family", "label": "Family", "widget": "list:text"},
+              {"name": "friends", "label": "Friends", "widget": "list:text"},
+              {"name": "communityGroupsWhoCanProvideAssistance", "label": "Community Groups Who Can Provide Assistance", "widget": "list:text"}
+            ],
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "communicationPlatforms",
+            "label": "Communication Platforms",
+            "widget": "object",
+            "subFields": [
+              {"name": "preferredMessagingPlatforms", "label": "Preferred Messaging Platforms", "widget": "list:text", "description": "e.g., WhatsApp, Telegram for emergencies"}
+            ],
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "emergencyBroadcastChannels",
+            "label": "Emergency Broadcast Channels",
+            "widget": "object",
+            "subFields": [
+              {"name": "subscribedChannelsForAlerts", "label": "Subscribed Channels for Alerts", "widget": "list:text", "description": "e.g., weather, disaster management"}
+            ],
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "communityPlatforms",
+            "label": "Community Platforms",
+            "widget": "object",
+            "subFields": [
+              {"name": "membershipInLocalEmergencyNetworks", "label": "Membership in Local Emergency Networks", "widget": "list:text"},
+              {"name": "preparednessGroups", "label": "Preparedness Groups", "widget": "list:text"}
+            ],
+            "order": 4,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  }
+    
+]

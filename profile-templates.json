@@ -1,9 +1,38 @@
-`[
+[
   {
-    "profileCategory": "individual",
-    "profileType": "personal",
-    "name": "Personal Profile Template",
-    "slug": "personal-profile",
+    "profileCategory": "accessory",
+    "profileType": "drivers",
+    "name": "Drivers Profile Template",
+    "slug": "drivers-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": []
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": []
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "group",
+    "name": "Group Profile Template",
+    "slug": "group-profile",
     "categories": [
       {
         "name": "about",
@@ -12,59 +41,80 @@
         "collapsible": true,
         "fields": [
           {
-            "name": "personalInfo",
-            "label": "Personal Information",
-            "widget": "object",
+            "name": "groupName",
+            "label": "Group Name",
+            "widget": "text",
             "order": 1,
             "enabled": true
           },
           {
-            "name": "interestsAndGoals",
-            "label": "Interests and Goals",
+            "name": "purposeAndVision",
+            "label": "Purpose and Vision",
             "widget": "textarea",
             "order": 2,
             "enabled": true
           },
           {
-            "name": "quotes",
-            "label": "Quotes",
-            "widget": "textarea",
+            "name": "membershipAndRoles",
+            "label": "Membership and Roles",
+            "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "biography",
-            "label": "Biography",
-            "widget": "textarea",
+            "name": "interestsAndActivities",
+            "label": "Interests and Activities",
+            "widget": "list:text",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "needsAndWishlist",
-            "label": "Needs and Wishlist",
-            "widget": "textarea",
+            "name": "groupMeetings",
+            "label": "Group Meetings",
+            "widget": "object",
             "order": 5,
             "enabled": true
           },
           {
-            "name": "hobbies",
-            "label": "Hobbies",
-            "widget": "list:text",
+            "name": "communication",
+            "label": "Communication",
+            "widget": "object",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "importantLocations",
-            "label": "Important Locations",
-            "widget": "object",
+            "name": "groupRules",
+            "label": "Group Rules",
+            "widget": "textarea",
             "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "achievements",
+            "label": "Achievements",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "growthAndFuture",
+            "label": "Growth and Future",
+            "widget": "textarea",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "membershipOpportunities",
+            "label": "Membership Opportunities",
+            "widget": "object",
+            "order": 10,
             "enabled": true
           },
           {
             "name": "gallery",
             "label": "Gallery",
             "widget": "image",
-            "order": 8,
+            "order": 11,
             "enabled": true
           }
         ]
@@ -76,15 +126,15 @@
         "collapsible": true,
         "fields": [
           {
-            "name": "contactInformation",
-            "label": "Contact Information",
+            "name": "primaryContact",
+            "label": "Primary Contact",
             "widget": "object",
             "order": 1,
             "enabled": true
           },
           {
-            "name": "mediumOfCommunication",
-            "label": "Medium of Communication",
+            "name": "preferredModeOfContact",
+            "label": "Preferred Mode of Contact",
             "widget": "select",
             "options": [
               {"label": "Email", "value": "email"},
@@ -95,1313 +145,121 @@
             "enabled": true
           },
           {
-            "name": "messagingApps",
-            "label": "Messaging Apps",
-            "widget": "multiselect",
-            "options": [
-              {"label": "WhatsApp", "value": "whatsapp"},
-              {"label": "Telegram", "value": "telegram"},
-              {"label": "Signal", "value": "signal"}
-            ],
+            "name": "leadershipAndKeyRoles",
+            "label": "Leadership and Key Roles",
+            "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "calendars",
-            "label": "Calendars (Schedules)",
+            "name": "meetingsAndEvents",
+            "label": "Meetings and Events",
             "widget": "object",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "socialPartners",
-            "label": "Social Partners",
-            "widget": "list:text",
+            "name": "memberSupport",
+            "label": "Member Support",
+            "widget": "object",
             "order": 5,
             "enabled": true
           },
-          {
-            "name": "bookings",
-            "label": "Bookings",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
           {
             "name": "socialMedia",
             "label": "Social Media",
             "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "websites",
-            "label": "Websites",
-            "widget": "list:text",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "celebrations",
-            "label": "Celebrations (Plan)",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "payments",
-            "label": "Payments",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "lifeInsurance",
-            "label": "Life Insurance",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "affiliations",
-            "label": "Affiliations",
-            "widget": "list:text",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "videoStreaming",
-            "label": "Video Streaming",
-            "widget": "list:text",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "videoSharing",
-            "label": "Video Sharing",
-            "widget": "list:text",
-            "order": 8,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "profileCategory": "individual",
-    "profileType": "academic",
-    "name": "Academic Profile Template",
-    "slug": "academic-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "academicInformation",
-            "label": "Academic Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "academicInterests",
-            "label": "Academic Interests",
-            "widget": "list:text",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "education",
-            "label": "Education",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "programsAndCourses",
-            "label": "Programs and Courses",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "academicNeeds",
-            "label": "Academic Needs",
-            "widget": "textarea",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "accomplishments",
-            "label": "Accomplishments",
-            "widget": "textarea",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "awardsAndAchievements",
-            "label": "Awards and Achievements",
+            "name": "newsletterAndUpdates",
+            "label": "Newsletter and Updates",
             "widget": "object",
             "order": 7,
             "enabled": true
           },
           {
-            "name": "experience",
-            "label": "Experience",
+            "name": "donationsAndFunding",
+            "label": "Donations and Funding",
             "widget": "object",
             "order": 8,
             "enabled": true
           },
           {
-            "name": "skills",
-            "label": "Skills",
-            "widget": "list:text",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
-            "order": 10,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "contactInformation",
-            "label": "Contact Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "communications",
-            "label": "Communications",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "availability",
-            "label": "Availability",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "academicCalendar",
-            "label": "Academic Calendar",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "schoolActivities",
-            "label": "School Activities",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "academicContacts",
-            "label": "Academic Contacts",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "classSchedule",
-            "label": "Class Schedule",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "cvResume",
-            "label": "CV/Resume",
-            "widget": "file",
-            "order": 8,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "socialMediaLinks",
-            "label": "Social Media Links",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "accommodations",
-            "label": "Accommodations",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "importantLocations",
-            "label": "Important Locations",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "paymentsPayouts",
-            "label": "Payments/Payouts",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "scholarshipsAndGrants",
-            "label": "Scholarships and Grants",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "tuitionsAndLoans",
-            "label": "Tuitions and Loans",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "importantDates",
-            "label": "Important Dates",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "academicAffiliations",
-            "label": "Academic Affiliations",
-            "widget": "list:text",
-            "order": 8,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "profileCategory": "individual",
-    "profileType": "work",
-    "name": "Work Profile Template",
-    "slug": "work-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "workInformation",
-            "label": "Work Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "workSchedule",
-            "label": "Work Schedule",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "skills",
-            "label": "Skills",
-            "widget": "list:text",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "careerAchievements",
-            "label": "Career Achievements",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "workingWeeklyPlans",
-            "label": "Working Weekly Plans",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "workTimesheet",
-            "label": "Work Timesheet",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "workTimeBalanceReport",
-            "label": "Work Time Balance Report",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "cvResume",
-            "label": "CV/Resume",
-            "widget": "file",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
-            "order": 9,
-            "enabled": true
-          }
-        ]
-      },
-
-      {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "workContact",
-            "label": "Work Contact",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "mediumOfCommunication",
-            "label": "Medium of Communication",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "companyContactPerson",
-            "label": "Company Contact Person",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "coworkersAndSupervisors",
-            "label": "Coworkers and Supervisors",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "workCalendarsAndSchedules",
-            "label": "Work Calendars and Schedules",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "appointmentAndBooking",
-            "label": "Appointment and Booking",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "workHolidaysAndImportantDates",
-            "label": "Work Holidays & Other Important Dates",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "workInsurance",
-            "label": "Work Insurance",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "workPayday",
-            "label": "Work Payday",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "workReferrals",
-            "label": "Work Referrals",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "availability",
-            "label": "Availability",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "booking",
-            "label": "Booking",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "linkedInProfile",
-            "label": "LinkedIn Profile",
-            "widget": "url",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "industryGroups",
-            "label": "Industry Groups",
-            "widget": "list:text",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "professionalAssociations",
-            "label": "Professional Associations",
-            "widget": "list:text",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
-            "order": 10,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-   {
-    "profileCategory": "individual",
-    "profileType": "dependent",
-    "name": "Dependent Profile Template",
-    "slug": "dependent-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "name",
-            "label": "Name",
-            "widget": "text",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "relationshipToPrimaryProfile",
-            "label": "Relationship to Primary Profile",
-            "widget": "text",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "dateOfBirth",
-            "label": "Date of Birth",
-            "widget": "date",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "gender",
-            "label": "Gender",
-            "widget": "select",
-            "options": [
-              {"label": "Male", "value": "male"},
-              {"label": "Female", "value": "female"},
-              {"label": "Other", "value": "other"},
-              {"label": "Prefer not to say", "value": "not_specified"}
-            ],
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "specialNeeds",
-            "label": "Special Needs (if applicable)",
-            "widget": "textarea",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "interests",
-            "label": "Interests",
-            "widget": "list:text",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "hobbies",
-            "label": "Hobbies",
-            "widget": "list:text",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "needs",
-            "label": "Needs",
-            "widget": "textarea",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "importantLocations",
-            "label": "Important Locations",
+            "name": "emergencyAndCrises",
+            "label": "Emergency and Crises",
             "widget": "object",
             "order": 9,
             "enabled": true
           },
           {
-            "name": "religion",
-            "label": "Religion",
-            "widget": "text",
+            "name": "membershipApplications",
+            "label": "Membership Applications",
+            "widget": "object",
             "order": 10,
             "enabled": true
           },
           {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
+            "name": "feedbackAndSuggestions",
+            "label": "Feedback and Suggestions",
+            "widget": "object",
             "order": 11,
             "enabled": true
           }
         ]
       },
       {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "primaryGuardianContact",
-            "label": "Primary Guardian Contact",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "emergencyContact",
-            "label": "Emergency Contact",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "schoolEducation",
-            "label": "School/Education",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "preferredModeOfContact",
-            "label": "Preferred Mode of Contact",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "messagingApps",
-            "label": "Messaging Apps",
-            "widget": "multiselect",
-            "options": [
-              {"label": "WhatsApp", "value": "whatsapp"},
-              {"label": "Telegram", "value": "telegram"},
-              {"label": "Signal", "value": "signal"}
-            ],
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "activityAndAppointment",
-            "label": "Activity and Appointment",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          }
-        ]
-      },
-      {
         "name": "social",
         "label": "Social",
         "icon": "share-alt",
         "collapsible": true,
         "fields": [
           {
-            "name": "guardianApprovedSocialMediaLinks",
-            "label": "Guardian Approved Social Media Links",
+            "name": "groupSocialMedia",
+            "label": "Group Social Media",
             "widget": "object",
             "order": 1,
             "enabled": true
           },
           {
-            "name": "educationalApps",
-            "label": "Educational Apps",
-            "widget": "list:text",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "dependentSchedule",
-            "label": "Dependent Schedule",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "importantDependentDates",
-            "label": "Important Dependent Dates",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "insurances",
-            "label": "Insurances",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "affiliations",
-            "label": "Affiliations",
-            "widget": "list:text",
-            "order": 6,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "profileCategory": "individual",
-    "profileType": "artist",
-    "name": "Artist Profile Template",
-    "slug": "artist-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "artistInformation",
-            "label": "Artist Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "albums",
-            "label": "Albums",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "guardians",
-            "label": "Guardians",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "interestAndGoals",
-            "label": "Interest and Goals",
-            "widget": "textarea",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "locations",
-            "label": "Locations",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "needsAndWishlist",
-            "label": "Needs and Wishlist",
-            "widget": "textarea",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "skills",
-            "label": "Skills",
-            "widget": "list:text",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "careProviders",
-            "label": "Care Providers",
-            "widget": "object",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "religion",
-            "label": "Religion",
-            "widget": "text",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
-            "order": 10,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "emergencyInformation",
-            "label": "Emergency Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "guardians",
-            "label": "Guardians",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "contactApp",
-            "label": "Contact App",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "messagingApp",
-            "label": "Messaging App",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "calendars",
-            "label": "Calendars",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "socialMedia",
-            "label": "Social Media",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "celebrations",
-            "label": "Celebrations",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "payments",
-            "label": "Payments",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "insurance",
-            "label": "Insurance",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "others",
-            "label": "Others",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  }, 
-   {
-    "profileCategory": "accessory",
-    "profileType": "event",
-    "name": "Event Profile Template",
-    "slug": "event-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "eventInformation",
-            "label": "Event Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "eventPurposeAndGoals",
-            "label": "Event Purpose and Goals",
-            "widget": "textarea",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "eventDateTimeLocation",
-            "label": "Event Date, Time and Location",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "targetAudience",
-            "label": "Target Audience",
-            "widget": "textarea",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "agendaAndKeyActivities",
-            "label": "Agenda and Key Activities",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "speakersAndSpecialGuests",
-            "label": "Speakers and Special Guests",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "eventManagementAndOrganisers",
-            "label": "Event Management and Organisers",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "eventTicketingAndRegistrations",
-            "label": "Event Ticketing and Registrations",
-            "widget": "object",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "eventLogisticsAndAccess",
-            "label": "Event Logistics and Access",
-            "widget": "object",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "safetyAndSecurity",
-            "label": "Safety and Security",
-            "widget": "object",
-            "order": 10,
-            "enabled": true
-          },
-          {
-            "name": "galleryAndEventHighlights",
-            "label": "Gallery and Event Highlights",
-            "widget": "image",
-            "order": 11,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "eventOrganisationDetails",
-            "label": "Event Organisation Details",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "preferredModeOfContact",
-            "label": "Preferred Mode of Contact",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "eventTicketingAndRegion",
-            "label": "Event Ticketing and Region",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "eventManagement",
-            "label": "Event Management",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "scheduleAndProgramUpdates",
-            "label": "Schedule and Program Updates",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "emergencyAndSecurity",
-            "label": "Emergency and Security",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "exhibitorAndVendorContact",
-            "label": "Exhibitor and Vendor Contact",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "customerSupportAndHelp",
-            "label": "Customer Support and Help",
-            "widget": "object",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "partnershipAndSponsorship",
-            "label": "Partnership and Sponsorship",
-            "widget": "object",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "pressAndMediaContact",
-            "label": "Press and Media Contact",
-            "widget": "object",
-            "order": 10,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "eventSocialMediaPages",
-            "label": "Event Social Media Pages",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "officialEventWebsite",
-            "label": "Official Event Website",
+            "name": "officialWebsite",
+            "label": "Official Website",
             "widget": "url",
             "order": 2,
             "enabled": true
           },
           {
-            "name": "eventHighlightsAndMilestones",
-            "label": "Event Highlights and Milestones",
+            "name": "groupAchievements",
+            "label": "Group Achievements",
             "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "paymentAndTicketingPlatforms",
-            "label": "Payment and Ticketing Platforms",
+            "name": "messagingAndDiscussions",
+            "label": "Messaging and Discussions",
             "widget": "object",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "sponsorshipsAndPartnershipOpportunities",
-            "label": "Sponsorships and Partnership Opportunities",
+            "name": "eventLivestreaming",
+            "label": "Event Livestreaming",
             "widget": "object",
             "order": 5,
             "enabled": true
           },
           {
-            "name": "liveStreamingAndVirtual",
-            "label": "Live Streaming and Virtual",
+            "name": "memberRecognition",
+            "label": "Member Recognition",
             "widget": "object",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "onDemandContent",
-            "label": "On Demand Content",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "travelAndAccommodation",
-            "label": "Travel and Accommodation",
-            "widget": "object",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "loyaltyAndVipAccessPrograms",
-            "label": "Loyalty and VIP Access Programs",
-            "widget": "object",
-            "order": 9,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "profileCategory": "individual",
-    "profileType": "rider",
-    "name": "Rider Profile Template",
-    "slug": "rider-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "riderInformation",
-            "label": "Rider Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "serviceGoalsAndMission",
-            "label": "Service Goals and Mission",
-            "widget": "textarea",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "professionalBackground",
-            "label": "Professional Background",
-            "widget": "textarea",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "vehicleDetailsAndSpecifications",
-            "label": "Vehicle Details and Specifications",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "workAvailability",
-            "label": "Work Availability",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "serviceSpecialties",
-            "label": "Service Specialties",
-            "widget": "list:text",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "bookingAndServicesPlatforms",
-            "label": "Booking and Services Platforms",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "certificationAndCompliance",
-            "label": "Certification and Compliance",
-            "widget": "object",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "customerReviews",
-            "label": "Customer Reviews",
-            "widget": "object",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "loyaltyAndRewardsPrograms",
-            "label": "Loyalty and Rewards Programs",
-            "widget": "object",
-            "order": 10,
-            "enabled": true
-          },
-          {
-            "name": "galleryAndServiceShowcase",
-            "label": "Gallery and Service Showcase",
-            "widget": "image",
-            "order": 11,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "riderContactInformation",
-            "label": "Rider Contact Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "preferredModeOfContact",
-            "label": "Preferred Mode of Contact",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "messagingAppsForClients",
-            "label": "Messaging Apps for Clients",
-            "widget": "multiselect",
-            "options": [
-              {"label": "WhatsApp", "value": "whatsapp"},
-              {"label": "Telegram", "value": "telegram"},
-              {"label": "Signal", "value": "signal"}
-            ],
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "rideBookingPlatforms",
-            "label": "Ride Booking Platforms",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "workCalendarAndAvailability",
-            "label": "Work Calendar and Availability",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "customerSupportAndDispatch",
-            "label": "Customer Support and Dispatch",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "paymentAndFareInquiry",
-            "label": "Payment and Fare Inquiry",
+            "name": "newsletterAndBlog",
+            "label": "Newsletter and Blog",
             "widget": "object",
             "order": 7,
             "enabled": true
@@ -1411,10 +269,10 @@
     ]
   },
   {
-    "profileCategory": "individual",
-    "profileType": "freelancer",
-    "name": "Freelancer Profile Template",
-    "slug": "freelancer-profile",
+    "profileCategory": "group",
+    "profileType": "family",
+    "name": "Family Profile Template",
+    "slug": "family-profile",
     "categories": [
       {
         "name": "about",
@@ -1423,722 +281,86 @@
         "collapsible": true,
         "fields": [
           {
-            "name": "freelanceInformation",
-            "label": "Freelance Information",
+            "name": "familyNameAndIdentity",
+            "label": "Family Name and Identity",
             "widget": "object",
             "order": 1,
             "enabled": true
           },
           {
-            "name": "skillsAndExpertise",
-            "label": "Skills and Expertise",
-            "widget": "list:text",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "inspirationalQuotes",
-            "label": "Inspirational Quotes",
-            "widget": "textarea",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "freelancerBiography",
-            "label": "Freelancer Biography",
-            "widget": "textarea",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "toolsAndResources",
-            "label": "Tools and Resources",
-            "widget": "list:text",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "workAndInterests",
-            "label": "Work and Interests",
-            "widget": "textarea",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "freelancePlatforms",
-            "label": "Freelance Platforms",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "affiliationsAndMemberships",
-            "label": "Affiliations and Memberships",
-            "widget": "list:text",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "portfolioAndWorkSamples",
-            "label": "Portfolio and Work Samples",
-            "widget": "object",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "businessGallery",
-            "label": "Business Gallery",
-            "widget": "image",
-            "order": 10,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "freelancerContactInfo",
-            "label": "Freelancer Contact Info",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "preferredModeOfContact",
-            "label": "Preferred Mode of Contact",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "freelanceCalendar",
-            "label": "Freelance Calendar",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "clientAndPartnerContact",
-            "label": "Client and Partner Contact",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "consultationAndBooking",
-            "label": "Consultation and Booking",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "freelancerSocialMedia",
-            "label": "Freelancer Social Media",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "portfolio",
-            "label": "Portfolio",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "freelanceMilestones",
-            "label": "Freelance Milestones",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "paymentAndInvoicing",
-            "label": "Payment and Invoicing",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "freelancerInsuranceAndBenefits",
-            "label": "Freelancer Insurance and Benefits",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "professionalAffiliations",
-            "label": "Professional Affiliations",
-            "widget": "list:text",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "contentCreationAndVideoPlatforms",
-            "label": "Content Creation and Video Platforms",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "freelancerCommunity",
-            "label": "Freelancer Community",
-            "widget": "object",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "otherProfessionalsRecommendations",
-            "label": "Other Professionals Recommendations",
-            "widget": "object",
-            "order": 9,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-   {
-    "profileCategory": "individual",
-    "profileType": "work",
-    "name": "Work Profile Template",
-    "slug": "work-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "workInformation",
-            "label": "Work Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "workSchedule",
-            "label": "Work Schedule",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "skills",
-            "label": "Skills",
-            "widget": "list:text",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "careerAchievements",
-            "label": "Career Achievements",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "workingWeeklyPlans",
-            "label": "Working Weekly Plans",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "workTimeSheet",
-            "label": "Work TimeSheet",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "workTimeBalanceReport",
-            "label": "Work Time Balance Report",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "cvResume",
-            "label": "CV/Resume",
-            "widget": "object",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
-            "order": 9,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "workContact",
-            "label": "Work Contact",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "mediumOfCommunication",
-            "label": "Medium of Communication",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "companyContactPerson",
-            "label": "Company Contact Person",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "coworkersAndSupervisors",
-            "label": "Coworkers and Supervisors",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "workCalendarsAndSchedules",
-            "label": "Work Calendars and Schedules",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "appointmentAndBooking",
-            "label": "Appointment and Booking",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "workHolidaysAndImportantDates",
-            "label": "Work Holidays & Other Important Dates",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "workInsurance",
-            "label": "Work Insurance",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "workPayday",
-            "label": "Work Payday",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "workReferrals",
-            "label": "Work Referrals",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "availability",
-            "label": "Availability",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "booking",
-            "label": "Booking",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "linkedInProfile",
-            "label": "LinkedIn Profile",
-            "widget": "url",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "industryGroups",
-            "label": "Industry Groups",
-            "widget": "list:text",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "professionalAssociations",
-            "label": "Professional Associations",
-            "widget": "list:text",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
-            "order": 10,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "profileCategory": "individual",
-    "profileType": "professional",
-    "name": "Professional Profile Template",
-    "slug": "professional-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "professionalBio",
-            "label": "Professional Bio",
-            "widget": "textarea",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "professionalInformation",
-            "label": "Professional Information",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "industryAndSpecialization",
-            "label": "Industry & Specialization",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "certifications",
-            "label": "Certifications",
-            "widget": "list:text",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "licenses",
-            "label": "Licenses",
-            "widget": "list:text",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "experienceAndAchievements",
-            "label": "Experience & Achievements",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "projectsAndContributions",
-            "label": "Projects & Contributions",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "reviewsAndRecommendations",
-            "label": "Reviews & Recommendations",
-            "widget": "object",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
-            "order": 9,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "professionalContact",
-            "label": "Professional Contact",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "mediumOfCommunication",
-            "label": "Medium of Communication",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "industryCommunicationPlatforms",
-            "label": "Industry Communication Platforms",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "professionalAssociation",
-            "label": "Professional Association",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "workCalendarsAndSchedulingApp",
-            "label": "Work Calendars & Scheduling App",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "businessPartnersAndAffiliates",
-            "label": "Business Partners & Affiliates",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "consultationAndBookingSystem",
-            "label": "Consultation & Booking System",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "professionalNetworks",
-            "label": "Professional Networks",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "industryOrganizations",
-            "label": "Industry Organizations",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "onlinePortfolios",
-            "label": "Online Portfolios",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "professionalSocialMedia",
-            "label": "Professional Social Media",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "businessWebsites",
-            "label": "Business Websites",
-            "widget": "list:text",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "professionalAchievementsAndMilestones",
-            "label": "Professional Achievements & Milestones",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "paymentAndFinancialPlatforms",
-            "label": "Payment & Financial Platforms",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          },
-          {
-            "name": "professionalToolsAndSoftware",
-            "label": "Professional Tools & Software",
-            "widget": "list:text",
-            "order": 8,
-            "enabled": true
-          },
-          {
-            "name": "reviewsAndRecommendations",
-            "label": "Reviews & Recommendations",
-            "widget": "object",
-            "order": 9,
-            "enabled": true
-          },
-          {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
-            "order": 10,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "profileCategory": "accessory",
-    "profileType": "emergency",
-    "name": "Emergency Profile Template",
-    "slug": "emergency-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "emergencyNeedsAndInstructions",
-            "label": "Emergency Needs & Instructions",
-            "widget": "textarea",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "medicalHistoryAndNotes",
-            "label": "Medical History & Notes",
+            "name": "familyBackground",
+            "label": "Family Background",
             "widget": "textarea",
             "order": 2,
             "enabled": true
           },
           {
-            "name": "insuranceAndHealthcareProvider",
-            "label": "Insurance & Healthcare Provider",
+            "name": "familyMembers",
+            "label": "Family Members",
             "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "knownAllergies",
-            "label": "Known Allergies",
-            "widget": "list:text",
+            "name": "familyTraditions",
+            "label": "Family Traditions",
+            "widget": "textarea",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "religion",
-            "label": "Religion",
-            "widget": "text",
+            "name": "hobbiesAndSharedActivities",
+            "label": "Hobbies and Shared Activities",
+            "widget": "list:text",
             "order": 5,
             "enabled": true
           },
           {
-            "name": "safetyPlan",
-            "label": "Safety Plan",
-            "widget": "textarea",
+            "name": "familyHomeAndLifestyle",
+            "label": "Family Home and Lifestyle",
+            "widget": "object",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "personalSafetyCode",
-            "label": "Personal Safety Code",
-            "widget": "text",
+            "name": "milestonesAndAchievements",
+            "label": "Milestones and Achievements",
+            "widget": "object",
             "order": 7,
             "enabled": true
           },
           {
-            "name": "bloodGroupType",
-            "label": "Blood Group/Type",
-            "widget": "text",
+            "name": "educationAndCareer",
+            "label": "Education and Career",
+            "widget": "object",
             "order": 8,
             "enabled": true
           },
           {
-            "name": "firstAidKits",
-            "label": "First Aid Kits",
+            "name": "familyGathering",
+            "label": "Family Gathering",
             "widget": "object",
             "order": 9,
             "enabled": true
           },
           {
-            "name": "emergencyKits",
-            "label": "Emergency Kits",
+            "name": "petsAndAnimalsCompanions",
+            "label": "Pets and Animals Companions",
             "widget": "object",
             "order": 10,
             "enabled": true
           },
           {
-            "name": "medicalIdAndImportantDocuments",
-            "label": "Medical ID & Important Documents",
-            "widget": "object",
+            "name": "familyHeritage",
+            "label": "Family Heritage",
+            "widget": "textarea",
             "order": 11,
             "enabled": true
           },
           {
-            "name": "organDonorStatus",
-            "label": "Organ Donor Status",
-            "widget": "text",
+            "name": "futureGoalsAndFamilyPlans",
+            "label": "Future Goals and Family Plans",
+            "widget": "textarea",
             "order": 12,
             "enabled": true
           },
@@ -2158,304 +380,136 @@
         "collapsible": true,
         "fields": [
           {
-            "name": "primaryEmergencyContact",
-            "label": "Primary Emergency Contact",
+            "name": "primaryFamilyContact",
+            "label": "Primary Family Contact",
             "widget": "object",
             "order": 1,
             "enabled": true
           },
           {
-            "name": "secondaryEmergencyContact",
-            "label": "Secondary Emergency Contact",
+            "name": "emergencyContact",
+            "label": "Emergency Contact",
             "widget": "object",
             "order": 2,
             "enabled": true
           },
           {
-            "name": "localEmergencyServices",
-            "label": "Local Emergency Services",
+            "name": "familyGroupChat",
+            "label": "Family Group Chat",
             "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "medicalProviderContact",
-            "label": "Medical Provider Contact",
+            "name": "addressAndHome",
+            "label": "Address and Home",
             "widget": "object",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "preferredModeOfEmergencyContact",
-            "label": "Preferred Mode of Emergency Contact",
-            "widget": "select",
-            "options": [
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"},
-              {"label": "Email", "value": "email"}
-            ],
+            "name": "healthcareAndMedication",
+            "label": "Healthcare and Medication",
+            "widget": "object",
             "order": 5,
             "enabled": true
           },
           {
-            "name": "workplaceOrSchoolEmergencyContact",
-            "label": "Workplace or School Emergency Contact",
+            "name": "schoolAndEducation",
+            "label": "School and Education",
             "widget": "object",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "locationSharingAndTracking",
-            "label": "Location Sharing & Tracking",
-            "widget": "object",
-            "order": 7,
-            "enabled": true
-          }
-        ]
-      },
-      {
-        "name": "social",
-        "label": "Social",
-        "icon": "share-alt",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "importantEmergencyEventsDates",
-            "label": "Important Emergency Events/Dates",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "emergencyAlertsSubscription",
-            "label": "Emergency Alerts Subscription",
-            "widget": "object",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "disasterPreparednessGroups",
-            "label": "Disaster Preparedness Groups",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "healthInsurance",
-            "label": "Health Insurance",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "onlineMedicalAndCrisisNetworks",
-            "label": "Online Medical & Crisis Networks",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          }
-        ]
-      }
-    ]
-  },
-    {
-    "profileCategory": "individual",
-    "profileType": "proprietor",
-    "name": "Sole Proprietor Profile Template",
-    "slug": "sole-proprietor-profile",
-    "categories": [
-      {
-        "name": "about",
-        "label": "About",
-        "icon": "info-circle",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "businessInformation",
-            "label": "Business Information",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "industryAndMarketInsights",
-            "label": "Industry & Market Insights",
-            "widget": "textarea",
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "missionStatement",
-            "label": "Mission Statement",
-            "widget": "textarea",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "servicesProductsOffered",
-            "label": "Services/Products Offered",
-            "widget": "list:text",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "offerArea",
-            "label": "Offer Area",
-            "widget": "textarea",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "businessHours",
-            "label": "Business Hours",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          },
-          {
-            "name": "sampleWork",
-            "label": "Sample Work",
+            "name": "elderlyAndSpecialContacts",
+            "label": "Elderly and Special Contacts",
             "widget": "object",
             "order": 7,
             "enabled": true
           },
           {
-            "name": "accreditation",
-            "label": "Accreditation",
-            "widget": "list:text",
+            "name": "petsCareAndVeterinarian",
+            "label": "Pets Care and Veterinarian",
+            "widget": "object",
             "order": 8,
             "enabled": true
           },
           {
-            "name": "businessToolsAndPlatforms",
-            "label": "Business Tools & Platforms",
-            "widget": "list:text",
+            "name": "extendedFamily",
+            "label": "Extended Family",
+            "widget": "object",
             "order": 9,
             "enabled": true
           },
           {
-            "name": "gallery",
-            "label": "Gallery",
-            "widget": "image",
+            "name": "socialMediaAndFamilyNetworks",
+            "label": "Social Media and Family Networks",
+            "widget": "object",
             "order": 10,
             "enabled": true
           }
         ]
       },
       {
-        "name": "contact",
-        "label": "Contact",
-        "icon": "address-book",
-        "collapsible": true,
-        "fields": [
-          {
-            "name": "businessContact",
-            "label": "Business Contact",
-            "widget": "object",
-            "order": 1,
-            "enabled": true
-          },
-          {
-            "name": "mediumOfCommunication",
-            "label": "Medium of Communication",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
-            "order": 2,
-            "enabled": true
-          },
-          {
-            "name": "customerClientContacts",
-            "label": "Customer/Client Contacts",
-            "widget": "object",
-            "order": 3,
-            "enabled": true
-          },
-          {
-            "name": "supplierContacts",
-            "label": "Supplier Contacts",
-            "widget": "object",
-            "order": 4,
-            "enabled": true
-          },
-          {
-            "name": "businessPartnershipsAndAffiliations",
-            "label": "Business Partnerships & Affiliations",
-            "widget": "object",
-            "order": 5,
-            "enabled": true
-          },
-          {
-            "name": "consultationAndBookingSystem",
-            "label": "Consultation & Booking System",
-            "widget": "object",
-            "order": 6,
-            "enabled": true
-          }
-        ]
-      },
-      {
         "name": "social",
         "label": "Social",
         "icon": "share-alt",
         "collapsible": true,
         "fields": [
           {
-            "name": "businessSocialMediaPages",
-            "label": "Business Social Media Pages",
+            "name": "familySocial",
+            "label": "Family Social",
             "widget": "object",
             "order": 1,
             "enabled": true
           },
           {
-            "name": "businessImportantEventsAndDates",
-            "label": "Business Important Events & Dates",
+            "name": "photoAndVideoShoots",
+            "label": "Photo and Video Shoots",
             "widget": "object",
             "order": 2,
             "enabled": true
           },
           {
-            "name": "businessPayments",
-            "label": "Business Payments",
+            "name": "milestoneAndCelebration",
+            "label": "Milestone and Celebration",
             "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "businessInsurance",
-            "label": "Business Insurance",
+            "name": "messagingAndCommunication",
+            "label": "Messaging and Communication",
             "widget": "object",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "businessReviews",
-            "label": "Business Reviews",
+            "name": "familyGenealogy",
+            "label": "Family Genealogy",
             "widget": "object",
             "order": 5,
             "enabled": true
           },
           {
-            "name": "businessAds",
-            "label": "Business Ads",
+            "name": "petAndFamilyLife",
+            "label": "Pet and Family Life",
             "widget": "object",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "businessQAndAs",
-            "label": "Business Q&As",
+            "name": "diyAndHomeProject",
+            "label": "DIY and Home Project",
             "widget": "object",
             "order": 7,
             "enabled": true
           },
           {
-            "name": "others",
-            "label": "Others",
-            "widget": "textarea",
+            "name": "familyChallenge",
+            "label": "Family Challenge",
+            "widget": "object",
             "order": 8,
             "enabled": true
           }
@@ -2464,10 +518,614 @@
     ]
   },
   {
-    "profileCategory": "individual",
-    "profileType": "merchant",
-    "name": "Merchant Profile Template",
-    "slug": "merchant-profile",
+    "profileCategory": "group",
+    "profileType": "neighbourhood",
+    "name": "Neighbourhood Profile Template",
+    "slug": "neighbourhood-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "neighbourhoodInformation",
+            "label": "Neighbourhood Information",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "location",
+            "label": "Location",
+            "widget": "object",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "communityHistory",
+            "label": "Community History",
+            "widget": "textarea",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "demographics",
+            "label": "Demographics",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "localAttraction",
+            "label": "Local Attraction",
+            "widget": "list:text",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "housingAndInfrastructure",
+            "label": "Housing and Infrastructure",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "safetyAndSecurity",
+            "label": "Safety And Security",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "publicServices",
+            "label": "Public Services",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "transportation",
+            "label": "Transportation",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "educationAndSchools",
+            "label": "Education and Schools",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "healthcareAndMedication",
+            "label": "Healthcare and Medication",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "businessAndEconomics",
+            "label": "Business and Economics",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "neighbourhoodEvents",
+            "label": "Neighbourhood Events",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          },
+          {
+            "name": "sustainability",
+            "label": "Sustainability",
+            "widget": "object",
+            "order": 14,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "primaryNeighbourhoodContact",
+            "label": "Primary Neighbourhood Contact",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "homeownersAssistantContact",
+            "label": "Homeowners Assistant Contact",
+            "widget": "object",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "communityOffice",
+            "label": "Community Office",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "emergencyContact",
+            "label": "Emergency Contact",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "localGovernment",
+            "label": "Local Government",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "publicUtilityService",
+            "label": "Public Utility Service",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "healthcareAndMedicine",
+            "label": "Healthcare and Medicine",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "schoolAndEducation",
+            "label": "School and Education",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "realEstateAndHousing",
+            "label": "Real Estate and Housing",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "volunteerAndSocialServices",
+            "label": "Volunteer and Social Services",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "socialMediaPage",
+            "label": "Social Media Page",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "officialNeighbourhoodWebsite",
+            "label": "Official Neighbourhood Website",
+            "widget": "url",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "localNewsAndAnnouncements",
+            "label": "Local News and Announcements",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "messagingAndContacts",
+            "label": "Messaging and Contacts",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "neighbourhoodEvents",
+            "label": "Neighbourhood Events",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "liveStreamAndVideos",
+            "label": "LiveStream and Videos",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "businessAndMarket",
+            "label": "Business and Market",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "localClassifieds",
+            "label": "Local Classifieds",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "sustainability",
+            "label": "Sustainability",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "volunteerAndSocialServices",
+            "label": "Volunteer and Social Services",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "networking",
+            "label": "Networking",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "company",
+    "name": "Company Profile Template",
+    "slug": "company-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "companyInformation",
+            "label": "Company Information",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "companyHistory",
+            "label": "Company History",
+            "widget": "textarea",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "leadershipAndTeam",
+            "label": "Leadership and Team",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "productsAndServices",
+            "label": "Products and Services",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "targetMarket",
+            "label": "Target Market",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "businessModel",
+            "label": "Business Model",
+            "widget": "textarea",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "partnerships",
+            "label": "Partnerships",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "technologies",
+            "label": "Technologies",
+            "widget": "list:text",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "achievements",
+            "label": "Achievements",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "companyCulture",
+            "label": "Company Culture",
+            "widget": "textarea",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "growthAndExpansion",
+            "label": "Growth and Expansion",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "investorsAndStakeholders",
+            "label": "Investors and Stakeholders",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "primaryContact",
+            "label": "Primary Contact",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "customerSupport",
+            "label": "Customer Support",
+            "widget": "object",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "salesAndBusinessContact",
+            "label": "Sales and Business Contact",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "investorAndStakeholderContact",
+            "label": "Investor and Stakeholder Contact",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "partnershipsAndCollaborations",
+            "label": "Partnerships and Collaborations",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "mediaAndPressInquiries",
+            "label": "Media and Press Inquiries",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "humanResource",
+            "label": "Human Resource",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "careerOpportunities",
+            "label": "Career Opportunities",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "legalAndCompliance",
+            "label": "Legal and Compliance",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "billingAndFinancial",
+            "label": "Billing and Financial",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "technicalAndITSupport",
+            "label": "Technical and IT Support",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "productsAndServices",
+            "label": "Products and Services",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "vendorAndSupplies",
+            "label": "Vendor and Supplies",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          },
+          {
+            "name": "regionalAndInternationalContact",
+            "label": "Regional And International Contact",
+            "widget": "object",
+            "order": 14,
+            "enabled": true
+          },
+          {
+            "name": "emergencyAndCrises",
+            "label": "Emergency and Crises",
+            "widget": "object",
+            "order": 15,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "socialMediaPage",
+            "label": "Social Media Page",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "officialWebsites",
+            "label": "Official Websites",
+            "widget": "url",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "businessAnnouncements",
+            "label": "Business Announcements",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "pressReleases",
+            "label": "Press Releases",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "liveEvents",
+            "label": "Live Events",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "corporateSocialResponsibility",
+            "label": "Corporate Social Responsibility",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "jobOpenings",
+            "label": "Job Openings",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "partnerships",
+            "label": "Partnerships",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "affiliateAndBranding",
+            "label": "Affiliate and Branding",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "eCommerce",
+            "label": "E-Commerce",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "salesAndPromotions",
+            "label": "Sales and Promotions",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "community",
+    "name": "Community Profile Template",
+    "slug": "community-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": []
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": []
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": []
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "business",
+    "name": "Business Profile Template",
+    "slug": "business-profile",
     "categories": [
       {
         "name": "about",
@@ -2483,59 +1141,73 @@
             "enabled": true
           },
           {
-            "name": "businessGoalsAndVision",
-            "label": "Business Goals & Vision",
+            "name": "businessHistory",
+            "label": "Business History",
             "widget": "textarea",
             "order": 2,
             "enabled": true
           },
           {
-            "name": "merchantBiography",
-            "label": "Merchant Biography",
-            "widget": "textarea",
+            "name": "subsidiary",
+            "label": "Subsidiary",
+            "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "businessNeedsAndWishlist",
-            "label": "Business Needs & Wishlist",
-            "widget": "list:text",
+            "name": "industriesAndMarketing",
+            "label": "Industries and Marketing",
+            "widget": "object",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "productCategoriesAndSpecialties",
-            "label": "Product Categories & Specialties",
-            "widget": "list:text",
+            "name": "leadershipAndControl",
+            "label": "Leadership and Control",
+            "widget": "object",
             "order": 5,
             "enabled": true
           },
           {
-            "name": "retailAndEcommercePlatforms",
-            "label": "Retail & E-commerce Platforms",
-            "widget": "list:text",
+            "name": "productsAndServices",
+            "label": "Products and Services",
+            "widget": "object",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "certificationsAndBusinessLicenses",
-            "label": "Certifications & Business Licenses",
+            "name": "globalPresence",
+            "label": "Global Presence",
             "widget": "object",
             "order": 7,
             "enabled": true
           },
           {
-            "name": "partnershipsAndSupplierCollaborations",
-            "label": "Partnerships & Supplier Collaborations",
-            "widget": "object",
+            "name": "businessModel",
+            "label": "Business Model",
+            "widget": "textarea",
             "order": 8,
             "enabled": true
           },
           {
-            "name": "galleryAndProductShowcase",
-            "label": "Gallery & Product Showcase",
-            "widget": "image",
+            "name": "innovationAndTechnology",
+            "label": "Innovation and Technology",
+            "widget": "object",
             "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "partnershipsAndStrategicAlliances",
+            "label": "Partnerships and Strategic Alliances",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "achievements",
+            "label": "Achievements",
+            "widget": "object",
+            "order": 11,
             "enabled": true
           }
         ]
@@ -2547,62 +1219,108 @@
         "collapsible": true,
         "fields": [
           {
-            "name": "merchantContactInformation",
-            "label": "Merchant Contact Information",
+            "name": "primaryCorporateContact",
+            "label": "Primary Corporate Contact",
             "widget": "object",
             "order": 1,
             "enabled": true
           },
           {
-            "name": "preferredModeOfContact",
-            "label": "Preferred Mode of Contact",
-            "widget": "select",
-            "options": [
-              {"label": "Email", "value": "email"},
-              {"label": "Phone", "value": "phone"},
-              {"label": "Text", "value": "text"}
-            ],
+            "name": "regionalAndInternationalContact",
+            "label": "Regional and International Contact",
+            "widget": "object",
             "order": 2,
             "enabled": true
           },
           {
-            "name": "messagingAppsForCustomerSupport",
-            "label": "Messaging Apps for Customer Support",
-            "widget": "multiselect",
-            "options": [
-              {"label": "WhatsApp", "value": "whatsapp"},
-              {"label": "Telegram", "value": "telegram"},
-              {"label": "Signal", "value": "signal"}
-            ],
+            "name": "customerSupport",
+            "label": "Customer Support",
+            "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "ecommerceAndSalesPlatforms",
-            "label": "E-commerce & Sales Platforms",
+            "name": "salesAndBusiness",
+            "label": "Sales and Business",
             "widget": "object",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "supplierAndVendorContactApps",
-            "label": "Supplier & Vendor Contact Apps",
+            "name": "investorAndStakeholder",
+            "label": "Investor and Stakeholder",
             "widget": "object",
             "order": 5,
             "enabled": true
           },
           {
-            "name": "businessCalendarAndScheduling",
-            "label": "Business Calendar & Scheduling",
+            "name": "partnerships",
+            "label": "Partnerships",
             "widget": "object",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "appointmentAndOrderBookingSystem",
-            "label": "Appointment & Order Booking System",
+            "name": "humanResource",
+            "label": "Human Resource",
             "widget": "object",
             "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "mediaAndPress",
+            "label": "Media and Press",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "careerOpportunities",
+            "label": "Career Opportunities",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "legalCompliance",
+            "label": "Legal Compliance",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "billingAndFinancialServices",
+            "label": "Billing and Financial Services",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "technicalAndITSupport",
+            "label": "Technical and IT Support",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "regionalAndInternationalOffices",
+            "label": "Regional and International Offices",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          },
+          {
+            "name": "emergencyAndCrises",
+            "label": "Emergency and Crises",
+            "widget": "object",
+            "order": 14,
+            "enabled": true
+          },
+          {
+            "name": "franchiseAndLicensing",
+            "label": "Franchise and Licensing",
+            "widget": "object",
+            "order": 15,
             "enabled": true
           }
         ]
@@ -2614,88 +1332,999 @@
         "collapsible": true,
         "fields": [
           {
-            "name": "businessSocialMedia",
-            "label": "Business Social Media",
+            "name": "socialMediaPage",
+            "label": "Social Media Page",
             "widget": "object",
             "order": 1,
             "enabled": true
           },
           {
-            "name": "ecommerceAndStoreWebsite",
-            "label": "E-commerce & Store Website",
+            "name": "officialWebsite",
+            "label": "Official Website",
             "widget": "url",
             "order": 2,
             "enabled": true
           },
           {
-            "name": "promotionsAndSalesEvents",
-            "label": "Promotions & Sales Events",
+            "name": "businessAnnouncements",
+            "label": "Business Announcements",
             "widget": "object",
             "order": 3,
             "enabled": true
           },
           {
-            "name": "paymentsAndFinancialPlatforms",
-            "label": "Payments & Financial Platforms",
+            "name": "pressReleases",
+            "label": "Press Releases",
             "widget": "object",
             "order": 4,
             "enabled": true
           },
           {
-            "name": "merchantInsuranceAndProtection",
-            "label": "Merchant Insurance & Protection",
+            "name": "productsAndServices",
+            "label": "Products and Services",
             "widget": "object",
             "order": 5,
             "enabled": true
           },
           {
-            "name": "affiliationsAndBusinessNetworks",
-            "label": "Affiliations & Business Networks",
+            "name": "corporateSocialResponsibility",
+            "label": "Corporate Social Responsibility",
             "widget": "object",
             "order": 6,
             "enabled": true
           },
           {
-            "name": "productVideosAndDemonstrations",
-            "label": "Product Videos & Demonstrations",
+            "name": "jobOpportunities",
+            "label": "Job Opportunities",
             "widget": "object",
             "order": 7,
             "enabled": true
           },
           {
-            "name": "onlineBusinessLearningAndResources",
-            "label": "Online Business Learning & Resources",
+            "name": "partnershipsAndCollaborations",
+            "label": "Partnerships and Collaborations",
             "widget": "object",
             "order": 8,
             "enabled": true
           },
           {
-            "name": "logisticsAndFulfillmentServices",
-            "label": "Logistics & Fulfillment Services",
+            "name": "affiliateAndBranding",
+            "label": "Affiliate and Branding",
             "widget": "object",
             "order": 9,
             "enabled": true
           },
           {
-            "name": "merchantCommunitiesAndForums",
-            "label": "Merchant Communities & Forums",
+            "name": "eCommerce",
+            "label": "E-Commerce",
             "widget": "object",
             "order": 10,
             "enabled": true
           },
           {
-            "name": "marketplacesAndSellingPlatforms",
-            "label": "Marketplaces & Selling Platforms",
+            "name": "salesAndPromotions",
+            "label": "Sales and Promotions",
             "widget": "object",
             "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "logisticsAndFulfillment",
+            "label": "Logistics and Fulfillment",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "marketplacesAndSales",
+            "label": "Marketplaces and Sales",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "association",
+    "name": "Association Profile Template",
+    "slug": "association-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "associationInformation",
+            "label": "Association Information",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "historyAndBackground",
+            "label": "History and Background",
+            "widget": "textarea",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "leadershipAndGovernance",
+            "label": "Leadership and Governance",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "membershipStructure",
+            "label": "Membership Structure",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "industriesAndCompanies",
+            "label": "Industries and Companies",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "programsAndServices",
+            "label": "Programs and Services",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "certifications",
+            "label": "Certifications",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "partnerships",
+            "label": "Partnerships",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "achievements",
+            "label": "Achievements",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "upcomingEvents",
+            "label": "Upcoming Events",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "primaryContact",
+            "label": "Primary Contact",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "membershipSupport",
+            "label": "Membership Support",
+            "widget": "object",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "leadershipAndGovernance",
+            "label": "Leadership and Governance",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndConferences",
+            "label": "Events and Conferences",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "partnerships",
+            "label": "Partnerships",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "financialAndBilling",
+            "label": "Financial And Billing",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "legalAndCompliance",
+            "label": "Legal and Compliance",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "mediaAndPublicRelations",
+            "label": "Media and Public Relations",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "regionalAndLocal",
+            "label": "Regional and Local",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "officialSocialMedia",
+            "label": "Official Social Media",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "associationWebsite",
+            "label": "Association Website",
+            "widget": "url",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "professionalAndNetworking",
+            "label": "Professional and Networking",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "liveEventsAndWebinars",
+            "label": "Live Events and Webinars",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "membershipSpotlight",
+            "label": "Membership Spotlight",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "educationalContacts",
+            "label": "Educational Contacts",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "corporatePartners",
+            "label": "Corporate Partners",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "advocacyAndIndustries",
+            "label": "Advocacy and Industries",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "sponsorshipHighlight",
+            "label": "Sponsorship Highlight",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "communityEngagements",
+            "label": "Community Engagements",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "networkingAndMembers",
+            "label": "Networking and Members",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "exclusiveMembers",
+            "label": "Exclusive Members",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "organization",
+    "name": "Organization Profile Template",
+    "slug": "organization-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "organizationInformation",
+            "label": "Organization Information",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "missionAndVision",
+            "label": "Mission and Vision",
+            "widget": "textarea",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "historyAndBackground",
+            "label": "History and Background",
+            "widget": "textarea",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "leadershipAndGovernance",
+            "label": "Leadership and Governance",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "programsAndServices",
+            "label": "Programs and Services",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "targetAudience",
+            "label": "Target Audience",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "partnershipsAndCollaborations",
+            "label": "Partnerships and Collaborations",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "certificationsAndAccreditations",
+            "label": "Certifications and Accreditations",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "achievements",
+            "label": "Achievements",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "recognitions",
+            "label": "Recognitions",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "technologyAndInnovation",
+            "label": "Technology and Innovation",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndConferences",
+            "label": "Events and Conferences",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "fundingAndFinance",
+            "label": "Funding and Finance",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          },
+          {
+            "name": "futureGoals",
+            "label": "Future Goals",
+            "widget": "textarea",
+            "order": 14,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "primaryContact",
+            "label": "Primary Contact",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "executiveLeadership",
+            "label": "Executive Leadership",
+            "widget": "object",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "membershipsAndRegistration",
+            "label": "Memberships and Registration",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "sponsorshipAndPartnerships",
+            "label": "Sponsorship and Partnerships",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "trainingAndEducation",
+            "label": "Training and Education",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "financialAndDonations",
+            "label": "Financial and Donations",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndConferences",
+            "label": "Events and Conferences",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "legalAndCompliance",
+            "label": "Legal and Compliance",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "technicalAndITSupport",
+            "label": "Technical and IT Support",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "humanResources",
+            "label": "Human Resources",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "careerOpportunities",
+            "label": "Career Opportunities",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "feedbackAndSuggestion",
+            "label": "Feedback and Suggestion",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "regionalAndInternationalOffices",
+            "label": "Regional and International Offices",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "officialSocialMediaPage",
+            "label": "Official Social Media Page",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "organizationWebsite",
+            "label": "Organization Website",
+            "widget": "url",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "communityNetwork",
+            "label": "Community Network",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "discussionGroups",
+            "label": "Discussion Groups",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "liveWebinars",
+            "label": "Live Webinars",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "memberSpotlight",
+            "label": "Member Spotlight",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "educationalContent",
+            "label": "Educational Content",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "advocacyAndSocialImpact",
+            "label": "Advocacy and Social Impact",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "corporateAndCommunication",
+            "label": "Corporate and Communication",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "fundraisingAndDonation",
+            "label": "Fundraising and Donation",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "jobPostings",
+            "label": "Job Postings",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "volunteerAndCommunityService",
+            "label": "Volunteer and Community Service",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "eventPromotion",
+            "label": "Event Promotion",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "profileCategory": "group",
+    "profileType": "institution",
+    "name": "Institution Profile Template",
+    "slug": "institution-profile",
+    "categories": [
+      {
+        "name": "about",
+        "label": "About",
+        "icon": "info-circle",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "institutionInformation",
+            "label": "Institution Information",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "missionAndVision",
+            "label": "Mission and Vision",
+            "widget": "textarea",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "historyAndBackground",
+            "label": "History and Background",
+            "widget": "textarea",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "leadershipAndGovernance",
+            "label": "Leadership and Governance",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "departments",
+            "label": "Departments",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "programsAndServices",
+            "label": "Programs and Services",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "targetAudience",
+            "label": "Target Audience",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "communityServices",
+            "label": "Community Services",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "accreditationAndCertifications",
+            "label": "Accreditation and Certifications",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "innovationsAndResearch",
+            "label": "Innovations and Research",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "sustainabilityAndEnvironment",
+            "label": "Sustainability and Environment",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "achievementsAndRecognitions",
+            "label": "Achievements and Recognitions",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndConferences",
+            "label": "Events and Conferences",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "contact",
+        "label": "Contact",
+        "icon": "address-book",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "primaryContact",
+            "label": "Primary Contact",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "admissionsOffice",
+            "label": "Admissions Office",
+            "widget": "object",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "administration",
+            "label": "Administration",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "academicDepartments",
+            "label": "Academic Departments",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "facultyContacts",
+            "label": "Faculty Contacts",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "studentAffairs",
+            "label": "Student Affairs",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "supportServices",
+            "label": "Support Services",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "alumniRelationships",
+            "label": "Alumni Relationships",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "researchAndInnovations",
+            "label": "Research and Innovations",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "careerServices",
+            "label": "Career Services",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "internships",
+            "label": "Internships",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "libraryAndLearning",
+            "label": "Library and Learning",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "technicalAndITSupport",
+            "label": "Technical and IT Support",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          },
+          {
+            "name": "eventsAndConferences",
+            "label": "Events and Conferences",
+            "widget": "object",
+            "order": 14,
+            "enabled": true
+          },
+          {
+            "name": "partnershipsAndCollaborations",
+            "label": "Partnerships and Collaborations",
+            "widget": "object",
+            "order": 15,
+            "enabled": true
+          }
+        ]
+      },
+      {
+        "name": "social",
+        "label": "Social",
+        "icon": "share-alt",
+        "collapsible": true,
+        "fields": [
+          {
+            "name": "officialSocialMediaPage",
+            "label": "Official Social Media Page",
+            "widget": "object",
+            "order": 1,
+            "enabled": true
+          },
+          {
+            "name": "institutionWebsite",
+            "label": "Institution Website",
+            "widget": "url",
+            "order": 2,
+            "enabled": true
+          },
+          {
+            "name": "studentsAndAlumni",
+            "label": "Students and Alumni",
+            "widget": "object",
+            "order": 3,
+            "enabled": true
+          },
+          {
+            "name": "liveWebinarsAndLectures",
+            "label": "Live Webinars and Lectures",
+            "widget": "object",
+            "order": 4,
+            "enabled": true
+          },
+          {
+            "name": "studentAchievements",
+            "label": "Student Achievements",
+            "widget": "object",
+            "order": 5,
+            "enabled": true
+          },
+          {
+            "name": "alumniSpotlights",
+            "label": "Alumni Spotlights",
+            "widget": "object",
+            "order": 6,
+            "enabled": true
+          },
+          {
+            "name": "educationAndResearch",
+            "label": "Education and Research",
+            "widget": "object",
+            "order": 7,
+            "enabled": true
+          },
+          {
+            "name": "admissionsAndEnrollment",
+            "label": "Admissions and Enrollment",
+            "widget": "object",
+            "order": 8,
+            "enabled": true
+          },
+          {
+            "name": "publicOutreach",
+            "label": "Public Outreach",
+            "widget": "object",
+            "order": 9,
+            "enabled": true
+          },
+          {
+            "name": "communityEngagements",
+            "label": "Community Engagements",
+            "widget": "object",
+            "order": 10,
+            "enabled": true
+          },
+          {
+            "name": "scholarshipsAndFundings",
+            "label": "Scholarships and Fundings",
+            "widget": "object",
+            "order": 11,
+            "enabled": true
+          },
+          {
+            "name": "studentEvents",
+            "label": "Student Events",
+            "widget": "object",
+            "order": 12,
+            "enabled": true
+          },
+          {
+            "name": "extracurricularActivities",
+            "label": "Extracurricular Activities",
+            "widget": "object",
+            "order": 13,
+            "enabled": true
+          },
+          {
+            "name": "careerServices",
+            "label": "Career Services",
+            "widget": "object",
+            "order": 14,
+            "enabled": true
+          },
+          {
+            "name": "internshipOpportunities",
+            "label": "Internship Opportunities",
+            "widget": "object",
+            "order": 15,
+            "enabled": true
+          },
+          {
+            "name": "annualConferences",
+            "label": "Annual Conferences",
+            "widget": "object",
+            "order": 16,
             "enabled": true
           }
         ]
       }
     ]
   }
-
-
-  ]
-
-`
+]
